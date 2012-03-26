@@ -158,17 +158,17 @@ class Cube
 				face.set_col(1, row[2]) # row 3 -> col 1
 				
 				# change the other faces effected by the turn
-				# before_turn = [
-				# 	left.get_col(3)
-				# 	top.get_row(3)
-				# 	right.get_col(1)
-				# 	bottom.get_row(1)
-				# ]
-				# 
-				# left.set_col(3, before_turn[3])
-				# top.set_row(3, before_turn[0])
-				# right.set_col(1, before_turn[1])
-				# bottom.set_row(1, before_turn[2])
+				before_turn = [
+					left.get_col(3)
+					top.get_row(3)
+					right.get_col(1)
+					bottom.get_row(1)
+				]
+				
+				left.set_col(3, before_turn[3])
+				top.set_row(3, before_turn[0])
+				right.set_col(1, before_turn[1])
+				bottom.set_row(1, before_turn[2])
 				
 				
 
@@ -185,5 +185,5 @@ class Cube
 
 c = new Cube "Rubik's"
 c.white.cw()
-c.green.cw()
+
 c.display()
