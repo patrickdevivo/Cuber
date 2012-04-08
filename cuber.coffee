@@ -241,8 +241,8 @@ class Cube
 		
 		return this
 		
-	scramble: ->
-		_.times(100, () =>
+	scramble: (n = 100) ->
+		_.times(n, () =>
 			faces = ['white', 'green', 'orange', 'blue', 'red', 'yellow']
 			random_face = _.shuffle(faces)[0]
 			directions = ['cw', 'ccw']
