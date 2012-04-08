@@ -8,10 +8,6 @@ class Cube
 	constructor: (@name, @empty = false) ->
 		@id = _.uniqueId()
 		cube = this
-		@cache = {
-			edges: {}
-			corners: {}
-		}
 		class Edge
 			constructor: (id) ->
 				if id.length == 2
@@ -54,29 +50,29 @@ class Cube
 		@edges['wo'] = new Edge 'wo'
 		@edges['wb'] = new Edge 'wb'
 		@edges['wr'] = new Edge 'wr'
-	
+
 		@edges['yg'] = new Edge 'yg'
 		@edges['yr'] = new Edge 'yr'
 		@edges['yb'] = new Edge 'yb'
 		@edges['yo'] = new Edge 'yo'
-	
+
 		@edges['go'] = new Edge 'go'
 		@edges['ob'] = new Edge 'ob'
 		@edges['br'] = new Edge 'br'
 		@edges['rg'] = new Edge 'rg'
-	
+
 		# corners
 		@corners = {}
 		@corners['wgo'] = new Corner 'wgo'
 		@corners['wob'] = new Corner 'wob'
 		@corners['wbr'] = new Corner 'wbr'
 		@corners['wrg'] = new Corner 'wrg'
-	
+
 		@corners['ygr'] = new Corner 'ygr'
 		@corners['yrb'] = new Corner 'yrb'
 		@corners['ybo'] = new Corner 'ybo'
 		@corners['yog'] = new Corner 'yog'
-		
+	
 		# faces
 		@white	= new Face 'white'
 		@green	= new Face 'green'
@@ -102,7 +98,10 @@ class Cube
 		# if check = true then console.log 'Good'
 		# else console.log 'Bad'
 		
-	get: (coordinates) ->
+	get: (coordinates, key = true) ->
+		if typeof coordinates == 'string'
+			coordinates = _.chars(coordinates)
+			
 		switch _.size(coordinates)
 			when 2
 				type = 'edges'
@@ -124,10 +123,27 @@ class Cube
 			if _.size(overlap) == _.size(coordinates)
 				output = key
 				
-		# return output
-		return this[type][output]
+		if key
+			return output
+		else
+			return this[type][output]
 		
-	turn: (face, direction) ->		
+	set: (piece, color_key, value) =>
+		piece = this.get(piece)
+		
+		switch _.size(_.chars(piece))
+			when 2
+				type = 'edges'
+			when 3
+				type = 'corners'
+			else
+				console.log 'Enter two or three colors to select a position on the cube'
+		
+		this[type][piece][color_key] = value
+		
+		
+	turn: (face, direction) ->
+		cube = this
 		# refer to face by first character of color
 		face = face.charAt 0
 		
@@ -138,8 +154,9 @@ class Cube
 				edges_to_turn.push key
 		
 		# store edges
+		previous_edges = {}
 		_.each edges_to_turn, (element, index, list) =>
-			this.cache.edges[element] = this.edges[element]
+			previous_edges[element] = _.clone(this.edges[element])
 			
 		# find corners to turn
 		corners_to_turn = []
@@ -148,8 +165,9 @@ class Cube
 				corners_to_turn.push key
 				
 		# store corners
+		previous_corners = {}
 		_.each corners_to_turn, (element, index, list) =>
-			this.cache.corners[element] = this.corners[element]
+			previous_corners[element] = _.clone(this.corners[element])
 		
 		# define order of other faces changed by turn
 		switch face
@@ -178,27 +196,51 @@ class Cube
 		
 		# reduce colors to first letter
 		_.each order, (element, index, list)=>
-			order[index] = element.charAt 0
+			order[index] = element.charAt 0		
 		
-		_.each edges_to_turn, (element, index, list) =>
-			outer_color = _.reject(_.chars(element), (color)-> return color == face)
-			outer_color = outer_color[0] # non face color
+		for edge in edges_to_turn # turn edges
+			outer_color = _.reject(_.chars(edge), (color) -> return color == face)[0]
 			order_location = _.indexOf order, outer_color # location of outer color in order array
 			cw_color = if order_location + 1 == _.size order then _.first order else order[order_location + 1]
-			ccw_color = if order_location - 1 == -1 then _.last order else order[order_location - 1]			
-			next_color = if direction == 'cw' then cw_color else if direction == 'ccw' then ccw_color
-			next_edge = _.find(list, (edge)-> edge.indexOf(next_color) != -1)
+			ccw_color = if order_location - 1 == -1 then _.last order else order[order_location - 1]
+			input_color = if direction == 'cw' then ccw_color else if direction == 'ccw' then cw_color
+			input_edge = _.filter(edges_to_turn, (edge)-> edge.indexOf(input_color) != -1)
 			
-			# console.log cw_color + ' ' + outer_color + ' ' + ccw_color
-			# console.log element + ' ' + next_edge
-			# console.log outer_color + ' ' + next_color
+			this.set(edge, face, previous_edges[input_edge][face])
+			this.set(edge, outer_color, previous_edges[input_edge][input_color])
 			
-			console.log this.edges[next_edge][next_color]
+		for corner in corners_to_turn # turn corners
+			other_colors = _.reject(_.chars(corner), (color) -> return color == face)
+			order_location = [_.indexOf(order, other_colors[0]), _.indexOf(order, other_colors[1])]
+			cw_colors = [
+				if order_location[0] + 1 == _.size order then _.first order else order[order_location[0] + 1],
+				if order_location[1] + 1 == _.size order then _.first order else order[order_location[1] + 1]				
+			]
+			ccw_colors = [
+				if order_location[0] - 1 == -1 then _.last order else order[order_location[0] - 1],
+				if order_location[1] - 1 == -1 then _.last order else order[order_location[1] - 1]
+			]
+			input_colors = [
+				if direction == 'cw' then ccw_colors[0] else if direction == 'ccw' then cw_colors[0],
+				if direction == 'cw' then ccw_colors[1] else if direction == 'ccw' then cw_colors[1]
+			]
+			input_corner = _.filter(corners_to_turn, (corner)-> corner.indexOf(input_colors[0]) != -1 and corner.indexOf(input_colors[1]) != -1)
 			
-			this.edges[next_edge][face] = this.cache.edges[element][face]
-			this.edges[next_edge][next_color] = this.cache.edges[element][outer_color]
-
+			this.set(corner, face, previous_corners[input_corner][face])
+			this.set(corner, other_colors[0], previous_corners[input_corner][input_colors[0]])
+			this.set(corner, other_colors[1], previous_corners[input_corner][input_colors[1]])
+					
+		# console.log "turned " + face + " " + direction
+		
+		return this
+		
+	scramble: () ->
+		_.times(20, ()->
+			faces = ['white', ]
+			random_face = 
+		)
+				
 
 c = new Cube "Rubik's"
-c.white.cw()
-console.log c
+c.scramble()
+c.display()
