@@ -5,7 +5,7 @@ _.str.include('Underscore.string', 'string')
 # $ = require 'jquery'
 
 class Cube
-	constructor: (@name, @empty = false) ->
+	constructor: (@name = "Rubik\'s") ->
 		@id = _.uniqueId()
 		cube = this
 		class Edge
@@ -135,7 +135,7 @@ class Cube
 		else
 			return this[type][output]
 		
-	set: (piece, color_key, value) =>
+	set: (piece, color_key, value) ->
 		piece = this.get(piece)
 		
 		switch _.size(_.chars(piece))
@@ -249,9 +249,8 @@ class Cube
 			random_direction = _.shuffle(directions)[0]
 			this.turn(random_face, random_direction)
 		)
-				
+		
+		return this
 
-c = new Cube "Rubik's"
-c.scramble()
-# c.display()
-c.check()
+
+module.exports = Cube
