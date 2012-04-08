@@ -268,6 +268,6 @@ class Cube
 			# this.display()
 		)
 		
-		return this
+		return this.display()
 
 module.exports = Cube
