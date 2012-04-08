@@ -11,9 +11,6 @@ class Cube
 		class Edge
 			constructor: (id) ->
 				if id.length == 2
-					# @position = {}
-					# @position[id.charAt 0] = id.charAt 0
-					# @position[id.charAt 1] = id.charAt 1
 					this[id.charAt 0] = id.charAt 0
 					this[id.charAt 1] = id.charAt 1
 				else
@@ -22,10 +19,6 @@ class Cube
 		class Corner
 			constructor: (id) ->
 				if id.length == 3
-					# @position = {}
-					# @position[id.charAt 0] = id.charAt 0
-					# @position[id.charAt 1] = id.charAt 1
-					# @position[id.charAt 2] = id.charAt 2
 					this[id.charAt 0] = id.charAt 0
 					this[id.charAt 1] = id.charAt 1
 					this[id.charAt 2] = id.charAt 2
@@ -86,17 +79,31 @@ class Cube
 		console.log this.corners
 		
 	check: ->
-		# check = true
-		# _.each this.edges, (element, index, list)->
-		# 	if index != element
-		# 		check = false
-		# 
-		# _.each this.corners, (element, index, list)->
-		# 	if index != element
-		# 		check = false
-		# 	
-		# if check = true then console.log 'Good'
-		# else console.log 'Bad'
+		edges_good = true
+		_.each(this.edges, (value, key)->
+			_.each(value, (position, color)->
+				if color isnt position
+					edges_good = false
+			)
+		)
+		
+		corners_good = true
+		_.each(this.corners, (value, key)->
+			_.each(value, (position, color)->
+				if color isnt position
+					corners = false
+			)
+		)
+		
+		final = edges_good and corners_good
+		
+		if final
+			console.log "Cube is solved!"
+		else
+			console.log "Cube is not solved"
+			
+		return final
+			
 		
 	get: (coordinates, key = true) ->
 		if typeof coordinates == 'string'
@@ -230,17 +237,21 @@ class Cube
 			this.set(corner, other_colors[0], previous_corners[input_corner][input_colors[0]])
 			this.set(corner, other_colors[1], previous_corners[input_corner][input_colors[1]])
 					
-		# console.log "turned " + face + " " + direction
+		console.log "Turned " + face + " " + direction
 		
 		return this
 		
-	scramble: () ->
-		_.times(20, ()->
-			faces = ['white', ]
-			random_face = 
+	scramble: ->
+		_.times(100, () =>
+			faces = ['white', 'green', 'orange', 'blue', 'red', 'yellow']
+			random_face = _.shuffle(faces)[0]
+			directions = ['cw', 'ccw']
+			random_direction = _.shuffle(directions)[0]
+			this.turn(random_face, random_direction)
 		)
 				
 
 c = new Cube "Rubik's"
 c.scramble()
-c.display()
+# c.display()
+c.check()

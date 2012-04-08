@@ -102,7 +102,29 @@
       return console.log(this.corners);
     };
 
-    Cube.prototype.check = function() {};
+    Cube.prototype.check = function() {
+      var corners_good, edges_good, final;
+      edges_good = true;
+      _.each(this.edges, function(value, key) {
+        return _.each(value, function(position, color) {
+          if (color !== position) return edges_good = false;
+        });
+      });
+      corners_good = true;
+      _.each(this.corners, function(value, key) {
+        return _.each(value, function(position, color) {
+          var corners;
+          if (color !== position) return corners = false;
+        });
+      });
+      final = edges_good && corners_good;
+      if (final) {
+        console.log("Cube is solved!");
+      } else {
+        console.log("Cube is not solved");
+      }
+      return final;
+    };
 
     Cube.prototype.get = function(coordinates, key) {
       var output, possibles, type;
@@ -149,7 +171,7 @@
     };
 
     Cube.prototype.turn = function(face, direction) {
-      var ccw_color, corners_to_turn, cube, cw_color, edge, edges_to_turn, input_color, input_edge, order, order_location, outer_color, previous_corners, previous_edges, rotate, _i, _len, _results,
+      var ccw_color, ccw_colors, corner, corners_to_turn, cube, cw_color, cw_colors, edge, edges_to_turn, input_color, input_colors, input_corner, input_edge, order, order_location, other_colors, outer_color, previous_corners, previous_edges, rotate, _i, _j, _len, _len2,
         _this = this;
       cube = this;
       face = face.charAt(0);
@@ -159,7 +181,7 @@
       });
       previous_edges = {};
       _.each(edges_to_turn, function(element, index, list) {
-        return previous_edges[element] = _this.edges[element];
+        return previous_edges[element] = _.clone(_this.edges[element]);
       });
       corners_to_turn = [];
       _.each(this.corners, function(value, key, list) {
@@ -167,7 +189,7 @@
       });
       previous_corners = {};
       _.each(corners_to_turn, function(element, index, list) {
-        return previous_corners[element] = _this.corners[element];
+        return previous_corners[element] = _.clone(_this.corners[element]);
       });
       switch (face) {
         case 'w':
@@ -204,7 +226,6 @@
       _.each(order, function(element, index, list) {
         return order[index] = element.charAt(0);
       });
-      _results = [];
       for (_i = 0, _len = edges_to_turn.length; _i < _len; _i++) {
         edge = edges_to_turn[_i];
         outer_color = _.reject(_.chars(edge), function(color) {
@@ -218,9 +239,38 @@
           return edge.indexOf(input_color) !== -1;
         });
         this.set(edge, face, previous_edges[input_edge][face]);
-        _results.push(this.set(edge, outer_color, previous_edges[input_edge][input_color]));
+        this.set(edge, outer_color, previous_edges[input_edge][input_color]);
       }
-      return _results;
+      for (_j = 0, _len2 = corners_to_turn.length; _j < _len2; _j++) {
+        corner = corners_to_turn[_j];
+        other_colors = _.reject(_.chars(corner), function(color) {
+          return color === face;
+        });
+        order_location = [_.indexOf(order, other_colors[0]), _.indexOf(order, other_colors[1])];
+        cw_colors = [order_location[0] + 1 === _.size(order) ? _.first(order) : order[order_location[0] + 1], order_location[1] + 1 === _.size(order) ? _.first(order) : order[order_location[1] + 1]];
+        ccw_colors = [order_location[0] - 1 === -1 ? _.last(order) : order[order_location[0] - 1], order_location[1] - 1 === -1 ? _.last(order) : order[order_location[1] - 1]];
+        input_colors = [direction === 'cw' ? ccw_colors[0] : direction === 'ccw' ? cw_colors[0] : void 0, direction === 'cw' ? ccw_colors[1] : direction === 'ccw' ? cw_colors[1] : void 0];
+        input_corner = _.filter(corners_to_turn, function(corner) {
+          return corner.indexOf(input_colors[0]) !== -1 && corner.indexOf(input_colors[1]) !== -1;
+        });
+        this.set(corner, face, previous_corners[input_corner][face]);
+        this.set(corner, other_colors[0], previous_corners[input_corner][input_colors[0]]);
+        this.set(corner, other_colors[1], previous_corners[input_corner][input_colors[1]]);
+      }
+      console.log("Turned " + face + " " + direction);
+      return this;
+    };
+
+    Cube.prototype.scramble = function() {
+      var _this = this;
+      return _.times(100, function() {
+        var directions, faces, random_direction, random_face;
+        faces = ['white', 'green', 'orange', 'blue', 'red', 'yellow'];
+        random_face = _.shuffle(faces)[0];
+        directions = ['cw', 'ccw'];
+        random_direction = _.shuffle(directions)[0];
+        return _this.turn(random_face, random_direction);
+      });
     };
 
     return Cube;
@@ -229,8 +279,8 @@
 
   c = new Cube("Rubik's");
 
-  c.white.cw();
+  c.scramble();
 
-  c.display();
+  c.check();
 
 }).call(this);
