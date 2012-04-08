@@ -26,10 +26,6 @@ class Cube
 					console.log "Invalid corner id"
 		class Face
 			constructor: (@color) ->
-
-				
-			display: ->
-				# TODO: display values on face
 				
 			cw: () ->
 				cube.turn(this.color, 'cw')
@@ -75,8 +71,29 @@ class Cube
 		@yellow	= new Face 'yellow'
 		
 	display: ->
-		console.log this.edges
-		console.log this.corners
+		f = (piece) => this.get(piece, false)
+		output ="          --+-+-+--\n" +
+				"          | #{f('oby').o} #{f('oy').o} #{f('oby').o} |\n" +
+				"          | #{f('og').o} o #{f('ob').o} |\n" +
+				"          | #{f('ogw').o} #{f('ow').o} #{f('obw').o} |\n" +
+				
+				"--+-+-+-- --+-+-+-- --+-+-+--\n" +
+				"| #{f('gyo').g} #{f('go').g} #{f('gow').g} | | #{f('wog').w} #{f('wo').w} #{f('wob').w} | | #{f('bow').b} #{f('bo').b} #{f('boy').b} |\n" +
+				"| #{f('gy').g} g #{f('gw').g} | | #{f('wg').w} w #{f('wb').w} | | #{f('bw').b} b #{f('by').b} |\n" +
+				"| #{f('gry').g} #{f('gr').g} #{f('gwr').g} | | #{f('wgr').w} #{f('wr').w} #{f('wbr').w} | | #{f('brw').b} #{f('br').b} #{f('byr').b} |\n" +
+				"--+-+-+-- --+-+-+-- --+-+-+--\n"+
+				
+				"          | #{f('rgw').r} #{f('rw').r} #{f('rwb').r} |\n" +
+				"          | #{f('rg').r} r #{f('rb').r} |\n" +
+				"          | #{f('rgw').r} #{f('ry').r} #{f('ryb').r} |\n" +
+				"          --+-+-+--\n" +
+				"          | #{f('ryg').y} #{f('ry').y} #{f('ryb').y} |\n" +
+				"          | #{f('gy').y} y #{f('yb').y} |\n" +
+				"          | #{f('gyo').y} #{f('yo').y} #{f('byo').y} |\n" +
+				"          --+-+-+--\n"
+				
+		
+		console.log output
 		
 	check: ->
 		edges_good = true
@@ -248,9 +265,9 @@ class Cube
 			directions = ['cw', 'ccw']
 			random_direction = _.shuffle(directions)[0]
 			this.turn(random_face, random_direction)
+			# this.display()
 		)
 		
 		return this
-
 
 module.exports = Cube
