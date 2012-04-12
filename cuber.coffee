@@ -70,6 +70,8 @@ class Cube
 		@red	= new Face 'red'
 		@yellow	= new Face 'yellow'
 		
+		@history = []
+		
 	display: ->
 		f = (piece) => this.get(piece, false)
 		output ="          --+-+-+--\n" +
@@ -94,6 +96,7 @@ class Cube
 				
 		
 		console.log output
+		return this
 		
 	check: ->
 		edges_good = true
@@ -169,7 +172,17 @@ class Cube
 	turn: (face, direction) ->
 		cube = this
 		# refer to face by first character of color
-		face = face.charAt 0
+		face = face.charAt(0)
+		
+		if !direction # if no direction is specificifed, get direction from face case (capitialized or not)
+			switch face
+				when face.toLowerCase() # if face is uppercase
+					direction = 'cw'
+				when face.toUpperCase() # if face is lowercase
+					direction = 'ccw'
+					
+		face = face.toLowerCase()
+				
 		
 		# find edges to turn
 		edges_to_turn = []
@@ -253,8 +266,24 @@ class Cube
 			this.set(corner, face, previous_corners[input_corner][face])
 			this.set(corner, other_colors[0], previous_corners[input_corner][input_colors[0]])
 			this.set(corner, other_colors[1], previous_corners[input_corner][input_colors[1]])
-					
+		
+		history_input = if direction == 'cw' then face else if direction == 'ccw' then face.toUpperCase()
+		this.history.push(history_input)
+		
 		console.log "Turned " + face + " " + direction
+		
+		return this
+		
+	cheat: ()->
+		reverse = _.clone(this.history).reverse()
+		_.each(reverse, (element, index)=>
+			switch element
+				when element.toUpperCase() # when uppercase...
+					move = element.toLowerCase() # make lowercase
+				when element.toLowerCase() # when lowercase...
+					move = element.toUpperCase() # make uppercase
+			this.turn(move)
+		)
 		
 		return this
 		
@@ -268,6 +297,6 @@ class Cube
 			# this.display()
 		)
 		
-		return this.display()
+		return this
 
 module.exports = Cube
