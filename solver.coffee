@@ -1,5 +1,5 @@
-_ = require './underscore.min.js'
-_.str = require './underscore.string.min.js'
+_ = require './requirements/underscore.min.js'
+_.str = require './requirements/underscore.string.min.js'
 _.mixin(_.str.exports())
 _.str.include('Underscore.string', 'string')
 

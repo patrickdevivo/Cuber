@@ -20,3 +20,13 @@ Model of a 3x3 Rubik's cube written in CoffeeScript
 
 **Check if a cube is solver**: 
 `cube.check()`
+
+**Cheat**
+`cube.cheat()` *reverses all previous moves to return to starting (solved) state*
+
+**Turn a face**
+`cube.white.cw()`
+or
+`cube.turn('white', 'cw)`
+or
+`cube.turn('w')` *lowercase means clockwise, uppercase means counter-clockwise*
