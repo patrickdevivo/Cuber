@@ -72,7 +72,7 @@ class Cube
 		
 		@history = []
 		
-	display: ->
+	display: -> # display cube to the console
 		f = (piece) => this.get(piece, false)
 		output ="          --+-+-+--\n" +
 				"          | #{f('oby').o} #{f('oy').o} #{f('oby').o} |\n" +
@@ -96,9 +96,25 @@ class Cube
 				
 		
 		console.log output
-		return this
+		return output
 		
-	check: ->
+	# export: () -> # returns string of colors on the cube. Every 9th character is a face color		
+	# 	raw = _.chars(this.display())
+	# 	output = ''
+	# 	_.each(raw, (element, index) => # run thru display() output and select only color values
+	# 		if element is 'w' or element is 'b' or element is 'g' or element is 'r' or element is 'o' or element is 'y'
+	# 			output = output + element
+	# 	)
+	# 	
+	# 	return output
+	# 	
+	# import: (values) -> # imports a string of color values and sets them on the cube
+	# 	colors = _.chars(values)
+	# 	faces = [colors[4], colors[13], colors[22], colors[31], colors[40], colors[49]]
+	# 	
+	# 	console.log faces
+		
+	check: -> # check if cube is solved
 		edges_good = true
 		_.each(this.edges, (value, key)->
 			_.each(value, (position, color)->
@@ -125,7 +141,7 @@ class Cube
 		return final
 			
 		
-	get: (coordinates, key = true) ->
+	get: (coordinates, key = true) -> # specify a piece on the cube as 'wg' or 'gw' or 'wgb', returns the name of the piece by default, an object with color values if key = false
 		if typeof coordinates == 'string'
 			coordinates = _.chars(coordinates)
 			
@@ -155,7 +171,7 @@ class Cube
 		else
 			return this[type][output]
 		
-	set: (piece, color_key, value) ->
+	set: (piece, color_key, value) -> # set the value of 'color_key' on 'piece' to 'value'
 		piece = this.get(piece)
 		
 		switch _.size(_.chars(piece))
@@ -180,9 +196,8 @@ class Cube
 					direction = 'cw'
 				when face.toUpperCase() # if face is lowercase
 					direction = 'ccw'
-					
+
 		face = face.toLowerCase()
-				
 		
 		# find edges to turn
 		edges_to_turn = []
@@ -222,7 +237,8 @@ class Cube
 				order = ['blue', 'orange', 'green', 'red']
 			else
 				console.log "Incorrect face"
-				
+		
+		# comes in handy a little later for navigating the order array above
 		switch direction
 			when 'cw'
 				rotate = 1
@@ -274,7 +290,15 @@ class Cube
 		
 		return this
 		
-	cheat: ()->
+	import_turns: (turns) -> # takes a string of turns and executes them in order (from left to right) ex: 'wgRbBoYGw'
+		if typeof turns != 'string'
+			console.log 'Error: import a string of turns to do'
+		turns = _.chars(turns)
+		_.each(turns, (element, index) =>
+			this.cube.turn(element)
+		)
+		
+	cheat: () -> # reverse all moves in the cube turn history (cube.history)
 		reverse = _.clone(this.history).reverse()
 		_.each(reverse, (element, index)=>
 			switch element
@@ -287,7 +311,7 @@ class Cube
 		
 		return this
 		
-	scramble: (n = 100) ->
+	scramble: (n = 100) -> # scranbles a cube with n random turns
 		_.times(n, () =>
 			faces = ['white', 'green', 'orange', 'blue', 'red', 'yellow']
 			random_face = _.shuffle(faces)[0]
@@ -298,5 +322,41 @@ class Cube
 		)
 		
 		return this
+		
+class Solver # a solver is a holder for a sequence of algorithms
+	constructor: (@cube = cube) ->
+		@queue = [] # algorithm queue
 
-module.exports = Cube
+	add_algorithm: (turns, condition) -> # add an algorithm to the solver queue
+		@queue.push([turns, condition])
+
+	run_algorithm: (turns, condition) -> # run an algorithm -> check if condition is true, execute turns
+		if typeof turns == 'string'
+			turns = _.chars(turns)
+
+		if condition()
+			_.each(turns, (turn, index) =>
+				this.cube.turn(turn)
+			)
+
+		return condition()
+
+	go: () -> # run thru algorithm queue and run each in order
+		_.each(@queue, (element, index) =>
+			this.run_algorithm(element[0], element[1])
+		)
+		
+		return this.cube.check()
+		
+	export_turns: () -> # returns a string of all moves solver will execute when go() is called
+		output = ''
+		_.each(@queue, (element, index) =>
+			console.log element[1]
+			if element[1]
+				output = output + element[0]
+		)
+		
+		return output
+
+module.exports.Cube = Cube
+module.exports.Solver = Solver
