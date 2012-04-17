@@ -185,7 +185,7 @@ class Cube
 		this[type][piece][color_key] = value
 		
 		
-	turn: (face, direction) ->
+	turn: (face, direction, history = true) ->
 		cube = this
 		# refer to face by first character of color
 		face = face.charAt(0)
@@ -283,8 +283,9 @@ class Cube
 			this.set(corner, other_colors[0], previous_corners[input_corner][input_colors[0]])
 			this.set(corner, other_colors[1], previous_corners[input_corner][input_colors[1]])
 		
-		history_input = if direction == 'cw' then face else if direction == 'ccw' then face.toUpperCase()
-		this.history.push(history_input)
+		if history
+			history_input = if direction == 'cw' then face else if direction == 'ccw' then face.toUpperCase()
+			this.history.push(history_input)
 		
 		console.log "Turned " + face + " " + direction
 		
