@@ -334,14 +334,32 @@ class Solver # a solver is a holder for a sequence of algorithms
 	run_algorithm: (turns, condition) -> # run an algorithm -> check if condition is true, execute turns
 		if typeof turns == 'string'
 			turns = _.chars(turns)
+		
+		if typeof condition == 'function'
 
-		if condition()
-			_.each(turns, (turn, index) =>
-				this.cube.turn(turn)
+			if condition()
+				_.each(turns, (turn, index) =>
+					this.cube.turn(turn)
+				)
+
+			return condition()
+
+		if typeof condition == 'object'
+			checker = true
+			_.each(condition, (colors, piece) =>
+				_.each(colors, (value, key) =>
+					if @cube.get(piece, false)[key] != value
+						checker = false
+				)
 			)
-
-		return condition()
-
+			
+			if checker
+				_.each(turns, (turn, index) =>
+					this.cube.turn(turn)
+				)
+				
+			console.log checker
+		
 	go: () -> # run thru algorithm queue and run each in order
 		_.each(@queue, (element, index) =>
 			this.run_algorithm(element[0], element[1])
@@ -358,6 +376,17 @@ class Solver # a solver is a holder for a sequence of algorithms
 		)
 		
 		return output
+		
+	import_algorithms: (algorithms)->
+		if typeof algorithms != 'object'
+			console.log 'Invalid algorithms input'
+		
+		_.each(algorithms, (element, index) => # loop through algorithms
+			conditions = element[0]
+			turns = element[1]
+			this.add_algorithm(turns, conditions)
+		)
+		
 
 module.exports.Cube = Cube
 module.exports.Solver = Solver
