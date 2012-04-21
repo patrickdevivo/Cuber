@@ -98,22 +98,6 @@ class Cube
 		console.log output
 		return output
 		
-	# export: () -> # returns string of colors on the cube. Every 9th character is a face color		
-	# 	raw = _.chars(this.display())
-	# 	output = ''
-	# 	_.each(raw, (element, index) => # run thru display() output and select only color values
-	# 		if element is 'w' or element is 'b' or element is 'g' or element is 'r' or element is 'o' or element is 'y'
-	# 			output = output + element
-	# 	)
-	# 	
-	# 	return output
-	# 	
-	# import: (values) -> # imports a string of color values and sets them on the cube
-	# 	colors = _.chars(values)
-	# 	faces = [colors[4], colors[13], colors[22], colors[31], colors[40], colors[49]]
-	# 	
-	# 	console.log faces
-		
 	check: -> # check if cube is solved
 		edges_good = true
 		_.each(this.edges, (value, key)->

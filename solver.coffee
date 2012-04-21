@@ -11,7 +11,13 @@ jeremy = require './algorithms/jeremy.coffee'
 
 solver.import_algorithms(jeremy)
 
-console.log solver.queue
+cube.scramble()
+cube.display()
+
+solver.go()
+
+cube.display()
+
 
 # cube = []
 # solver = []
@@ -26,16 +32,17 @@ console.log solver.queue
 # 	index++
 # )
 
+
+
 ###
-
-console.log cube
-
 f = (piece) -> return cube.get(piece, false)
 
 
 cube.scramble()
 
 cube.display()
+
+
 #White-Green
 
 #1◊
