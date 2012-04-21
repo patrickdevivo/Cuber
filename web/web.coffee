@@ -24,4 +24,4 @@ web = require('zappa') port, ->
 			console.log req
 			return cube.display()
 		'/photo' : () ->
-			console.log @request.image
+			console.log @request
