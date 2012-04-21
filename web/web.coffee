@@ -23,3 +23,5 @@ web = require('zappa') port, ->
 			solver = new Cuber.Solver cube
 			console.log req
 			return cube.display()
+		'/photo' : () ->
+			console.log @request.image
