@@ -1,6 +1,4 @@
-console.log process.env.PORT
-
-port = process.env.PORT || 3000
+port = process.env.PORT
 
 web = require('zappa') ->
 	Cuber = require('../cuber.coffee')
