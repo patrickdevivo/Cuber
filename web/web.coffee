@@ -1,18 +1,21 @@
 port = process.env.PORT
-console.log typeof port
 web = require('zappa') port, ->
 	Cuber = require('../cuber.coffee')
 	@use 'bodyParser'
 	@get
 		'/' : -> @render index: {layout: no}
 		'/gui' : -> @render 'gui/index' : {layout: no}
-		'/scrambled' : -> 
+		'/scrambled' : ->
+			@response.contentType('application/json')
 			cube = new Cuber.Cube
 			cube.scramble()
-			return JSON.stringify(cube)
+			json = JSON.stringify(cube)
+			@response.send(json)
 		'/new' : ->
+			@response.contentType('application/json')
 			cube = new Cuber.Cube
-			return JSON.stringify(cube)
+			json = JSON.stringify(cube)
+			@response.send(json)
 		
 	@post
 		'/solve' : (req, res) -> 

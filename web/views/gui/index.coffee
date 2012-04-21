@@ -7,12 +7,21 @@ html ->
 			$ ->
 				$('#scrambled').click(()->
 					$.get('/scrambled', (data)->
-						$('#output').html(data)
+						cube = data
+						$('#output').html('').html(JSON.stringify(cube))
+					)
+				)
+
+				$('#new').click(()->
+					$.get('/new', (data)->
+						cube = data
+						$('#output').html('').html(JSON.stringify(cube))
 					)
 				)
 
 	body ->
 		button '#scrambled', 'Scrambled'
+		button '#new', 'New'
 		
 		form ->
 			textarea '#output', ''
