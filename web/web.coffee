@@ -1,4 +1,4 @@
-port = Number(process.env.PORT)
+port = process.env.PORT
 
 web = require('zappa') 'cuber.heroku.com', port ->
 	Cuber = require('../cuber.coffee')
