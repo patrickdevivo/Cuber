@@ -1,6 +1,6 @@
 port = process.env.PORT
-console.log 'Port: ' + port
-web = require('zappa') 'cuber.herokuapp.com', port, ->
+console.log typeof port
+web = require('zappa') port, ->
 	Cuber = require('../cuber.coffee')
 	@use 'bodyParser'
 	@get
