@@ -20,4 +20,4 @@ web = require('zappa') ->
 			return cube.display()
 			
 	
-web.app.listen 3000
+web.app.listen
