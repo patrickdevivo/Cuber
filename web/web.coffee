@@ -1,3 +1,5 @@
+console.log process.env.PORT
+
 port = process.env.PORT || 3000
 
 web = require('zappa') ->
