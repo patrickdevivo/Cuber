@@ -1,4 +1,5 @@
 port = process.env.PORT || 3000
+
 web = require('zappa') ->
 	Cuber = require('../cuber.coffee')
 	@use 'bodyParser'
