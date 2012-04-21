@@ -1,6 +1,6 @@
-port = Number(process.env.PORT) || 3000
+port = Number(process.env.PORT)
 
-web = require('zappa') ->
+web = require('zappa') 'cuber.heroku.com', port ->
 	Cuber = require('../cuber.coffee')
 	@use 'bodyParser'
 	@get
@@ -20,6 +20,3 @@ web = require('zappa') ->
 			solver = new Cuber.Solver cube
 			console.log req
 			return cube.display()
-			
-	
-web.app.listen port
