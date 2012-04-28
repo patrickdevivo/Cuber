@@ -1450,4 +1450,4 @@ algorithms = [
 #Cube Complete!
 ]
 
-
+module.exports = algorithms
