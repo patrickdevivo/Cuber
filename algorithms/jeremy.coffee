@@ -974,13 +974,13 @@ algorithms = [
 	}}, 'yygyGYRYr']
 #10◊
 	[{ yr: {
-		y: 'r'
-		r: 'g'
+		y: 'g'
+		r: 'r'
 	}}, 'ygyGYRYr']
 #10'
 	[{ yr: {
-		y: 'g'
-		r: 'r'
+		y: 'r'
+		r: 'g'
 	}}, 'yyRYrygyG']
 #11◊
 	[{ yb: {
@@ -994,13 +994,13 @@ algorithms = [
 	}}, 'gyGYRYr']
 #12◊
 	[{ yo: {
-		y: 'r'
-		o: 'g'
+		y: 'g'
+		o: 'r'
 	}}, 'YgyGYRYr']
 #12'
 	[{ yo: {
-		y: 'g'
-		o: 'r'
+		y: 'r'
+		o: 'g'
 	}}, 'RYrygyG']
 
 #Blue-Red
@@ -1036,13 +1036,13 @@ algorithms = [
 	}}, 'GYgyoyOYBYbyryR']
 #9◊
 	[{ yg: {
-		y: 'b'
-		g: 'r'
+		y: 'r'
+		g: 'b'
 	}}, 'YryRYBYb']
 #9'
 	[{ yg: {
-		y: 'r'
-		g: 'b'
+		y: 'b'
+		g: 'r'
 	}}, 'BYbyryR']
 #10◊
 	[{ yr: {
@@ -1056,13 +1056,13 @@ algorithms = [
 	}}, 'yyryRYBYb']
 #11◊
 	[{ yb: {
-		y: 'b'
-		b: 'r'
+		y: 'r'
+		b: 'b'
 	}}, 'yryRYBYb']
 #11'
 	[{ yb: {
-		y: 'r'
-		b: 'b'
+		y: 'b'
+		b: 'r'
 	}}, 'yyBYbyryR']
 #12◊
 	[{ yo: {
@@ -1078,63 +1078,63 @@ algorithms = [
 #Blue-Orange
 #7◊
 	[{ bo: {
-		b: 'g'
-		o: 'r'
+		b: 'b'
+		o: 'o'
 	}}, '']
 #7'
 	[{ bo: {
-		b: 'r'
-		o: 'g'
+		b: 'o'
+		o: 'b'
 	}}, 'OYoybyByOYoybyB']
 #8◊
 	[{ go: {
-		g: 'g'
-		o: 'r'
+		g: 'b'
+		o: 'o'
 	}}, 'ooyyooyyoo']
 #8'
 	[{ go: {
-		g: 'r'
-		o: 'g'
+		g: 'o'
+		o: 'b'
 	}}, 'GYgyoyOYbyBYOYo']
 #9◊
 	[{ yg: {
-		y: 'r'
-		g: 'g'
+		y: 'o'
+		g: 'b'
 	}}, 'yOYoybyB']
 #9'
 	[{ yg: {
-		y: 'g'
-		g: 'r'
+		y: 'b'
+		g: 'o'
 	}}, 'byBYOYo']
 #10◊
 	[{ yr: {
-		y: 'r'
-		r: 'g'
+		y: 'b'
+		r: 'o'
 	}}, 'YbyBYOYo']
 #10'
 	[{ yr: {
-		y: 'g'
-		r: 'r'
+		y: 'o'
+		r: 'b'
 	}}, 'OYoybyB']
 #11◊
 	[{ yb: {
-		y: 'r'
-		b: 'g'
+		y: 'o'
+		b: 'b'
 	}}, 'YOYoybyB']
 #11'
 	[{ yb: {
-		y: 'g'
-		b: 'r'
+		y: 'b'
+		b: 'o'
 	}}, 'yybyBYOYo']
 #12◊
 	[{ yo: {
-		y: 'r'
-		o: 'g'
+		y: 'b'
+		o: 'o'
 	}}, 'ybyBYOYo']
 #12'
 	[{ yo: {
-		y: 'g'
-		o: 'r'
+		y: 'o'
+		o: 'b'
 	}}, 'yyOYoybyB']
 
 #Green-Orange
@@ -1150,13 +1150,13 @@ algorithms = [
 	}}, 'GYgyoyOyGYgyoyO']
 #9◊
 	[{ yg: {
-		y: 'g'
-		g: 'o'
+		y: 'o'
+		g: 'g'
 	}}, 'yoyOYGYg']
 #9'
 	[{ yg: {
-		y: 'o'
-		g: 'g'
+		y: 'g'
+		g: 'o'
 	}}, 'yyGYgyoyO']
 #10◊
 	[{ yr: {
@@ -1170,13 +1170,13 @@ algorithms = [
 	}}, 'oyOYGYg']
 #11◊
 	[{ yb: {
-		y: 'g'
-		b: 'o'
+		y: 'o'
+		b: 'g'
 	}}, 'YoyOYGYg']
 #11'
 	[{ yb: {
-		y: 'o'
-		b: 'g'
+		y: 'g'
+		b: 'o'
 	}}, 'GYgyoyO']
 #12◊
 	[{ yo: {
@@ -1371,7 +1371,7 @@ algorithms = [
 	[{ yg: {
 		y: 'g'
 		g: 'y'
-	}}, 'GYwoYwbYwRYr']
+	}}, 'GYwoYwbYwRYryWByWOyWgy']
 #10◊
 	[{ yr: {
 		y: 'y'
@@ -1381,7 +1381,7 @@ algorithms = [
 	[{ yr: {
 		y: 'g'
 		r: 'y'
-	}}, 'rrYbGrrBgYrrGYwoYwbYwRYr']
+	}}, 'rrYbGrrBgYrrGYwoYwbYwRYryWByWOyWgy']
 #11◊
 	[{ yb: {
 		y: 'y'
@@ -1391,7 +1391,7 @@ algorithms = [
 	[{ yb: {
 		y: 'g'
 		b: 'y'
-	}}, 'rrybGrrBgyrrGYwoYwbYwRYr']
+	}}, 'rrybGrrBgyrrGYwoYwbYwRYryWByWOyWgy']
 #12◊
 	[{ yo: {
 		y: 'y'
@@ -1401,7 +1401,7 @@ algorithms = [
 	[{ yo: {
 		y: 'g'
 		o: 'y'
-	}}, 'ooygBooGbyooGYwoYwbYwRYr']
+	}}, 'ooygBooGbyooGYwoYwbYwRYryWByWOyWgy']
 
 #Yellow-Red
 #10◊
@@ -1447,7 +1447,7 @@ algorithms = [
 		b: 'y'
 	}}, 'BYwrYwgYwOYoWyGWyRWyby']
 
-#Cube Complete!
+#Cube Complete!!!
 ]
 
-module.exports = algorithms
+
