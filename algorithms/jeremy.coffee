@@ -1381,7 +1381,7 @@ algorithms = [
 	[{ yr: {
 		y: ‘g’
 		r: ‘y’
-	}}, 'rrYbGrrBgYrrGYwoYwbYwRYr']
+	}}, 'rrYbGrrBgYrrGYwoYwbYwRYryWByWOyWgy']
 #11◊
 	[{ yb: {
 		y: ‘y’
@@ -1391,7 +1391,7 @@ algorithms = [
 	[{ yb: {
 		y: ‘g’
 		b: ‘y’
-	}}, 'rrybGrrBgyrrGYwoYwbYwRYr']
+	}}, 'rrybGrrBgyrrGYwoYwbYwRYryWByWOyWgy']
 #12◊
 	[{ yo: {
 		y: ‘y’
@@ -1401,7 +1401,7 @@ algorithms = [
 	[{ yo: {
 		y: ‘g’
 		o: ‘y’
-	}}, 'ooygBooGbyooGYwoYwbYwRYr']
+	}}, 'ooygBooGbyooGYwoYwbYwRYryWByWOyWgy']
 
 #Yellow-Red
 #10◊
