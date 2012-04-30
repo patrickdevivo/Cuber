@@ -1036,13 +1036,13 @@ algorithms = [
 	}}, 'GYgyoyOYBYbyryR']
 #9◊
 	[{ yg: {
-		y: ‘b’
-		g: ‘r’
+		y: ‘r’
+		g: ‘b’
 	}}, 'YryRYBYb']
 #9'
 	[{ yg: {
-		y: ‘r’
-		g: ‘b’
+		y: ‘b’
+		g: ‘r’
 	}}, 'BYbyryR']
 #10◊
 	[{ yr: {
@@ -1056,13 +1056,13 @@ algorithms = [
 	}}, 'yyryRYBYb']
 #11◊
 	[{ yb: {
-		y: ‘b’
-		b: ‘r’
+		y: ‘r’
+		b: ‘b’
 	}}, 'yryRYBYb']
 #11'
 	[{ yb: {
-		y: ‘r’
-		b: ‘b’
+		y: ‘b’
+		b: ‘r’
 	}}, 'yyBYbyryR']
 #12◊
 	[{ yo: {
@@ -1108,13 +1108,13 @@ algorithms = [
 	}}, 'byBYOYo']
 #10◊
 	[{ yr: {
-		y: ‘r’
-		r: 'g'
+		y: ‘g’
+		r: 'r'
 	}}, 'YbyBYOYo']
 #10'
 	[{ yr: {
-		y: 'g'
-		r: ‘r’
+		y: 'r'
+		r: ‘g’
 	}}, 'OYoybyB']
 #11◊
 	[{ yb: {
@@ -1128,13 +1128,13 @@ algorithms = [
 	}}, 'yybyBYOYo']
 #12◊
 	[{ yo: {
-		y: ‘r’
-		o: 'g'
+		y: ‘g’
+		o: 'r'
 	}}, 'ybyBYOYo']
 #12'
 	[{ yo: {
-		y: 'g'
-		o: ‘r’
+		y: 'r'
+		o: ‘g’
 	}}, 'yyOYoybyB']
 
 #Green-Orange
@@ -1150,13 +1150,13 @@ algorithms = [
 	}}, 'GYgyoyOyGYgyoyO']
 #9◊
 	[{ yg: {
-		y: ‘g’
-		g: ‘o’
+		y: ‘o’
+		g: ‘g’
 	}}, 'yoyOYGYg']
 #9'
 	[{ yg: {
-		y: ‘o’
-		g: ‘g’
+		y: ‘g’
+		g: ‘o’
 	}}, 'yyGYgyoyO']
 #10◊
 	[{ yr: {
@@ -1170,13 +1170,13 @@ algorithms = [
 	}}, 'oyOYGYg']
 #11◊
 	[{ yb: {
-		y: ‘g’
-		b: ‘o’
+		y: ‘o’
+		b: ‘g’
 	}}, 'YoyOYGYg']
 #11'
 	[{ yb: {
-		y: ‘o’
-		b: ‘g’
+		y: ‘g’
+		b: ‘o’
 	}}, 'GYgyoyO']
 #12◊
 	[{ yo: {
