@@ -1371,7 +1371,7 @@ algorithms = [
 	[{ yg: {
 		y: ‘g’
 		g: ‘y’
-	}}, 'GYwoYwbYwRYr']
+	}}, 'GYwoYwbYwRYryWByWOyWgy']
 #10◊
 	[{ yr: {
 		y: ‘y’
