@@ -122,7 +122,7 @@ algorithms = [
 		y: 'g'
 		o: 'w'
 	}}, 'Og']
-
+###
 
 #White-Red
 
