@@ -1,8 +1,6 @@
 algorithms = [
-
-
+	
 #White-Green
-
 #1◊
 	[{ wg: {
 		w: 'w'
@@ -1450,4 +1448,4 @@ algorithms = [
 #Cube Complete!!!
 ]
 
-
+module.exports = algorithms
