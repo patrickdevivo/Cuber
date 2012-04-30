@@ -974,13 +974,13 @@ algorithms = [
 	}}, 'yygyGYRYr']
 #10◊
 	[{ yr: {
-		y: ‘r’
-		r: 'g'
+		y: ‘g’
+		r: 'r'
 	}}, 'ygyGYRYr']
 #10'
 	[{ yr: {
-		y: 'g'
-		r: ‘r’
+		y: 'r'
+		r: ‘g’
 	}}, 'yyRYrygyG']
 #11◊
 	[{ yb: {
@@ -994,13 +994,13 @@ algorithms = [
 	}}, 'gyGYRYr']
 #12◊
 	[{ yo: {
-		y: ‘r’
-		o: 'g'
+		y: ‘g’
+		o: 'r'
 	}}, 'YgyGYRYr']
 #12'
 	[{ yo: {
-		y: 'g'
-		o: ‘r’
+		y: 'r'
+		o: ‘g’
 	}}, 'RYrygyG']
 
 #Blue-Red
