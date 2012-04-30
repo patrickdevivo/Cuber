@@ -1078,63 +1078,63 @@ algorithms = [
 #Blue-Orange
 #7◊
 	[{ bo: {
-		b: 'g'
-		o: ‘r’
+		b: 'b'
+		o: ‘o’
 	}}, '']
 #7'
 	[{ bo: {
-		b: ‘r’
-		o: 'g'
+		b: ‘o’
+		o: ‘b’
 	}}, 'OYoybyByOYoybyB']
 #8◊
 	[{ go: {
-		g: 'g'
-		o: ‘r’
+		g: ‘b’
+		o: ‘o’
 	}}, 'ooyyooyyoo']
 #8'
 	[{ go: {
-		g: ‘r’
-		o: 'g'
+		g: ‘o’
+		o: ‘b’
 	}}, 'GYgyoyOYbyBYOYo']
 #9◊
 	[{ yg: {
-		y: ‘r’
-		g: 'g'
+		y: ‘o’
+		g: ‘b’
 	}}, 'yOYoybyB']
 #9'
 	[{ yg: {
-		y: 'g'
-		g: ‘r’
+		y: ‘b’
+		g: ‘o’
 	}}, 'byBYOYo']
 #10◊
 	[{ yr: {
-		y: ‘g’
-		r: 'r'
+		y: ‘b’
+		r: ‘o’
 	}}, 'YbyBYOYo']
 #10'
 	[{ yr: {
-		y: 'r'
-		r: ‘g’
+		y: ‘o’
+		r: ‘b’
 	}}, 'OYoybyB']
 #11◊
 	[{ yb: {
-		y: ‘r’
-		b: 'g'
+		y: ‘o’
+		b: ‘b’
 	}}, 'YOYoybyB']
 #11'
 	[{ yb: {
-		y: 'g'
-		b: ‘r’
+		y: ‘b’
+		b: ‘o’
 	}}, 'yybyBYOYo']
 #12◊
 	[{ yo: {
-		y: ‘g’
-		o: 'r'
+		y: ‘b’
+		o: ‘o’
 	}}, 'ybyBYOYo']
 #12'
 	[{ yo: {
-		y: 'r'
-		o: ‘g’
+		y: ‘o’
+		o: ‘b’
 	}}, 'yyOYoybyB']
 
 #Green-Orange
