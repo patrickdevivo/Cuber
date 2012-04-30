@@ -18,10 +18,18 @@ html ->
 						$('#output').html('').html(JSON.stringify(cube))
 					)
 				)
+				
+				$('#test').click(()->
+					$.get('/solver', (data)->
+						cube = data
+						$('#output').html('').html(JSON.stringify(cube))
+					)
+				)
 
 	body ->
 		button '#scrambled', 'Scrambled'
 		button '#new', 'New'
+		button '#test', 'Test'
 		
 		form ->
 			textarea '#output', ''
