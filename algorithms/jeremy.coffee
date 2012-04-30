@@ -2,7 +2,6 @@ algorithms = [
 
 
 #White-Green
-
 #1◊
 	[{ wg: {
 		w: 'w'
