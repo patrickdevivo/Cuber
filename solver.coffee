@@ -9,22 +9,20 @@ _.str.include('Underscore.string', 'string')
 
 jeremy = require './algorithms/jeremy.coffee'
 
-cubes = []
-solvers = []
 checks = 0
 before = new Date().getTime()
 i = 0
-n = 36000
+n = 1000
 _.times(n, ()->
-	cubes[i] = new Cuber.Cube
-	solvers[i] = new Cuber.Solver cubes[i]
-	solvers[i].import_algorithms(jeremy)
-	cubes[i].scramble()
-	solvers[i].go()
-	if cubes[i].check()
+	cube = new Cuber.Cube
+	solver = new Cuber.Solver cube
+	solver.import_algorithms(jeremy)
+	cube.scramble()
+	solver.go()
+	if cube.check()
 		checks++
 	else
-		cubes[i].display()
+		cube.display()
 	i++
 )
 after = new Date().getTime()
@@ -60,3 +58,8 @@ test.save((error, data)->
     else
         console.log data
 )
+
+close = ()->
+	mongoose.connection.close()
+
+_.delay(close(), 1000)
