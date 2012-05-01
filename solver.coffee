@@ -15,8 +15,8 @@ cube.scramble()
 cube.display()
 
 solver.go()
-
 cube.display()
+
 
 
 # cube = []

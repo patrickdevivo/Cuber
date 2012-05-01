@@ -75,7 +75,7 @@ class Cube
 	display: -> # display cube to the console
 		f = (piece) => this.get(piece, false)
 		output ="          --+-+-+--\n" +
-				"          | #{f('oby').o} #{f('oy').o} #{f('oby').o} |\n" +
+				"          | #{f('ogy').o} #{f('oy').o} #{f('oby').o} |\n" +
 				"          | #{f('og').o} o #{f('ob').o} |\n" +
 				"          | #{f('ogw').o} #{f('ow').o} #{f('obw').o} |\n" +
 				
@@ -87,7 +87,7 @@ class Cube
 				
 				"          | #{f('rgw').r} #{f('rw').r} #{f('rwb').r} |\n" +
 				"          | #{f('rg').r} r #{f('rb').r} |\n" +
-				"          | #{f('rgw').r} #{f('ry').r} #{f('ryb').r} |\n" +
+				"          | #{f('rgy').r} #{f('ry').r} #{f('ryb').r} |\n" +
 				"          --+-+-+--\n" +
 				"          | #{f('ryg').y} #{f('ry').y} #{f('ryb').y} |\n" +
 				"          | #{f('gy').y} y #{f('yb').y} |\n" +
@@ -157,7 +157,6 @@ class Cube
 		
 	set: (piece, color_key, value) -> # set the value of 'color_key' on 'piece' to 'value'
 		piece = this.get(piece)
-		
 		switch _.size(_.chars(piece))
 			when 2
 				type = 'edges'
@@ -245,9 +244,9 @@ class Cube
 			
 			this.set(edge, face, previous_edges[input_edge][face])
 			this.set(edge, outer_color, previous_edges[input_edge][input_color])
-			
+		
 		for corner in corners_to_turn # turn corners
-			other_colors = _.reject(_.chars(corner), (color) -> return color == face)
+			other_colors = _.reject(_.chars(corner), (color) -> return color == face) # ['g', 'o']
 			order_location = [_.indexOf(order, other_colors[0]), _.indexOf(order, other_colors[1])]
 			cw_colors = [
 				if order_location[0] + 1 == _.size order then _.first order else order[order_location[0] + 1],
@@ -341,8 +340,6 @@ class Solver # a solver is a holder for a sequence of algorithms
 				_.each(turns, (turn, index) =>
 					this.cube.turn(turn)
 				)
-				
-			console.log checker
 		
 	go: () -> # run thru algorithm queue and run each in order
 		_.each(@queue, (element, index) =>

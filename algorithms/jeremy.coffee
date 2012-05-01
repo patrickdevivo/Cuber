@@ -499,7 +499,7 @@ algorithms = [
 		w: 'w'
 		g: 'r'
 		o: 'g'
-	}}, 'oyOyRYr']
+	}}, 'oyORYr']
 #4'
 	[{ wgo: {
 		w: 'g'
