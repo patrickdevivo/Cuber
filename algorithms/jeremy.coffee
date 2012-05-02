@@ -961,7 +961,7 @@ algorithms = [
 	[{ go: {
 		g: 'r'
 		o: 'g'
-	}}, 'oyOYGYgyRYryGYg']
+	}}, 'oyOYGYgyRYrygyG']
 #9◊
 	[{ yg: {
 		y: 'r'
