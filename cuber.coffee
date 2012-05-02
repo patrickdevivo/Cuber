@@ -310,6 +310,7 @@ class Cube
 class Solver # a solver is a holder for a sequence of algorithms
 	constructor: (@cube = cube) ->
 		@queue = [] # algorithm queue
+		@turn_count = 0 # turns solver execute
 
 	add_algorithm: (turns, condition) -> # add an algorithm to the solver queue
 		@queue.push([turns, condition])
@@ -339,6 +340,7 @@ class Solver # a solver is a holder for a sequence of algorithms
 			if checker
 				_.each(turns, (turn, index) =>
 					this.cube.turn(turn)
+					@turn_count = @turn_count + 1
 				)
 		
 	go: () -> # run thru algorithm queue and run each in order

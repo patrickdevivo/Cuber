@@ -18,7 +18,8 @@ cube.display()
 checks = 0
 before = new Date().getTime()
 i = 0
-n = 100
+n = 10
+total_turns = 0
 _.times(n, ()->
 	cube = new Cuber.Cube
 	solver = new Cuber.Solver cube
@@ -29,13 +30,14 @@ _.times(n, ()->
 		checks++
 	else
 		cube.display()
+	total_turns = total_turns + solver.turn_count
 	i++
 )
 after = new Date().getTime()
 
 console.log (checks/n)*100 + '%' # spit out accuracy
 console.log (after-before)/1000 + ' seconds' # take time difference, convert to seconds
-
+console.log  total_turns/n
 
 
 mongoose = require('mongoose')
@@ -53,7 +55,7 @@ Test = mongoose.model('Test', Test)
 
 test_data = {
     id: 'Brute Force Test'
-	result: 'Accuracy: '+(checks/n)*100 + '%'+' running for '+(after-before)/1000+' seconds ('+n+' cubes attempted)'
+	result: 'Accuracy: '+(checks/n)*100 + '%'+' running for '+(after-before)/1000+' seconds ('+n+' cubes attempted). Total turns: ' + total_turns + ', Average turns per cube: '+ total_turns/n +''
 };
 
 test = new Test(test_data)
