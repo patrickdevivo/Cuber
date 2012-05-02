@@ -1,6 +1,4 @@
 algorithms = [
-
-
 #White-Green
 
 #1◊
@@ -8,6 +6,7 @@ algorithms = [
 		w: 'w'
 		g: 'g'
 	}}, '']
+
 #1'
 	[{ wg: {
 		w: 'g'
@@ -1452,5 +1451,3 @@ algorithms = [
 ]
 
 module.exports = algorithms
-
-

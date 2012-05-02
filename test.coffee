@@ -9,7 +9,7 @@ _.str.include('Underscore.string', 'string')
 algorithms = [
 	[
 		(cube)-> 
-			return cube.get('wg', false).w == 'w'
+			return cube.fetch('wg').w == 'w' and cube.fetch('wg').g == 'g'
 		'rrrrr'
 	]
 ]

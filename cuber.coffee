@@ -154,6 +154,9 @@ class Cube
 			return output
 		else
 			return this[type][output]
+			
+	fetch: (piece) ->
+		this.get(piece, false)
 		
 	set: (piece, color_key, value) -> # set the value of 'color_key' on 'piece' to 'value'
 		piece = this.get(piece)
