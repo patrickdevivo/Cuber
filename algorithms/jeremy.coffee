@@ -1,4 +1,6 @@
 algorithms = [
+
+
 #White-Green
 
 #1◊
@@ -6,7 +8,6 @@ algorithms = [
 		w: 'w'
 		g: 'g'
 	}}, '']
-
 #1'
 	[{ wg: {
 		w: 'g'
@@ -1192,6 +1193,53 @@ algorithms = [
 
 #Last Layer
 
+#Orientation
+
+#Cross
+
+#L=> Cross
+[
+	(cube)->
+		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y'
+	"byrYRB"
+]
+[
+	(cube)->
+		return cube.fetch('yg').y == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y'
+	"oybYBO"
+]
+[
+	(cube)->
+		return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y'
+	"gyoYOG"
+]
+[
+	(cube)->
+		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').y == 'y'  
+	"rygYGR"
+]
+
+#I=> Cross
+[
+	(cube)->
+		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y'
+	"rgyGYR"
+]
+[
+	(cube)->
+		return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y'
+	"byrYRB"
+]
+
+#Dot=> Cross
+[
+	(cube)->
+		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y'
+	"rgyGYRoybYBO"
+]
+#Cross Complete
+
+
 #Yellow-Green-Red
 #5◊
 	[{ ygr: {
@@ -1447,7 +1495,8 @@ algorithms = [
 	}}, 'BYwrYwgYwOYoWyGWyRWyby']
 
 #Cube Complete!!!
-
 ]
 
 module.exports = algorithms
+
+
