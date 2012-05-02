@@ -1,6 +1,6 @@
 Cuber = require './cuber.coffee'
-# cube = new Cuber.Cube
-# solver = new Cuber.Solver cube
+cube = new Cuber.Cube
+solver = new Cuber.Solver cube
 _ = require './requirements/underscore.min.js'
 _.str = require './requirements/underscore.string.min.js'
 _.mixin(_.str.exports())
