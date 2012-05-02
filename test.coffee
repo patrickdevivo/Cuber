@@ -6,6 +6,7 @@ _.str = require './requirements/underscore.string.min.js'
 _.mixin(_.str.exports())
 _.str.include('Underscore.string', 'string')
 
+
 algorithms = [
 	[
 		(cube)-> 

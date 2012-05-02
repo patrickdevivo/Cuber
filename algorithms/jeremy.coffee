@@ -1266,11 +1266,12 @@ algorithms = [
 
 
 # 3 Corners cw
- [
+[
 	(cube)->
 		return cube.fetch('ygr').y == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').o == 'y'
 	"RyyryRyr"
 ]
+
 [
 	(cube)->
 		return cube.fetch('ygr').g == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').o == 'y'
