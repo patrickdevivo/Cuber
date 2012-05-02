@@ -191,7 +191,7 @@ algorithms = [
 	[{ go: {
 		g: 'w'
 		o: 'r'
-	}}, 'wwOWw']
+	}}, 'wwOww']
 #8'
 	[{ go: {
 		g: 'r'
