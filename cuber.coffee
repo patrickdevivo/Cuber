@@ -320,13 +320,12 @@ class Solver # a solver is a holder for a sequence of algorithms
 			turns = _.chars(turns)
 		
 		if typeof condition == 'function'
-
-			if condition()
+			if condition(@cube)
 				_.each(turns, (turn, index) =>
 					this.cube.turn(turn)
 				)
 
-			return condition()
+			return condition(@cube)
 
 		if typeof condition == 'object'
 			checker = true

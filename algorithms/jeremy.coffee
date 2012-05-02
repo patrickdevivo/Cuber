@@ -1448,6 +1448,7 @@ algorithms = [
 	}}, 'BYwrYwgYwOYoWyGWyRWyby']
 
 #Cube Complete!!!
+
 ]
 
 module.exports = algorithms

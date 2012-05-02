@@ -18,7 +18,7 @@ cube.display()
 checks = 0
 before = new Date().getTime()
 i = 0
-n = 10
+n = 1000
 total_turns = 0
 _.times(n, ()->
 	cube = new Cuber.Cube
