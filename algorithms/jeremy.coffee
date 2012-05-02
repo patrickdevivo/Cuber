@@ -1,6 +1,8 @@
 algorithms = [
-	
+
+
 #White-Green
+
 #1◊
 	[{ wg: {
 		w: 'w'
@@ -128,111 +130,111 @@ algorithms = [
 #2◊
 	[{ wr: {
 		w: 'w'
-		r: 'r'
+		r: ‘r’
 	}}, '']
 #2'
 	[{ wr: {
-		w: 'r'
+		w: ‘r’
 		r: 'w'
 	}}, 'rWbw']
 #3◊
 	[{ wb: {
 		w: 'w'
-		b: 'r'
+		b: ‘r’
 	}}, 'BWbw']
 #3'
 	[{ wb: {
-		w: 'r'
+		w: ‘r’
 		b: 'w'
 	}}, 'BR']
 #4◊
 	[{ wo: {
 		w: 'w'
-		o: 'r'
+		o: ‘r’
 	}}, 'owwOww']
 #4'
 	[{ wo: {
-		w: 'r'
+		w: ‘r’
 		o: 'w'
 	}}, 'OWBw']
 #5◊
 	[{ gr: {
-		g: 'w'
+		g: ‘w’
 		r: 'r'
-	}}, 'r']
+	}}, ‘r’]
 #5'
 	[{ gr: {
 		g: 'r'
-		r: 'w'
+		r: ‘w’
 	}}, 'GWg']
 #6◊
 	[{ br: {
-		b: 'w'
+		b: ‘w’
 		r: 'r'
 	}}, 'R']
 #6'
 	[{ br: {
 		b: 'r'
-		r: 'w'
+		r: ‘w’
 	}}, 'Wbw']
 #7◊
 	[{ bo: {
-		b: 'w'
+		b: ‘w’
 		o: 'r'
 	}}, 'BbbR']
 #7'
 	[{ bo: {
 		b: 'r'
-		o: 'w'
+		o: ‘w’
 	}}, 'WBw']
 #8◊
 	[{ go: {
-		g: 'w'
+		g: ‘w’
 		o: 'r'
-	}}, 'wwOWw']
+	}}, ‘wwOWw’]
 #8'
 	[{ go: {
 		g: 'r'
-		o: 'w'
+		o: ‘w’
 	}}, 'gWG']
 #9◊
 	[{ yg: {
 		y: 'w'
-		g: 'r'
+		g: ‘r’
 	}}, 'yrr']
 #9'
 	[{ yg: {
-		y: 'r'
+		y: ‘r’
 		g: 'w'
 	}}, 'Grg']
 #10◊
 	[{ yr: {
 		y: 'w'
-		r: 'r'
+		r: ‘r’
 	}}, 'rr']
 #10'
 	[{ yr: {
-		y: 'r'
+		y: ‘r’
 		r: 'w'
 	}}, 'YGrg']
 #11◊
 	[{ yb: {
 		y: 'w'
-		b: 'r'
+		b: ‘r’
 	}}, 'Yrr']
 #11'
 	[{ yb: {
-		y: 'r'
+		y: ‘r’
 		b: 'w'
 	}}, 'bR']
 #12◊
 	[{ yo: {
 		y: 'w'
-		o: 'r'
+		o: ‘r’
 	}}, 'yyrr']
 #12'
 	[{ yo: {
-		y: 'r'
+		y: ‘r’
 		o: 'w'
 	}}, 'YbR']
 
@@ -242,101 +244,101 @@ algorithms = [
 #3◊
 	[{ wb: {
 		w: 'w'
-		b: 'b'
+		b: ‘b’
 	}}, '']
 #3'
 	[{ wb: {
-		w: 'b'
+		w: ‘b’
 		b: 'w'
 	}}, 'BwRW']
 #4◊
 	[{ wo: {
 		w: 'w'
-		o: 'b'
+		o: ‘b’
 	}}, 'oWOw']
 #4'
 	[{ wo: {
-		w: 'b'
+		w: ‘b’
 		o: 'w'
 	}}, 'OB']
 #5◊
 	[{ gr: {
-		g: 'b'
+		g: ‘b’
 		r: 'w'
-	}}, 'gyybbG']
+	}}, ‘gyybbG’]
 #5'
 	[{ gr: {
 		g: 'w'
-		r: 'b'
+		r: ‘b’
 	}}, 'wrW']
 #6◊
 	[{ br: {
-		b: 'b'
+		b: ‘b’
 		r: 'w'
 	}}, 'b']
 #6'
 	[{ br: {
 		b: 'w'
-		r: 'b'
+		r: ‘b’
 	}}, 'wRW']
 #7◊
 	[{ bo: {
-		b: 'b'
+		b: ‘b’
 		o: 'w'
 	}}, 'B']
 #7'
 	[{ bo: {
 		b: 'w'
-		o: 'b'
+		o: ‘b’
 	}}, 'Wow']
 #8◊
 	[{ go: {
-		g: 'b'
+		g: ‘b’
 		o: 'w'
-	}}, 'wwgww']
+	}}, ‘wwgww’]
 #8'
 	[{ go: {
 		g: 'w'
-		o: 'b'
+		o: ‘b’
 	}}, 'WOw']
 #9◊
 	[{ yg: {
 		y: 'w'
-		g: 'b'
+		g: ‘b’
 	}}, 'yybb']
 #9'
 	[{ yg: {
-		y: 'b'
+		y: ‘b’
 		g: 'w'
 	}}, 'yRbr']
 #10◊
 	[{ yr: {
 		y: 'w'
-		r: 'b'
+		r: ‘b’
 	}}, 'ybb']
 #10'
 	[{ yr: {
-		y: 'b'
+		y: ‘b’
 		r: 'w'
 	}}, 'Rbr']
 #11◊
 	[{ yb: {
 		y: 'w'
-		b: 'b'
+		b: ‘b’
 	}}, 'bb']
 #11'
 	[{ yb: {
-		y: 'b'
+		y: ‘b’
 		b: 'w'
 	}}, 'YRbr']
 #12◊
 	[{ yo: {
 		y: 'w'
-		o: 'b'
+		o: ‘b’
 	}}, 'Ybb']
 #12'
 	[{ yo: {
-		y: 'b'
+		y: ‘b’
 		o: 'w'
 	}}, 'oB']
 
@@ -346,91 +348,91 @@ algorithms = [
 #4◊
 	[{ wo: {
 		w: 'w'
-		o: 'o'
+		o: ‘o’
 	}}, '']
 #4'
 	[{ wo: {
-		w: 'o'
+		w: ‘o’
 		o: 'w'
 	}}, 'OwBW']
 #5◊
 	[{ gr: {
-		g: 'w'
-		r: 'o'
-	}}, 'wwrww']
+		g: ‘w’
+		r: ‘o’
+	}}, ‘wwrww’]
 #5'
 	[{ gr: {
-		g: 'o'
-		r: 'w'
+		g: ‘o’
+		r: ‘w’
 	}}, 'WGw']
 #6◊
 	[{ br: {
-		b: 'w'
-		r: 'o'
-	}}, 'wwRww']
+		b: ‘w’
+		r: ‘o’
+	}}, ‘wwRww’]
 #6'
 	[{ br: {
-		b: 'o'
-		r: 'w'
+		b: ‘o’
+		r: ‘w’
 	}}, 'wbW']
 #7◊
 	[{ bo: {
-		b: 'w'
-		o: 'o'
+		b: ‘w’
+		o: ‘o’
 	}}, 'o']
 #7'
 	[{ bo: {
-		b: 'o'
-		o: 'w'
+		b: ‘o’
+		o: ‘w’
 	}}, 'wBW']
 #8◊
 	[{ go: {
-		g: 'w'
-		o: 'o'
-	}}, 'O']
+		g: ‘w’
+		o: ‘o’
+	}}, ‘O’]
 #8'
 	[{ go: {
-		g: 'o'
-		o: 'w'
+		g: ‘o’
+		o: ‘w’
 	}}, 'Wgw']
 #9◊
 	[{ yg: {
 		y: 'w'
-		g: 'o'
+		g: ‘o’
 	}}, 'Yoo']
 #9'
 	[{ yg: {
-		y: 'o'
+		y: ‘o’
 		g: 'w'
 	}}, 'gOG']
 #10◊
 	[{ yr: {
 		y: 'w'
-		r: 'o'
+		r: ‘o’
 	}}, 'yyoo']
 #10'
 	[{ yr: {
-		y: 'o'
+		y: ‘o’
 		r: 'w'
 	}}, 'YgOG']
 #11◊
 	[{ yb: {
 		y: 'w'
-		b: 'o'
+		b: ‘o’
 	}}, 'yoo']
 #11'
 	[{ yb: {
-		y: 'o'
+		y: ‘o’
 		b: 'w'
 	}}, 'Bob']
 #12◊
 	[{ yo: {
 		y: 'w'
-		o: 'o'
+		o: ‘o’
 	}}, 'oo']
 #12'
 	[{ yo: {
-		y: 'o'
+		y: ‘o’
 		o: 'w'
 	}}, 'YBob']
 #Cross Complete
@@ -590,29 +592,29 @@ algorithms = [
 	[{ wbr: {
 		w: 'w'
 		b: 'b'
-		r: 'r'
+		r: ‘r’
 	}}, '']
 #2'
 	[{ wbr: {
-		w: 'r'
+		w: ‘r’
 		b: 'w'
 		r: 'b'
 	}}, 'BYbyBYb']
 #'2
 	[{ wbr: {
 		w: 'b'
-		b: 'r'
+		b: ‘r’
 		r: 'w'
 	}}, 'ryRYryR']
 #3◊
 	[{ wbo: {
 		w: 'w'
-		b: 'r'
+		b: ‘r’
 		o: 'b'
 	}}, 'OYoryR']
 #3'
 	[{ wbo: {
-		w: 'r'
+		w: ‘r’
 		b: 'b'
 		o: 'w'
 	}}, 'OYoBYb']
@@ -620,53 +622,53 @@ algorithms = [
 	[{ wbo: {
 		w: 'b'
 		b: 'w'
-		o: 'r'
+		o: ‘r’
 	}}, 'OyoYryR']
 #4◊
 	[{ wgo: {
 		w: 'w'
 		g: 'b'
-		o: 'r'
+		o: ‘r’
 	}}, 'oyyOBYb']
 #4'
 	[{ wgo: {
-		w: 'r'
+		w: ‘r’
 		g: 'w'
 		o: 'b'
 	}}, 'GYgYBYb']
 #'4
 	[{ wgo: {
 		w: 'b'
-		g: 'r'
+		g: ‘r’
 		o: 'w'
 	}}, 'oyOyryR']
 #5◊
 	[{ ygr: {
 		y: 'w'
 		g: 'b'
-		r: 'r'
+		r: ‘r’
 	}}, 'yryyRYryR']
 #5'
 	[{ ygr: {
-		y: 'r'
+		y: ‘r’
 		g: 'w'
 		r: 'b'
 	}}, 'yryR']
 #'5
 	[{ ygr: {
 		y: 'b'
-		g: 'r'
+		g: ‘r’
 		r: 'w'
 	}}, 'yBYb']
 #6◊
 	[{ ybr: {
 		y: 'w'
-		b: 'r'
+		b: ‘r’
 		r: 'b'
 	}}, 'ByybyBYb']
 #6'
 	[{ ybr: {
-		y: 'r'
+		y: ‘r’
 		b: 'b'
 		r: 'w'
 	}}, 'ryR']
@@ -674,35 +676,35 @@ algorithms = [
 	[{ ybr: {
 		y: 'b'
 		b: 'w'
-		r: 'r'
+		r: ‘r’
 	}}, 'BYb']
 #7◊
 	[{ ybo: {
 		y: 'w'
 		b: 'b'
-		o: 'r'
+		o: ‘r’
 	}}, 'OyyoBYb']
 #7'
 	[{ ybo: {
-		y: 'r'
+		y: ‘r’
 		b: 'w'
 		o: 'b'
 	}}, 'YryR']
 #'7
 	[{ ybo: {
 		y: 'b'
-		b: 'r'
+		b: ‘r’
 		o: 'w'
 	}}, 'YBYb']
 #8◊
 	[{ ygo: {
 		y: 'w'
-		g: 'r'
+		g: ‘r’
 		o: 'b'
 	}}, 'GyygYBYb']
 #8'
 	[{ ygo: {
-		y: 'r'
+		y: ‘r’
 		g: 'b'
 		o: 'w'
 	}}, 'yyryR']
@@ -710,209 +712,209 @@ algorithms = [
 	[{ ygo: {
 		y: 'b'
 		g: 'w'
-		o: 'r'
+		o: ‘r’
 	}}, 'yyBYb']
 
 #White-Blue-Orange
 #3◊
 	[{ wbo: {
 		w: 'w'
-		b: 'b'
-		o: 'o'
+		b: ‘b’
+		o: ‘o’
 	}}, '']
 #3'
 	[{ wbo: {
-		w: 'b'
-		b: 'o'
+		w: ‘b’
+		b: ‘o’
 		o: 'w'
 	}}, 'OYoyOYo']
 #'3
 	[{ wbo: {
-		w: 'o'
+		w: ‘o’
 		b: 'w'
-		o: 'b'
+		o: ‘b’
 	}}, 'byBYbyB']
 #4◊
 	[{ wgo: {
 		w: 'w'
-		g: 'o'
-		o: 'b'
+		g: ‘o’
+		o: ‘b’
 	}}, 'GYgbyB']
 #4'
 	[{ wgo: {
-		w: 'b'
+		w: ‘b’
 		g: 'w'
-		o: 'o'
+		o: ‘o’
 	}}, 'GYgOYo']
 #'4
 	[{ wgo: {
-		w: 'o'
-		g: 'b'
+		w: ‘o’
+		g: ‘b’
 		o: 'w'
 	}}, 'GygYbyB']
 #5◊
 	[{ ygr: {
 		y: 'w'
-		g: 'o'
-		r: 'b'
+		g: ‘o’
+		r: ‘b’
 	}}, 'YGyygOYo']
 #5'
 	[{ ygr: {
-		y: 'b'
+		y: ‘b’
 		g: 'w'
-		r: 'o'
+		r: ‘o’
 	}}, 'yybyB']
 #'5
 	[{ ygr: {
-		y: 'o'
-		g: 'b'
+		y: ‘o’
+		g: ‘b’
 		r: 'w'
 	}}, 'yyOYo']
 #6◊
 	[{ ybr: {
 		y: 'w'
-		b: 'b'
-		r: 'o'
+		b: ‘b’
+		r: ‘o’
 	}}, 'ybyyBYbyB']
 #6'
 	[{ ybr: {
-		y: 'b'
-		b: 'o'
+		y: ‘b’
+		b: ‘o’
 		r: 'w'
 	}}, 'ybyB']
 #'6
 	[{ ybr: {
-		y: 'o'
+		y: ‘o’
 		b: 'w'
-		r: 'b'
+		r: ‘b’
 	}}, 'yOYo']
 #7◊
 	[{ ybo: {
 		y: 'w'
-		b: 'o'
-		o: 'b'
+		b: ‘o’
+		o: ‘b’
 	}}, 'OyyoyOYo']
 #7'
 	[{ ybo: {
-		y: 'b'
+		y: ‘b’
 		b: 'w'
-		o: 'o'
+		o: ‘o’
 	}}, 'byB']
 #'7
 	[{ ybo: {
-		y: 'o'
-		b: 'b'
+		y: ‘o’
+		b: ‘b’
 		o: 'w'
 	}}, 'OYo']
 #8◊
 	[{ ygo: {
 		y: 'w'
-		g: 'b'
-		o: 'o'
+		g: ‘b’
+		o: ‘o’
 	}}, ' GyygOYo']
 #8'
 	[{ ygo: {
-		y: 'b'
-		g: 'o'
+		y: ‘b’
+		g: ‘o’
 		o: 'w'
 	}}, 'YbyB']
 #'8
 	[{ ygo: {
-		y: 'o'
+		y: ‘o’
 		g: 'w'
-		o: 'b'
+		o: ‘b’
 	}}, 'YOYo']
 
 #White-Green-Orange
 #4◊
 	[{ wgo: {
 		w: 'w'
-		g: 'g'
-		o: 'o'
+		g: ‘g’
+		o: ‘o’
 	}}, '']
 #4'
 	[{ wgo: {
-		w: 'o'
+		w: ‘o’
 		g: 'w'
-		o: 'g'
+		o: ‘g’
 	}}, 'GYgyGYg']
 #'4
 	[{ wgo: {
-		w: 'g'
-		g: 'o'
+		w: ‘g’
+		g: ‘o’
 		o: 'w'
 	}}, 'oyOYoyO']
 #5◊
 	[{ ygr: {
 		y: 'w'
-		g: 'g'
-		r: 'o'
+		g: ‘g’
+		r: ‘o’
 	}}, 'YGyygyGYg']
 #5'
 	[{ ygr: {
-		y: 'o'
+		y: ‘o’
 		g: 'w'
-		r: 'g'
+		r: ‘g’
 	}}, 'YoyO']
 #'5
 	[{ ygr: {
-		y: 'g'
-		g: 'o'
+		y: ‘g’
+		g: ‘o’
 		r: 'w'
 	}}, 'YGYg']
 #6◊
 	[{ ybr: {
 		y: 'w'
-		b: 'o'
-		r: 'g'
+		b: ‘o’
+		r: ‘g’
 	}}, 'yyGyygyGYg']
 #6'
 	[{ ybr: {
-		y: 'o'
-		b: 'g'
+		y: ‘o’
+		b: ‘g’
 		r: 'w'
 	}}, 'yyoyO']
 #'6
 	[{ ybr: {
-		y: 'g'
+		y: ‘g’
 		b: 'w'
-		r: 'o'
+		r: ‘o’
 	}}, 'yyGYg']
 #7◊
 	[{ ybo: {
 		y: 'w'
-		b: 'g'
-		o: 'o'
+		b: ‘g’
+		o: ‘o’
 	}}, 'yGyygyGYg']
 #7'
 	[{ ybo: {
-		y: 'o'
+		y: ‘o’
 		b: 'w'
-		o: 'g'
+		o: ‘g’
 	}}, 'yoyO']
 #'7
 	[{ ybo: {
-		y: 'g'
-		b: 'o'
+		y: ‘g’
+		b: ‘o’
 		o: 'w'
 	}}, 'yGYg']
 #8◊
 	[{ ygo: {
 		y: 'w'
-		g: 'o'
-		o: 'g'
+		g: ‘o’
+		o: ‘g’
 	}}, 'GyygyGYg']
 #8'
 	[{ ygo: {
-		y: 'o'
-		g: 'g'
+		y: ‘o’
+		g: ‘g’
 		o: 'w'
 	}}, 'oyO']
 #'8
 	[{ ygo: {
-		y: 'g'
+		y: ‘g’
 		g: 'w'
-		o: 'o'
+		o: ‘o’
 	}}, 'GYg']
 
 #First Layer Complete!
@@ -923,268 +925,268 @@ algorithms = [
 #5◊
 	[{ gr: {
 		g: 'g'
-		r: 'r'
+		r: ‘r’
 	}}, '']
 #5'
 	[{ gr: {
-		g: 'r'
+		g: ‘r’
 		r: 'g'
 	}}, 'RYrygyGyRYrygyG']
 #6◊
 	[{ br: {
 		b: 'g'
-		r: 'r'
+		r: ‘r’
 	}}, 'rryyrryyrr']
 #6'
 	[{ br: {
-		b: 'r'
+		b: ‘r’
 		r: 'g'
 	}}, 'BYbyryRYgyGYRYr']
 #7◊
 	[{ bo: {
 		b: 'g'
-		o: 'r'
+		o: ‘r’
 	}}, 'bbyrryyrryyrrybb']
 #7'
 	[{ bo: {
-		b: 'r'
+		b: ‘r’
 		o: 'g'
 	}}, 'byBYOYoygyGYRYr']
 #8◊
 	[{ go: {
 		g: 'g'
-		o: 'r'
+		o: ‘r’
 	}}, 'ggyyggyygg']
 #8'
 	[{ go: {
-		g: 'r'
+		g: ‘r’
 		o: 'g'
 	}}, 'oyOYGYgyRYryGYg']
 #9◊
 	[{ yg: {
-		y: 'r'
+		y: ‘r’
 		g: 'g'
-	}}, 'YRYrgyG']
+	}}, 'YRYrygyG']
 #9'
 	[{ yg: {
 		y: 'g'
-		g: 'r'
+		g: ‘r’
 	}}, 'yygyGYRYr']
 #10◊
 	[{ yr: {
-		y: 'g'
+		y: ‘g’
 		r: 'r'
 	}}, 'ygyGYRYr']
 #10'
 	[{ yr: {
 		y: 'r'
-		r: 'g'
+		r: ‘g’
 	}}, 'yyRYrygyG']
 #11◊
 	[{ yb: {
-		y: 'r'
+		y: ‘r’
 		b: 'g'
 	}}, 'yRYrygyG']
 #11'
 	[{ yb: {
 		y: 'g'
-		b: 'r'
+		b: ‘r’
 	}}, 'gyGYRYr']
 #12◊
 	[{ yo: {
-		y: 'g'
+		y: ‘g’
 		o: 'r'
 	}}, 'YgyGYRYr']
 #12'
 	[{ yo: {
 		y: 'r'
-		o: 'g'
+		o: ‘g’
 	}}, 'RYrygyG']
 
 #Blue-Red
 #6◊
 	[{ br: {
-		b: 'b'
+		b: ‘b’
 		r: 'r'
 	}}, '']
 #6'
 	[{ br: {
 		b: 'r'
-		r: 'b'
+		r: ‘b’
 	}}, 'BYbyryRyBYbyryR']
 #7◊
 	[{ bo: {
-		b: 'b'
+		b: ‘b’
 		o: 'r'
 	}}, 'bbyybbyybb']
 #7'
 	[{ bo: {
 		b: 'r'
-		o: 'b'
+		o: ‘b’
 	}}, 'OYoybyBYryRYBYb']
 #8◊
 	[{ go: {
-		g: 'b'
+		g: ‘b’
 		o: 'r'
-	}}, 'ooybbyybbyybbyoo']
+	}}, ‘ooybbyybbyybbyoo’]
 #8'
 	[{ go: {
 		g: 'r'
-		o: 'b'
+		o: ‘b’
 	}}, 'GYgyoyOYBYbyryR']
 #9◊
 	[{ yg: {
-		y: 'r'
-		g: 'b'
+		y: ‘r’
+		g: ‘b’
 	}}, 'YryRYBYb']
 #9'
 	[{ yg: {
-		y: 'b'
-		g: 'r'
+		y: ‘b’
+		g: ‘r’
 	}}, 'BYbyryR']
 #10◊
 	[{ yr: {
-		y: 'b'
-		r: 'r'
+		y: ‘b’
+		r: ‘r’
 	}}, 'YBYbyryR']
 #10'
 	[{ yr: {
-		y: 'r'
-		r: 'b'
+		y: ‘r’
+		r: ‘b’
 	}}, 'yyryRYBYb']
 #11◊
 	[{ yb: {
-		y: 'r'
-		b: 'b'
+		y: ‘r’
+		b: ‘b’
 	}}, 'yryRYBYb']
 #11'
 	[{ yb: {
-		y: 'b'
-		b: 'r'
+		y: ‘b’
+		b: ‘r’
 	}}, 'yyBYbyryR']
 #12◊
 	[{ yo: {
-		y: 'b'
-		o: 'r'
+		y: ‘b’
+		o: ‘r’
 	}}, 'yBYbyryR']
 #12'
 	[{ yo: {
-		y: 'r'
-		o: 'b'
+		y: ‘r’
+		o: ‘b’
 	}}, 'ryRYBYb']
 
 #Blue-Orange
 #7◊
 	[{ bo: {
 		b: 'b'
-		o: 'o'
+		o: ‘o’
 	}}, '']
 #7'
 	[{ bo: {
-		b: 'o'
-		o: 'b'
+		b: ‘o’
+		o: ‘b’
 	}}, 'OYoybyByOYoybyB']
 #8◊
 	[{ go: {
-		g: 'b'
-		o: 'o'
+		g: ‘b’
+		o: ‘o’
 	}}, 'ooyyooyyoo']
 #8'
 	[{ go: {
-		g: 'o'
-		o: 'b'
+		g: ‘o’
+		o: ‘b’
 	}}, 'GYgyoyOYbyBYOYo']
 #9◊
 	[{ yg: {
-		y: 'o'
-		g: 'b'
+		y: ‘o’
+		g: ‘b’
 	}}, 'yOYoybyB']
 #9'
 	[{ yg: {
-		y: 'b'
-		g: 'o'
+		y: ‘b’
+		g: ‘o’
 	}}, 'byBYOYo']
 #10◊
 	[{ yr: {
-		y: 'b'
-		r: 'o'
+		y: ‘b’
+		r: ‘o’
 	}}, 'YbyBYOYo']
 #10'
 	[{ yr: {
-		y: 'o'
-		r: 'b'
+		y: ‘o’
+		r: ‘b’
 	}}, 'OYoybyB']
 #11◊
 	[{ yb: {
-		y: 'o'
-		b: 'b'
+		y: ‘o’
+		b: ‘b’
 	}}, 'YOYoybyB']
 #11'
 	[{ yb: {
-		y: 'b'
-		b: 'o'
+		y: ‘b’
+		b: ‘o’
 	}}, 'yybyBYOYo']
 #12◊
 	[{ yo: {
-		y: 'b'
-		o: 'o'
+		y: ‘b’
+		o: ‘o’
 	}}, 'ybyBYOYo']
 #12'
 	[{ yo: {
-		y: 'o'
-		o: 'b'
+		y: ‘o’
+		o: ‘b’
 	}}, 'yyOYoybyB']
 
 #Green-Orange
 #8◊
 	[{ go: {
-		g: 'g'
-		o: 'o'
-	}}, '']
+		g: ‘g’
+		o: ‘o’
+	}}, ‘’]
 #8'
 	[{ go: {
-		g: 'o'
-		o: 'g'
+		g: ‘o’
+		o: ‘g’
 	}}, 'GYgyoyOyGYgyoyO']
 #9◊
 	[{ yg: {
-		y: 'o'
-		g: 'g'
+		y: ‘o’
+		g: ‘g’
 	}}, 'yoyOYGYg']
 #9'
 	[{ yg: {
-		y: 'g'
-		g: 'o'
+		y: ‘g’
+		g: ‘o’
 	}}, 'yyGYgyoyO']
 #10◊
 	[{ yr: {
-		y: 'g'
-		r: 'o'
+		y: ‘g’
+		r: ‘o’
 	}}, 'yGYgyoyO']
 #10'
 	[{ yr: {
-		y: 'o'
-		r: 'g'
+		y: ‘o’
+		r: ‘g’
 	}}, 'oyOYGYg']
 #11◊
 	[{ yb: {
-		y: 'o'
-		b: 'g'
+		y: ‘o’
+		b: ‘g’
 	}}, 'YoyOYGYg']
 #11'
 	[{ yb: {
-		y: 'g'
-		b: 'o'
+		y: ‘g’
+		b: ‘o’
 	}}, 'GYgyoyO']
 #12◊
 	[{ yo: {
-		y: 'g'
-		o: 'o'
+		y: ‘g’
+		o: ‘o’
 	}}, 'YGYgyoyO']
 #12'
 	[{ yo: {
-		y: 'o'
-		o: 'g'
+		y: ‘o’
+		o: ‘g’
 	}}, 'yyoyOYGYg']
 
 #Second Layer Complete!!
@@ -1194,258 +1196,258 @@ algorithms = [
 #Yellow-Green-Red
 #5◊
 	[{ ygr: {
-		y: 'y'
-		g: 'g'
-		r: 'r'
+		y: ‘y’
+		g: ‘g’
+		r: ‘r’
 	}}, '']
 #5'
 	[{ ygr: {
-		y: 'r'
-		g: 'y'
-		r: 'g'
+		y: ‘r’
+		g: ‘y’
+		r: ‘g’
 	}}, 'GWgwGWgYGwgWGwgy']
 #'5
 	[{ ygr: {
-		y: 'g'
-		g: 'r'
-		r: 'y'
+		y: ‘g’
+		g: ‘r’
+		r: ‘y’
 	}}, 'GwgWGwgYGWgwGWgy']
 #6◊
 	[{ ybr: {
-		y: 'y'
-		b: 'r'
-		r: 'g'
+		y: ‘y’
+		b: ‘r’
+		r: ‘g’
 	}}, 'Y']
 #6'
 	[{ ybr: {
-		y: 'r'
-		b: 'g'
-		r: 'y'
+		y: ‘r’
+		b: ‘g’
+		r: ‘y’
 	}}, 'YGWgwGWgYGwgWGwgy']
 #'6
 	[{ ybr: {
-		y: 'g'
-		b: 'y'
-		r: 'r'
+		y: ‘g’
+		b: ‘y’
+		r: ‘r’
 	}}, 'YGwgWGwgYGWgwGWgy']
 #7◊
 	[{ ybo: {
-		y: 'y'
-		b: 'g'
-		o: 'r'
+		y: ‘y’
+		b: ‘g’
+		o: ‘r’
 	}}, 'yy']
 #7'
 	[{ ybo: {
-		y: 'r'
-		b: 'y'
-		o: 'g'
+		y: ‘r’
+		b: ‘y’
+		o: ‘g’
 	}}, 'yyGWgwGWgYGwgWGwgy']
 #'7
 	[{ ybo: {
-		y: 'g'
-		b: 'r'	
-		o: 'y'
+		y: ‘g’
+		b: ‘r’	
+		o: ‘y’
 	}}, 'yyGwgWGwgYGWgwGWgy']
 #8◊
 	[{ ygo: {
-		y: 'y'
-		g: 'r'
-		o: 'g'
+		y: ‘y’
+		g: ‘r’
+		o: ‘g’
 	}}, 'y']
 #8'
 	[{ ygo: {
-		y: 'r'
-		g: 'g'
-		o: 'y'
+		y: ‘r’
+		g: ‘g’
+		o: ‘y’
 	}}, 'yGWgwGWgYGwgWGwgy']
 #'8
 	[{ ygo: {
-		y: 'g'
-		g: 'y'
-		o: 'r'
+		y: ‘g’
+		g: ‘y’
+		o: ‘r’
 	}}, 'yGwgWGwgYGWgwGWgy']
 
 #Yellow-Blue-Red
 #6◊
 	[{ ybr: {
-		y: 'y'
-		b: 'b'
-		r: 'r'
+		y: ‘y’
+		b: ‘b’
+		r: ‘r’
 	}}, '']	
 #6'
 	[{ ybr: {
-		y: 'b'
-		b: 'r'
-		r: 'y'
+		y: ‘b’
+		b: ‘r’
+		r: ‘y’
 	}}, 'RWrwRWrYRwrWRwry']
 #'6
 	[{ ybr: {
-		y: 'r'
-		b: 'y'
-		r: 'b'
+		y: ‘r’
+		b: ‘y’
+		r: ‘b’
 	}}, 'RwrWRwrYRWrwRWry']
 #7◊
 	[{ ybo: {
-		y: 'y'
-		b: 'r'
-		o: 'b'
+		y: ‘y’
+		b: ‘r’
+		o: ‘b’
 	}}, 'oobbogObboGo']
 #7'
 	[{ ybo: {
-		y: 'b'
-		b: 'y'
-		o: 'r'
+		y: ‘b’
+		b: ‘y’
+		o: ‘r’
 	}}, 'oobbogObboGoRWrwRWrYRwrWRwry']
 #'7
 	[{ ybo: {
-		y: 'r'
-		b: 'b'
-		o: 'y'
+		y: ‘r’
+		b: ‘b’
+		o: ‘y’
 	}}, 'oobbogObboGoRwrWRwrYRWrwRWry']
 #8◊
 	[{ ygo: {
-		y: 'y'
-		g: 'b'
-		o: 'r'
+		y: ‘y’
+		g: ‘b’
+		o: ‘r’
 	}}, 'OgObboGObboo']
 #8'
 	[{ ygo: {
-		y: 'b'
-		g: 'r'
-		o: 'y'
+		y: ‘b’
+		g: ‘r’
+		o: ‘y’
 	}}, 'OgObboGObbooRWrwRWrYRwrWRwry']
 #'8
 	[{ ygo: {
-		y: 'r'
-		g: 'y'
-		o: 'b'
+		y: ‘r’
+		g: ‘y’
+		o: ‘b’
 	}}, 'OgObboGObbooRwrWRwrYRWrwRWry']
 
 #Yellow-Blue-Orange
 #7◊
 	[{ ybo: {
-		y: 'y'
-		b: 'b'
-		o: 'o'
+		y: ‘y’
+		b: ‘b’
+		o: ‘o’
 	}}, '']
 #7'
 	[{ ybo: {
-		y: 'o'
-		b: 'y'
-		o: 'b'
+		y: ‘o’
+		b: ‘y’
+		o: ‘b’
 	}}, 'BWbwBWbYBwbWBwby']
 #'7
 	[{ ybo: {
-		y: 'b'
-		b: 'o'	
-		o: 'y'
+		y: ‘b’
+		b: ‘o’	
+		o: ‘y’
 	}}, 'BwbWBwbYBWbwBWby']
 #8◊
 	[{ ygo: {
-		y: 'y'
-		g: 'o'
-		o: 'b'
+		y: ‘y’
+		g: ‘o’
+		o: ‘b’
 	}}, 'rYOyRyyoYOyyo']
 #8'
 	[{ ygo: {
-		y: 'o'
-		g: 'b'
-		o: 'y'
+		y: ‘o’
+		g: ‘b’
+		o: ‘y’
 	}}, 'rYOyRyyoYOyyoBWbwBWbYBwbWBwby']
 #'8
 	[{ ygo: {
-		y: 'b'
-		g: 'y'
-		o: 'o'
+		y: ‘b’
+		g: ‘y’
+		o: ‘o’
 	}}, ' rYOyRyyoYOyyoBwbWBwbYBWbwBWby']
 
 #Yellow-Green
 #9◊
 	[{ yg: {
-		y: 'y'
-		g: 'g'
+		y: ‘y’
+		g: ‘g’
 	}}, '']
 #9'
 	[{ yg: {
-		y: 'g'
-		g: 'y'
+		y: ‘g’
+		g: ‘y’
 	}}, 'GYwoYwbYwRYryWByWOyWgy']
 #10◊
 	[{ yr: {
-		y: 'y'
-		r: 'g'
+		y: ‘y’
+		r: ‘g’
 	}}, 'rrYbGrrBgYrr']
 #10'
 	[{ yr: {
-		y: 'g'
-		r: 'y'
+		y: ‘g’
+		r: ‘y’
 	}}, 'rrYbGrrBgYrrGYwoYwbYwRYryWByWOyWgy']
 #11◊
 	[{ yb: {
-		y: 'y'
-		b: 'g'
+		y: ‘y’
+		b: ‘g’
 	}}, 'rrybGrrBgyrr']
 #11'
 	[{ yb: {
-		y: 'g'
-		b: 'y'
+		y: ‘g’
+		b: ‘y’
 	}}, 'rrybGrrBgyrrGYwoYwbYwRYryWByWOyWgy']
 #12◊
 	[{ yo: {
-		y: 'y'
-		o: 'g'
+		y: ‘y’
+		o: ‘g’
 	}}, 'ooygBooGbyoo']
 #12'
 	[{ yo: {
-		y: 'g'
-		o: 'y'
+		y: ‘g’
+		o: ‘y’
 	}}, 'ooygBooGbyooGYwoYwbYwRYryWByWOyWgy']
 
 #Yellow-Red
 #10◊
 	[{ yr: {
-		y: 'y'
-		r: 'r'
+		y: ‘y’
+		r: ‘r’
 	}}, '']
 #10'
 	[{ yr: {
-		y: 'r'
-		r: 'y'
+		y: ‘r’
+		r: ‘y’
 	}}, 'RYwgYwoYwBYbWyOWyGWyry']
 #11◊
 	[{ yb: {
-		y: 'y'
-		b: 'r'
+		y: ‘y’
+		b: ‘r’
 	}}, 'bbYoRbbOrYbb']
 #11'
 	[{ yb: {
-		y: 'r'
-		b: 'y'
+		y: ‘r’
+		b: ‘y’
 	}}, 'bbYoRbbOrYbbRYwgYwoYwBYbWyOWyGWyry']
 #12◊
 	[{ yo: {
-		y: 'y'
-		o: 'r'
+		y: ‘y’
+		o: ‘r’
 	}}, 'bbyoRbbOrybb']
 #12'
 	[{ yo: {
-		y: 'r'
-		o: 'y'
+		y: ‘r’
+		o: ‘y’
 	}}, 'bbyoRbbOrybbRYwgYwoYwBYbWyOWyGWyry']
 
 #Yellow-Blue
 #11◊
 	[{ yb: {
-		y: 'y'
-		b: 'b'
+		y: ‘y’
+		b: ‘b’
 	}}, '']
 #11'
 	[{ yb: {
-		y: 'b'
-		b: 'y'
+		y: ‘b’
+		b: ‘y’
 	}}, 'BYwrYwgYwOYoWyGWyRWyby']
 
 #Cube Complete!!!
 ]
 
-module.exports = algorithms
+
