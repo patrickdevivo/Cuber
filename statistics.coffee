@@ -13,30 +13,31 @@ Schema = mongoose.Schema
 ObjectId = Schema.ObjectId
 
 Stat = new Schema({
-	start_time: {type: Date, required: true}
+	start_time: {type: Number}
 	total_cubes: {type: Number}
 	average_turns: {type: Number}
-	time_elapsed: {type: Date}
+	time_elapsed: {type: Number}
+	accuracy: {type: Number}
 });
-Stat = mongoose.model('Stat Sequence', Stat)
-first = new Stat({start_time: before})
+Stat = mongoose.model('Statistics', Stat)
+first = new Stat({start_time: before, total_cubes: 0, average_turns: 0, time_elapsed: 0})
 first.save()
+id = first._id
 
 jeremy = require './algorithms/jeremy.coffee'
-
 checks = 0
 n = 0
-turns = 0;
+turns = 0
+funky_cubes = {}
 execute = ()->
 	cube = new Cuber.Cube
 	solver = new Cuber.Solver cube
 	solver.import_algorithms(jeremy)
 	cube.scramble()
 	solver.go()
+	# increment stuff
 	if cube.check()
 		checks++
-
-	# increment stuff
 	n++
 	turns = turns + solver.turn_count
 	#
@@ -44,34 +45,13 @@ execute = ()->
 	data = {
 		total_cubes: n
 		average_turns: turns/n
-		time_elapsed: new Date().getTime() - before
+		time_elapsed: (new Date().getTime() - before)/1000
+		accuracy: (checks/n)*100
 	}
-	
-	conditions = {start_time: before}
-	update = {}
-	first.update(conditions, update)
-	execute()
+
+	conditions = {_id: id}
+	Stat.update(conditions, data, {upsert: true}, (err, num)-> execute() )
 	
 execute()
-	
 
-# console.log (checks/n)*100 + '%' # spit out accuracy
-# console.log (after-before)/1000 + ' seconds' # take time difference, convert to seconds
-# console.log  total_turns/n
-
-
-###
-
-test = new Test(test_data)
-
-test.save((error, data)->
-    if error
-        console.log error
-    else
-        console.log data
-)
-
-close = ()->
-	mongoose.connection.close()
-
-_.delay(close(), 1000)
+# mongoose.connection.close()
