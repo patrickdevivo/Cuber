@@ -5,7 +5,7 @@ _.str.include('Underscore.string', 'string')
 # $ = require 'jquery'
 
 class Cube
-	constructor: (@name = "Rubik\'s") ->
+	constructor: (@name = "Rubik\'s", @verbosity = true) ->
 		@id = _.uniqueId()
 		cube = this
 		class Edge
@@ -117,10 +117,11 @@ class Cube
 		
 		final = edges_good and corners_good
 		
-		if final
-			console.log "Cube is solved!"
-		else
-			console.log "Cube is not solved"
+		if @verbosity
+			if final
+				console.log "Cube is solved!"
+			else
+				console.log "Cube is not solved"
 			
 		return final
 			
@@ -273,7 +274,8 @@ class Cube
 			history_input = if direction == 'cw' then face else if direction == 'ccw' then face.toUpperCase()
 			this.history.push(history_input)
 		
-		console.log "Turned " + face + " " + direction
+		if @verbosity
+			console.log "Turned " + face + " " + direction
 		
 		return this
 		
