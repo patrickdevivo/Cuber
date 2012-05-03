@@ -306,7 +306,7 @@ class Cube
 		
 	scramble: (n = 100) -> # scranbles a cube with n random turns
 		_.times(n, () =>
-			faces = ['white', 'green', 'orange', 'blue', 'red', 'yellow']
+			faces = ['w', 'g', 'o', 'b', 'r', 'y']
 			random_face = _.shuffle(faces)[0]
 			directions = ['cw', 'ccw']
 			random_direction = _.shuffle(directions)[0]
@@ -326,9 +326,13 @@ class Solver # a solver is a holder for a sequence of algorithms
 		@queue.push([turns, condition])
 
 	run_algorithm: (turns, condition) -> # run an algorithm -> check if condition is true, execute turns
+		check_turn = (turn)=>
+			return /[wgrbyoWGRBYO]/.test(turn)
+		
 		execute_turn = (turn)=>
-			this.cube.turn(turn)
-			@turn_count = @turn_count + 1
+			if check_turn(turn)
+				this.cube.turn(turn)
+				@turn_count = @turn_count + 1
 			
 		if typeof turns == 'string'
 			turns = _.chars(turns)

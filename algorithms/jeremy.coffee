@@ -811,7 +811,7 @@ algorithms = [
 		y: 'w'
 		g: 'b'
 		o: 'o'
-	}}, ' GyygOYo']
+	}}, 'GyygOYo']
 #8'
 	[{ ygo: {
 		y: 'b'
@@ -1194,7 +1194,7 @@ algorithms = [
 # Last Layer 
 
 # Orientation
-\
+
 # Cross
 
 
