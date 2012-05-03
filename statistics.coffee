@@ -30,7 +30,7 @@ n = 0
 turns = 0
 funky_cubes = {}
 execute = ()->
-	cube = new Cuber.Cube
+	cube = new Cuber.Cube n+'', false
 	solver = new Cuber.Solver cube
 	solver.import_algorithms(jeremy)
 	cube.scramble()

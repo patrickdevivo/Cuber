@@ -227,7 +227,7 @@ class Cube
 			when 'y'
 				order = ['blue', 'orange', 'green', 'red']
 			else
-				console.log "Incorrect face"
+				console.log "Incorrect face: " + face
 		
 		# comes in handy a little later for navigating the order array above
 		switch direction
