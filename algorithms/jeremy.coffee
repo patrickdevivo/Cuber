@@ -1179,7 +1179,7 @@ algorithms = [
 		b: 'o'
 	}}, 'GYgyoyO']
 #12◊
-	[{ yo: {\\\\\\\]
+	[{ yo: {
 		y: 'g'
 		o: 'o'
 	}}, 'YGYgyoyO']
@@ -1207,7 +1207,7 @@ algorithms = [
 	"bryRYB"
 ]	
 [
-		(cube)->
+	(cube)->
 			return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').g == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').g == 'y'
 		"obyBYO"
 ]
@@ -1330,7 +1330,7 @@ algorithms = [
 # I=> Cross
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and 
+		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' 
 	"rgyGYR"
 ]
 [
@@ -1375,7 +1375,7 @@ algorithms = [
 
 
 # 3 Corners cw
- [
+[
 	(cube)->
 		return cube.fetch('ygr').y == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').o == 'y'
 	"RyyryRyr"
