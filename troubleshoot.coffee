@@ -17,6 +17,7 @@ _.times(n, ()->
 	solver.go()
 	# increment stuff
 	if !cube.check()
+		console.log cube.history.scramble
 		cube.display()
 )
 

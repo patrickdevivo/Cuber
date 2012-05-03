@@ -70,7 +70,11 @@ class Cube
 		@red	= new Face 'red'
 		@yellow	= new Face 'yellow'
 		
-		@history = []
+		@history = {
+			complete: []
+			scramble: []
+			algorithm: []
+		}
 		
 	display: -> # display cube to the console
 		f = (piece) => this.get(piece, false)
@@ -272,7 +276,7 @@ class Cube
 		
 		if history
 			history_input = if direction == 'cw' then face else if direction == 'ccw' then face.toUpperCase()
-			this.history.push(history_input)
+			this.history.complete.push(history_input)
 		
 		if @verbosity
 			console.log "Turned " + face + " " + direction
@@ -307,6 +311,7 @@ class Cube
 			directions = ['cw', 'ccw']
 			random_direction = _.shuffle(directions)[0]
 			this.turn(random_face, random_direction)
+			this.history.scramble.push([random_face, random_direction])
 			# this.display()
 		)
 		
@@ -321,13 +326,18 @@ class Solver # a solver is a holder for a sequence of algorithms
 		@queue.push([turns, condition])
 
 	run_algorithm: (turns, condition) -> # run an algorithm -> check if condition is true, execute turns
+		execute_turn = (turn)=>
+			this.cube.turn(turn)
+			@turn_count = @turn_count + 1
+			
 		if typeof turns == 'string'
 			turns = _.chars(turns)
 		
 		if typeof condition == 'function'
 			if condition(@cube)
 				_.each(turns, (turn, index) =>
-					this.cube.turn(turn)
+					# this.cube.turn(turn)
+					execute_turn(turn)
 				)
 
 			return condition(@cube)
@@ -343,8 +353,8 @@ class Solver # a solver is a holder for a sequence of algorithms
 			
 			if checker
 				_.each(turns, (turn, index) =>
-					this.cube.turn(turn)
-					@turn_count = @turn_count + 1
+					# this.cube.turn(turn)
+					execute_turn(turn)
 				)
 		
 	go: () -> # run thru algorithm queue and run each in order
