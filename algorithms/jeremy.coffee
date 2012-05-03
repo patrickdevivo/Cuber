@@ -1317,7 +1317,7 @@ algorithms = [
 # I=> Cross
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and 
+		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y'
 	"rgyGYR"
 ]
 [
@@ -1362,7 +1362,7 @@ algorithms = [
 
 
 # 3 Corners cw
- [
+[
 	(cube)->
 		return cube.fetch('ygr').y == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').o == 'y'
 	"RyyryRyr"
