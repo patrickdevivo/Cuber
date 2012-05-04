@@ -306,7 +306,7 @@ class Cube
 		
 	scramble: (n = 100) -> # scranbles a cube with n random turns
 		_.times(n, () =>
-			faces = ['w', 'g', 'o', 'b', 'r', 'y']
+			faces = ['white', 'green', 'orange', 'blue', 'red', 'yellow']
 			random_face = _.shuffle(faces)[0]
 			directions = ['cw', 'ccw']
 			random_direction = _.shuffle(directions)[0]
