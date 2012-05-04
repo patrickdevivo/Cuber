@@ -13,7 +13,7 @@ execute = ()->
 	solver = new Cuber.Solver cube
 	solver.import_algorithms(jeremy)
 	cube.scramble(25)
-	scramble = cube
+	scramble = _.clone(cube)
 	solver.go()
 	# increment stuff
 	if cube.check()
