@@ -330,7 +330,7 @@ class Solver # a solver is a holder for a sequence of algorithms
 		check_turn = (turn)=>
 			return /[wgrbyoWGRBYO]/.test(turn)
 		
-		execute_turn = (turn)=>
+		execute_turn = (turn) =>
 			if check_turn(turn)
 				this.cube.turn(turn)
 				@turn_count = @turn_count + 1
