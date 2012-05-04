@@ -20,6 +20,9 @@ execute = ()->
 	else
 		console.log cube.history.scramble
 		cube.display()
+		zipped = ''
+		_.each(cube.history.algorithm, (turn) => zipped = zipped + turn )
+		console.log zipped
 		
 execute()
 	
