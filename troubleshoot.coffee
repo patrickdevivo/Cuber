@@ -13,16 +13,18 @@ execute = ()->
 	solver = new Cuber.Solver cube
 	solver.import_algorithms(jeremy)
 	cube.scramble(25)
+	scramble = cube
 	solver.go()
 	# increment stuff
 	if cube.check()
 		execute()
 	else
 		console.log cube.history.scramble
-		cube.display()
+		scramble.display()
 		zipped = ''
 		_.each(solver.turns_executed, (turn) => zipped = zipped + turn )
 		console.log zipped
+		cube.display()
 		
 execute()
 	
