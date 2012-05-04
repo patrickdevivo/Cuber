@@ -811,7 +811,7 @@ algorithms = [
 		y: 'w'
 		g: 'b'
 		o: 'o'
-	}}, 'GyygOYo']
+	}}, ' GyygOYo']
 #8'
 	[{ ygo: {
 		y: 'b'
@@ -1179,7 +1179,7 @@ algorithms = [
 		b: 'o'
 	}}, 'GYgyoyO']
 #12◊
-	[{ yo: {
+	[{ yo: {\\\\\\\]
 		y: 'g'
 		o: 'o'
 	}}, 'YGYgyoyO']
@@ -1194,7 +1194,7 @@ algorithms = [
 # Last Layer 
 
 # Orientation
-
+\
 # Cross
 
 
@@ -1207,7 +1207,7 @@ algorithms = [
 	"bryRYB"
 ]	
 [
-	(cube)->
+		(cube)->
 			return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').g == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').g == 'y'
 		"obyBYO"
 ]
@@ -1273,7 +1273,7 @@ algorithms = [
 [
 	(cube)->
 		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').g == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').g == 'y'
-	"OgOGyyOgoggyyg"
+	"OgoGyyOgoggyyg"
 ]	
 [
 		(cube)->
@@ -1330,7 +1330,7 @@ algorithms = [
 # I=> Cross
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' 
+		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and 
 	"rgyGYR"
 ]
 [
@@ -1375,7 +1375,7 @@ algorithms = [
 
 
 # 3 Corners cw
-[
+ [
 	(cube)->
 		return cube.fetch('ygr').y == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').o == 'y'
 	"RyyryRyr"
@@ -1762,4 +1762,5 @@ algorithms = [
 ]
 
 module.exports = algorithms
+
 
