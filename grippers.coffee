@@ -6,6 +6,9 @@ positions = {
 	E: ''
 	F: ''
 }
+servos = {
+	
+}
 machine_moves = ''
 
 execute = (face) ->
@@ -18,8 +21,3 @@ execute = (face) ->
 				direction = 'ccw'
 				
 	face = face.toLowerCase()
-
-go = (input, target)->
-	# 
-	
-go('F', 'A')
