@@ -1179,7 +1179,7 @@ algorithms = [
 		b: 'o'
 	}}, 'GYgyoyO']
 #12◊
-	[{ yo: {
+	[{ yo: {\\\\\\\]
 		y: 'g'
 		o: 'o'
 	}}, 'YGYgyoyO']
@@ -1194,7 +1194,7 @@ algorithms = [
 # Last Layer 
 
 # Orientation
-\
+
 # Cross
 
 
@@ -1305,6 +1305,93 @@ algorithms = [
 ]
 
 
+# The W Left
+
+[
+	(cube)->
+		return cube.fetch('yg').y == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').r == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').y == 'y'
+	"byBybYBYBobO"
+]	
+[
+		(cube)->
+			return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').o == 'y'
+		"oyOyoYOYOgoG"
+]
+[
+	(cube)->
+		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').g == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').y == 'y'
+	"gyGygYGYGrgR"
+]
+[
+	(cube)->
+		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').g == 'y'
+	"ryRyrYRYRbrB"
+]
+
+
+# The W Right
+
+[
+	(cube)->
+		return cube.fetch('yg').y == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').g == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').y == 'y'
+	"OYoYOyoyoBOb"
+]	
+[
+		(cube)->
+			return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').g == 'y'
+		"GYgYGygygOGo"
+]
+[
+	(cube)->
+		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').r == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').y == 'y'
+	"RYrYRyryrGRg"
+]
+[
+	(cube)->
+		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').o == 'y'
+	"BYbYBybybRBr"
+]
+
+
+# Two-Edge Adjacent
+
+[
+	(cube)->
+		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
+	"oRBOryyoRBOr"
+]	
+[
+	(cube)->
+		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
+	"gBOGbyygBOGb"
+]
+[
+	(cube)->
+		return cube.fetch('yg').y == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
+	"rOGRoyyrOGRo"
+]
+[
+	(cube)->
+		return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
+	"bGRBgyybGRBg"
+]
+
+
+# Two-Edge Opposite
+
+[
+	(cube)->
+		return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
+	"rOYoyRoBOb"
+]	
+[
+	(cube)->
+		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
+	"bGYgyBgOGo"
+]
+
+
+
 # L=> Cross
 [
 	(cube)->
@@ -1330,7 +1417,7 @@ algorithms = [
 # I=> Cross
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' 
+		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and 
 	"rgyGYR"
 ]
 [
@@ -1375,7 +1462,7 @@ algorithms = [
 
 
 # 3 Corners cw
-[
+ [
 	(cube)->
 		return cube.fetch('ygr').y == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').o == 'y'
 	"RyyryRyr"
