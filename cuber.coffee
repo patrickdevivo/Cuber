@@ -346,8 +346,6 @@ class Solver # a solver is a holder for a sequence of algorithms
 					execute_turn(turn)
 				)
 
-			return condition(@cube)
-
 		if typeof condition == 'object'
 			checker = true
 			_.each(condition, (colors, piece) =>
@@ -358,7 +356,7 @@ class Solver # a solver is a holder for a sequence of algorithms
 			)
 			
 			if checker
-				_.each(turns, (turn, index) =>
+				_.each(turns, (turn, index)=>
 					# this.cube.turn(turn)
 					execute_turn(turn)
 				)

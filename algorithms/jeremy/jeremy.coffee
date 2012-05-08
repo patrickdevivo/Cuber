@@ -4,6 +4,7 @@ _.mixin(_.str.exports())
 _.str.include('Underscore.string', 'string')
 
 permutations = require "./permutations.coffee"
+
 algorithms = [
 #White-Green
 
@@ -1594,21 +1595,18 @@ algorithms = [
 [
 	(cube)->
 		_.times(4, ()->
-			if !cube.check()
-				_.each(permutations, (algorithm, index)->
-					turns = _.chars(algorithm[1])
-					conditions = algorithm[0]
-					if conditions(cube)
-						_.each(turns, (turn, index)->
-							cube.turn(turn)	
-						)
-				)
-				cube.turn('y')
+			_.each(permutations, (algorithm, index)->
+				turns = _.chars(algorithm[1])
+				conditions = algorithm[0]
+				if conditions(cube)
+					_.each(turns, (turn, index)->
+						cube.turn(turn)	
+					)
+			)
 		)
 		return false
 	''
 ]
-
 
 
 #Yellow-Green-Red
