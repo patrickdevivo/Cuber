@@ -47,7 +47,7 @@ web = require('zappa') port, ->
 		'/solver' : ->
 			cube = new Cuber.Cube
 			solver = new Cuber.Solver cube
-			jeremy = require '../algorithms/jeremy.coffee'
+			jeremy = require '../algorithms/jeremy/jeremy.coffee'
 			solver.import_algorithms(jeremy)
 			cube.scramble()
 			before = JSON.stringify(cube)

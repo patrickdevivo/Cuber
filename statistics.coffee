@@ -17,6 +17,7 @@ Stat = new Schema({
 	total_cubes: {type: Number}
 	average_turns: {type: Number}
 	time_elapsed: {type: Number}
+	time_per_cube: {type: Number}
 	accuracy: {type: Number}
 });
 Stat = mongoose.model('Statistics', Stat)
@@ -24,7 +25,7 @@ first = new Stat({start_time: before, total_cubes: 0, average_turns: 0, time_ela
 first.save()
 id = first._id
 
-jeremy = require './algorithms/jeremy.coffee'
+jeremy = require './algorithms/jeremy/jeremy.coffee'
 checks = 0
 n = 0
 turns = 0
@@ -41,11 +42,12 @@ execute = ()->
 	n++
 	turns = turns + solver.turn_count
 	#
-	
+	time_elapsed = (new Date().getTime() - before)/1000
 	data = {
 		total_cubes: n
 		average_turns: turns/n
-		time_elapsed: (new Date().getTime() - before)/1000
+		time_elapsed: time_elapsed
+		time_per_cube: time_elapsed/n
 		accuracy: (checks/n)*100
 	}
 

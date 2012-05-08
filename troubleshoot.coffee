@@ -6,7 +6,7 @@ _.str = require './requirements/underscore.string.min.js'
 _.mixin(_.str.exports())
 _.str.include('Underscore.string', 'string')
 
-jeremy = require './algorithms/jeremy.coffee'
+jeremy = require './algorithms/jeremy/jeremy.coffee'
 
 execute = ()->
 	cube = new Cuber.Cube 'Test Cube', false
