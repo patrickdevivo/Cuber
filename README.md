@@ -30,3 +30,6 @@ or
 `cube.turn('white', 'cw)`
 or
 `cube.turn('w')` *lowercase means clockwise, uppercase means counter-clockwise*
+
+**Solver**
+`solver = new Solver cube`
