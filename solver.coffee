@@ -9,6 +9,7 @@ _.str.include('Underscore.string', 'string')
 jeremy = require './algorithms/jeremy/jeremy.coffee'
 solver.import_algorithms(jeremy)
 
+###
 cube.scramble(25)
 cube.display()
 solver.go()

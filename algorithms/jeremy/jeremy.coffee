@@ -1594,15 +1594,20 @@ algorithms = [
 
 [
 	(cube)->
+		i = 1
 		_.times(4, ()->
-			_.each(permutations, (algorithm, index)->
-				turns = _.chars(algorithm[1])
-				conditions = algorithm[0]
-				if conditions(cube)
-					_.each(turns, (turn, index)->
-						cube.turn(turn)	
-					)
-			)
+			if i != 1
+				cube.turn('y')
+			if !cube.check()
+				_.each(permutations, (algorithm, index)->
+					turns = _.chars(algorithm[1])
+					conditions = algorithm[0]
+					if conditions(cube)
+						_.each(turns, (turn, index)->
+							cube.turn(turn)	
+							cube.history.algorithm.push(turn)
+						)
+				)
 		)
 		return false
 	''

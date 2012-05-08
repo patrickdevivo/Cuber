@@ -76,7 +76,7 @@ class Cube
 			algorithm: []
 		}
 		
-	display: -> # display cube to the console
+	display: (log = true)-> # display cube to the console
 		f = (piece) => this.get(piece, false)
 		output ="          --+-+-+--\n" +
 				"          | #{f('ogy').o} #{f('oy').o} #{f('oby').o} |\n" +
@@ -98,8 +98,8 @@ class Cube
 				"          | #{f('gyo').y} #{f('yo').y} #{f('byo').y} |\n" +
 				"          --+-+-+--\n"
 				
-		
-		console.log output
+		if log
+			console.log output
 		return output
 		
 	check: -> # check if cube is solved
@@ -320,8 +320,6 @@ class Cube
 class Solver # a solver is a holder for a sequence of algorithms
 	constructor: (@cube = cube) ->
 		@queue = [] # algorithm queue
-		@turn_count = 0 # turns solver execute
-		@turns_executed = []
 
 	add_algorithm: (turns, condition) -> # add an algorithm to the solver queue
 		@queue.push([turns, condition])
@@ -333,8 +331,7 @@ class Solver # a solver is a holder for a sequence of algorithms
 		execute_turn = (turn) =>
 			if check_turn(turn)
 				this.cube.turn(turn)
-				@turn_count = @turn_count + 1
-				@turns_executed.push(turn)
+				this.cube.history.algorithm.push(turn)
 			
 		if typeof turns == 'string'
 			turns = _.chars(turns)
