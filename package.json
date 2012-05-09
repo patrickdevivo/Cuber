@@ -4,7 +4,8 @@
   "dependencies": {
     "coffee-script": ">=1.2.0",
     "zappa": ">=0.3.3",
-	"mongoose": ">=2.6.0"
+	"mongoose": ">=2.6.0",
+	"monk": "0.1.7"
   },
   "engines": {
   	"node": "0.6.x",
