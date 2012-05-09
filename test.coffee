@@ -5,23 +5,14 @@ _.str = require './requirements/underscore.string.min.js'
 _.mixin(_.str.exports())
 _.str.include('Underscore.string', 'string')
 
-mongoose = require('mongoose')
-mongoose.connect('mongodb://heroku:cuber@staff.mongohq.com:10011/app4172676')
-Schema = mongoose.Schema
-ObjectId = Schema.ObjectId
+db = require('monk')('mongodb://heroku:cuber@staff.mongohq.com:10011/app4172676')
+tests = db.get('tests')
+id = ''
 
-Stat = new Schema({
-	start_time: {type: Number}
-	total_cubes: {type: Number}
-	average_turns: {type: Number}
-	time_elapsed: {type: Number}
-	time_per_cube: {type: Number}
-	accuracy: {type: Number}
-});
-Stat = mongoose.model('Statistics', Stat)
-first = new Stat({start_time: before, total_cubes: 0, average_turns: 0, time_elapsed: 0})
-first.save()
-id = first._id
+tests.insert({total_cubes: 0, average_turns: 0, time_elapsed: 0, accuracy: 0}, (err, doc)->
+	id = doc._id
+	execute()
+)
 
 jeremy = require './algorithms/jeremy/jeremy.coffee'
 checks = 0
@@ -37,7 +28,7 @@ execute = ()->
 	if cube.check()
 		checks++
 	n++
-	turns = turns + solver.turn_count
+	turns = turns + _.size(cube.history.algorithm)
 	#
 	time_elapsed = (new Date().getTime() - before)/1000
 	data = {
@@ -47,10 +38,6 @@ execute = ()->
 		time_per_cube: time_elapsed/n
 		accuracy: (checks/n)*100
 	}
-
-	conditions = {_id: id}
-	Stat.update(conditions, data, {upsert: true}, (err, num)-> execute() )
-	
-execute()
-
-# mongoose.connection.close()
+	tests.updateById(id, data, (err, doc)->
+		execute()
+	)

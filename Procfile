@@ -1,2 +1,2 @@
 web: coffee web/web.coffee
-worker: coffee statistics.coffee
+worker: coffee test.coffee
