@@ -16,7 +16,7 @@ permutations = [
 	[
 		(cube)->
 			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'r' and cube.fetch('yr').r == 'o'
-		"ggyRoggrOygg"
+		"ggyrOggRoygg"
 	]
 	[
 		(cube)->
