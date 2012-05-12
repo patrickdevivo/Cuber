@@ -47,14 +47,13 @@ execute = ()->
 		accuracy: (checks/n)*100
 	}
 	
-	if not process.env.heroku
-		table = new Table({
-			head: ['cubes', 'avg turns/cube', 'time elapsed', 'accuracy']
-		})
-		table.push([data.total_cubes, Math.floor(data.average_turns), data.time_elapsed + ' (s)', data.accuracy + '%'])
-	
-		console.log('\u001B[2J\u001B[0;0f') # clear screen
-		console.log table.toString()
+	table = new Table({
+		head: ['cubes', 'avg turns/cube', 'time elapsed', 'accuracy']
+	})
+	table.push([data.total_cubes, Math.floor(data.average_turns), data.time_elapsed + ' (s)', data.accuracy + '%'])
+
+	console.log('\u001B[2J\u001B[0;0f') # clear screen
+	console.log table.toString()
 	
 	tests.updateById(id, data, (err, doc)->
 		execute()
