@@ -11,11 +11,4 @@ jeremy = require './algorithms/jeremy/jeremy.coffee'
 solver.import_algorithms(jeremy)
 
 
-# cube.interface()
-
-table = new Table({
-	head: ['cubes', 'avg turns/cube', 'time elapsed', 'accuracy']
-})
-
-
-console.log table.toString()
+cube.interface()

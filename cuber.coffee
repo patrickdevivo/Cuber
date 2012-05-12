@@ -104,12 +104,12 @@ class Cube
 		# 	
 		# )
 		
-		colorize.ansicodes.g = '\033[32m'
-		colorize.ansicodes.r = '\033[31m'
-		colorize.ansicodes.w = '\033[37m'
-		colorize.ansicodes.b = '\033[34m'
-		colorize.ansicodes.y = '\033[33m'
-		colorize.ansicodes.o = '\033[38;5;94m'
+		colorize.ansicodes.g = '\u001b[32m'
+		colorize.ansicodes.r = '\u001b[31m'
+		colorize.ansicodes.w = '\u001b[37m'
+		colorize.ansicodes.b = '\u001b[38;5;25m'
+		colorize.ansicodes.y = '\u001b[38;5;142m'
+		colorize.ansicodes.o = '\u001b[38;5;94m'
 		
 		output = output
 			.replace(/g/gi, '#g[◙]')
