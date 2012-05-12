@@ -3,7 +3,6 @@ _.str = require './requirements/underscore.string.min.js'
 _.mixin(_.str.exports())
 _.str.include('Underscore.string', 'string')
 # $ = require 'jquery'
-prompt = require 'prompt'
 colorize = require 'colorize'
 
 class Cube
@@ -351,6 +350,7 @@ class Cube
 		return scrambles
 		
 	interface: =>
+		prompt = require 'prompt'
 		console.log('\u001B[2J\u001B[0;0f') # clear screen
 		this.display()
 		cube = this
