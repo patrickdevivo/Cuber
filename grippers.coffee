@@ -6,18 +6,20 @@ positions = {
 	E: ''
 	F: ''
 }
-servos = {
-	
-}
+
 machine_moves = ''
 
-execute = (face) ->
-	face = face.charAt(0)
-	if !direction # get direction from face case (capitialized or not)
+execute = (turns) ->
+	if typeof turns == 'string'
+		turns = _.chars(turns)
+	
+	_.each(turns, (face, index)->
+		face = face.charAt(0)
 		switch face
 			when face.toLowerCase() # if face is uppercase
 				direction = 'cw'
 			when face.toUpperCase() # if face is lowercase
-				direction = 'ccw'
-				
-	face = face.toLowerCase()
+					direction = 'ccw'	
+		face = face.toLowerCase()
+		
+	)

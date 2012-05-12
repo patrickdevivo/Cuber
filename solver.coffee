@@ -5,13 +5,17 @@ _ = require './requirements/underscore.min.js'
 _.str = require './requirements/underscore.string.min.js'
 _.mixin(_.str.exports())
 _.str.include('Underscore.string', 'string')
+Table = require 'cli-table'
 
 jeremy = require './algorithms/jeremy/jeremy.coffee'
 solver.import_algorithms(jeremy)
 
-###
-cube.scramble(25)
-cube.display()
-solver.go()
-cube.display()
-###
+
+# cube.interface()
+
+table = new Table({
+	head: ['cubes', 'avg turns/cube', 'time elapsed', 'accuracy']
+})
+
+
+console.log table.toString()

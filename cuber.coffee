@@ -3,6 +3,8 @@ _.str = require './requirements/underscore.string.min.js'
 _.mixin(_.str.exports())
 _.str.include('Underscore.string', 'string')
 # $ = require 'jquery'
+prompt = require 'prompt'
+colorize = require 'colorize'
 
 class Cube
 	constructor: (@name = "Rubik\'s", @verbosity = true) ->
@@ -77,14 +79,14 @@ class Cube
 		}
 		
 	display: (log = true)-> # display cube to the console
-		f = (piece) => this.get(piece, false)
+		f = (piece) => this.fetch(piece)
 		output ="          --+-+-+--\n" +
 				"          | #{f('ogy').o} #{f('oy').o} #{f('oby').o} |\n" +
 				"          | #{f('og').o} o #{f('ob').o} |\n" +
 				"          | #{f('ogw').o} #{f('ow').o} #{f('obw').o} |\n" +
 				
 				"--+-+-+-- --+-+-+-- --+-+-+--\n" +
-				"| #{f('gyo').g} #{f('go').g} #{f('gow').g} | | #{f('wog').w} #{f('wo').w} #{f('wob').w} | | #{f('bow').b} #{f('bo').b} #{f('boy').b} |\n" +
+				"| #{f('gyo').g} #{f('go').g} #{f('gow').g}] | | #{f('wog').w} #{f('wo').w} #{f('wob').w} | | #{f('bow').b} #{f('bo').b} #{f('boy').b} |\n" +
 				"| #{f('gy').g} g #{f('gw').g} | | #{f('wg').w} w #{f('wb').w} | | #{f('bw').b} b #{f('by').b} |\n" +
 				"| #{f('gry').g} #{f('gr').g} #{f('gwr').g} | | #{f('wgr').w} #{f('wr').w} #{f('wbr').w} | | #{f('brw').b} #{f('br').b} #{f('byr').b} |\n" +
 				"--+-+-+-- --+-+-+-- --+-+-+--\n"+
@@ -98,8 +100,28 @@ class Cube
 				"          | #{f('gyo').y} #{f('yo').y} #{f('byo').y} |\n" +
 				"          --+-+-+--\n"
 				
+		# _.each(_.chars(output), (char, index)=>
+		# 	
+		# )
+		
+		colorize.ansicodes.g = '\033[32m'
+		colorize.ansicodes.r = '\033[31m'
+		colorize.ansicodes.w = '\033[37m'
+		colorize.ansicodes.b = '\033[34m'
+		colorize.ansicodes.y = '\033[33m'
+		colorize.ansicodes.o = '\033[38;5;94m'
+		
+		output = output
+			.replace(/g/gi, '#g[◙]')
+			.replace(/r/gi, '#r[◙]')
+			.replace(/w/gi, '#w[◙]')
+			.replace(/b/gi, '#b[◙]')
+			.replace(/y/gi, '#y[◙]')
+			.replace(/o/gi, '#o[◙]')
+				
 		if log
-			console.log output
+			colorize.ansify(output)
+			colorize.console.log output
 		return output
 		
 	check: -> # check if cube is solved
@@ -292,7 +314,7 @@ class Cube
 		)
 		
 	cheat: () -> # reverse all moves in the cube turn history (cube.history)
-		reverse = _.clone(this.history).reverse()
+		reverse = _.clone(this.history.complete).reverse()
 		_.each(reverse, (element, index)=>
 			switch element
 				when element.toUpperCase() # when uppercase...
@@ -303,19 +325,70 @@ class Cube
 		)
 		
 		return this
+	
+	reset: () ->
+		this.cheat()
 		
-	scramble: (n = 100) -> # scranbles a cube with n random turns
+	scramble: (n = 100, return_only = false) -> # scranbles a cube with n random turns
+		scrambles = ''
 		_.times(n, () =>
 			faces = ['white', 'green', 'orange', 'blue', 'red', 'yellow']
 			random_face = _.shuffle(faces)[0]
 			directions = ['cw', 'ccw']
 			random_direction = _.shuffle(directions)[0]
-			this.turn(random_face, random_direction)
-			this.history.scramble.push([random_face, random_direction])
-			# this.display()
+			switch random_direction
+				when 'cw'
+					random_face = random_face.charAt(0).toLowerCase()
+				when 'ccw'
+					random_face = random_face.charAt(0).toUpperCase()
+			if !return_only
+				this.turn(random_face)
+				this.history.scramble.push([random_face, random_direction])
+			
+			scrambles = scrambles + random_face
 		)
 		
-		return this
+		return scrambles
+		
+	interface: =>
+		console.log('\u001B[2J\u001B[0;0f') # clear screen
+		this.display()
+		cube = this
+		prompt.start()
+		screen = ()->
+			console.log('\u001B[2J\u001B[0;0f')
+			cube.display()
+		ask = ()-> 
+			prompt.get(['turn'], (err, result) =>
+				if /[wgrbyoWGRBYO]/.test(result.turn) and result.turn.length is 1 # valid turn and one character
+					cube.turn(result.turn)
+					screen()
+					ask()
+				else if result.turn is 'reset'
+					cube.reset()
+					screen()
+					ask()
+				else if result.turn is 'scramble'
+					###
+					scrambles = _.chars(cube.scramble(500, true))
+					_.each(scrambles, (turn, index) =>
+						cube.turn(turn)
+						screen()
+						ask()
+					)
+					###
+					cube.scramble()
+					screen()
+					ask()
+
+				else if err
+					console.log err
+				else
+					console.log 'Invalid turn'
+					ask()
+			)
+		ask()
+		
 		
 class Solver # a solver is a holder for a sequence of algorithms
 	constructor: (@cube = cube) ->
