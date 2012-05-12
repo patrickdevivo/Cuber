@@ -7,7 +7,8 @@
 	"mongoose": ">=2.6.0",
 	"monk": "0.1.7",
 	"cli-table": "0.0.2",
-	"colorize": "0.1.0"
+	"colorize": "0.1.0",
+	"mongodb": "1.0.1"
   },
   "engines": {
   	"node": "0.6.x",
