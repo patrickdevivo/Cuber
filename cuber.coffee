@@ -4,6 +4,8 @@ _.mixin(_.str.exports())
 _.str.include('Underscore.string', 'string')
 # $ = require 'jquery'
 colorize = require 'colorize'
+require('console-trace')
+console.log = console.t.log
 
 class Cube
 	constructor: (@name = "Rubik\'s", @verbosity = true) ->
@@ -77,6 +79,15 @@ class Cube
 			algorithm: []
 		}
 		
+		@perspective = {
+			upper: 'w'
+			left: 'g'
+		}
+		
+	change_perspective: (upper, left) ->
+		@perspective.upper = upper
+		@perspective.left = left
+		
 	display: (log = true)-> # display cube to the console
 		f = (piece) => this.fetch(piece)
 		output ="          --+-+-+--\n" +
@@ -98,10 +109,6 @@ class Cube
 				"          | #{f('gy').y} y #{f('yb').y} |\n" +
 				"          | #{f('gyo').y} #{f('yo').y} #{f('byo').y} |\n" +
 				"          --+-+-+--\n"
-				
-		# _.each(_.chars(output), (char, index)=>
-		# 	
-		# )
 		
 		colorize.ansicodes.g = '\u001b[32m'
 		colorize.ansicodes.r = '\u001b[31m'
@@ -195,8 +202,129 @@ class Cube
 				console.log 'Enter two or three colors to select a position on the cube'
 		
 		this[type][piece][color_key] = value
+	
+	turn_by_perspective: (turn) ->
+		p = @perspective
+		color = {
+			up: p.upper
+			down: ''
+			left: p.left
+			right: ''
+			front: ''
+			back: ''
+		}
 		
+		switch p.upper
+			when 'w'
+				color.down = 'y'
+			when 'y'
+				color.down = 'w'
+			when 'g'
+				color.down = 'b'
+			when 'b'
+				color.down = 'g'
+			when 'o'
+				color.down = 'r'
+			when 'r'
+				color.down = 'o'
+
+		switch p.left
+			when 'w'
+				color.right = 'y'
+			when 'y'
+				color.right = 'w'
+			when 'g'
+				color.right = 'b'
+			when 'b'
+				color.right = 'g'
+			when 'o'
+				color.right = 'r'
+			when 'r'
+				color.right = 'o'
+
+		if p.upper == 'w' and p.left == 'g'
+			color.front = 'r'
+			color.back = 'o'
+		if p.upper == 'w' and p.left == 'r'
+			color.front = 'b'
+			color.back = 'g'
+		if p.upper == 'w' and p.left == 'b'
+			color.front = 'o'
+			color.back = 'r'
+		if p.upper == 'w' and p.left == 'o'
+			color.front = 'o'
+			color.back = 'r'
+		if p.upper == 'g' and p.left == 'w'
+			color.front = 'o'
+			color.back = 'r'
+		if p.upper == 'g' and p.left == 'o'
+			color.front = 'y'
+			color.back = 'w'
+		if p.upper == 'g' and p.left == 'y'
+			color.front = 'r'
+			color.back = 'o'
+		if p.upper == 'g' and p.left == 'r'
+			color.front = 'w'
+			color.back = 'y'
+		if p.upper == 'r' and p.left == 'w'
+			color.front = 'g'
+			color.back = 'b'
+		if p.upper == 'r' and p.left == 'g'
+			color.front = 'y'
+			color.back = 'w'
+		if p.upper == 'r' and p.left == 'y'
+			color.front = 'b'
+			color.back = 'g'
+		if p.upper == 'r' and p.left == 'b'
+			color.front = 'w'
+			color.back = 'y'
+		if p.upper == 'b' and p.left == 'w'
+			color.front = 'r'
+			color.back = 'o'
+		if p.upper == 'b' and p.left == 'r'
+			color.front = 'y'
+			color.back = 'w'
+		if p.upper == 'b' and p.left == 'y'
+			color.front = 'o'
+			color.back = 'r'
+		if p.upper == 'b' and p.left == 'o'
+			color.front = 'w'
+			color.back = 'y'
+		if p.upper == 'o' and p.left == 'w'
+			color.front = 'b'
+			color.back = 'g'
+		if p.upper == 'o' and p.left == 'b'
+			color.front = 'y'
+			color.back = 'w'
+		if p.upper == 'o' and p.left == 'y'
+			color.front = 'g'
+			color.back = 'b'
+		if p.upper == 'o' and p.left == 'g'
+			color.front = 'w'
+			color.back = 'y'
+		if p.upper == 'y' and p.left == 'g'
+			color.front = 'o'
+			color.back = 'r'
+		if p.upper == 'y' and p.left == 'o'
+			color.front = 'b'
+			color.back = 'g'
+		if p.upper == 'y' and p.left == 'b'
+			color.front = 'r'
+			color.back = 'o'
+		if p.upper == 'y' and p.left == 'r'
+			color.front = 'g'
+			color.back = 'b'
+			
+		turn = turn.charAt(0)
+
+		switch turn
+			when turn.toLowerCase() # if face is uppercase
+				direction = 'cw'
+			when turn.toUpperCase() # if face is lowercase
+				direction = 'ccw'
+			
 		
+				
 	turn: (face, direction, history = true) ->
 		cube = this
 		# refer to face by first character of color
@@ -461,3 +589,4 @@ class Solver # a solver is a holder for a sequence of algorithms
 
 module.exports.Cube = Cube
 module.exports.Solver = Solver
+module.exports._ = _
