@@ -1,1595 +1,1595 @@
 _ = require '../../requirements/underscore.min.js'
-_.str = require '../../requirements/underscore.string.min.js'
+_.stf = require '../../requirements/underscore.string.min.js'
 _.mixin(_.str.exports())
 _.str.include('Underscore.string', 'string')
 
 permutations = require "./permutations.coffee"
 
 algorithms = [
-#White-Green
+#Uhite-Lfeen
 
 #1◊
-	[{ wg: {
-		w: 'w'
-		g: 'g'
+	[{ ul: {
+		u: 'u'
+		l: 'l'
 	}}, '']
 #1'
-	[{ wg: {
-		w: 'g'
-		g: 'w'
-	}}, 'grw']
+	[{ ul: {
+		u: 'l'
+		l: 'u'
+	}}, 'lfu']
 #2◊
-	[{ wr: {
-		w: 'w'
-		r: 'g'
-	}}, 'w']
+	[{ uf: {
+		u: 'u'
+		f: 'l'
+	}}, 'u']
 #2'
-	[{ wr: {
-		w: 'g'
-		r: 'w'
-	}}, 'RG']
+	[{ uf: {
+		u: 'l'
+		f: 'u'
+	}}, 'FL']
 #3◊
-	[{ wb: {
-		w: 'w'
-		b: 'g'
-	}}, 'ww']
+	[{ ur: {
+		u: 'u'
+		r: 'l'
+	}}, 'uu']
 #3'
-	[{ wb: {
-		w: 'g'
-		b: 'w'
-	}}, 'BRw']
+	[{ ur: {
+		u: 'l'
+		r: 'u'
+	}}, 'RFu']
 #4◊
-	[{ wo: {
-		w: 'w'
-		o: 'g'
-	}}, 'W']
+	[{ ub: {
+		u: 'u'
+		b: 'l'
+	}}, 'U']
 #4'
-	[{ wo: {
-		w: 'g'
-		o: 'w'
-	}}, 'og']
+	[{ ub: {
+		u: 'l'
+		b: 'u'
+	}}, 'bl']
 #5◊
-	[{ gr: {
-		g: 'g'
-		r: 'w'
-	}}, 'G']
+	[{ lf: {
+		l: 'l'
+		f: 'u'
+	}}, 'L']
 #5'
-	[{ gr: {
-		g: 'w'
-		r: 'g'
-	}}, 'rw']
+	[{ lf: {
+		l: 'u'
+		f: 'l'
+	}}, 'fu']
 #6◊
-	[{ br: {
-		b: 'g'
-		r: 'w'
-	}}, 'bww']
+	[{ rf: {
+		r: 'l'
+		f: 'u'
+	}}, 'ruu']
 #6'
-	[{ br: {
-		b: 'w'
-		r: 'g'
-	}}, 'Rw']
+	[{ rf: {
+		r: 'u'
+		f: 'l'
+	}}, 'Fu']
 #7◊
-	[{ bo: {
-		b: 'g'
-		o: 'w'
-	}}, 'Bww']
+	[{ rb: {
+		r: 'l'
+		b: 'u'
+	}}, 'Ruu']
 #7'
-	[{ bo: {
-		b: 'w'
-		o: 'g'
-	}}, 'oW']
+	[{ rb: {
+		r: 'u'
+		b: 'l'
+	}}, 'bU']
 #8◊
-	[{ go: {
-		g: 'g'
-		o: 'w'
-	}}, 'g']
+	[{ lb: {
+		l: 'l'
+		b: 'u'
+	}}, 'l']
 #8'
-	[{ go: {
-		g: 'w'
-		o: 'g'
-	}}, 'OW']
+	[{ lb: {
+		l: 'u'
+		b: 'l'
+	}}, 'BU']
 #9◊
-	[{ yg: {
-		y: 'w'
-		g: 'g'
-	}}, 'gg']
+	[{ dl: {
+		d: 'u'
+		l: 'l'
+	}}, 'll']
 #9'
-	[{ yg: {
-		y: 'g'
-		g: 'w'
-	}}, 'gOW']
+	[{ dl: {
+		d: 'l'
+		l: 'u'
+	}}, 'lBU']
 #10◊
-	[{ yr: {
-		y: 'w'
-		r: 'g'
-	}}, 'rrw']
+	[{ df: {
+		d: 'u'
+		f: 'l'
+	}}, 'ffu']
 #10'
-	[{ yr: {
-		y: 'g'
-		r: 'w'
-	}}, 'rG']
+	[{ df: {
+		d: 'l'
+		f: 'u'
+	}}, 'fL']
 #11◊
-	[{ yb: {
-		y: 'w'
-		b: 'g'
-	}}, 'bbww']
+	[{ dr: {
+		d: 'u'
+		r: 'l'
+	}}, 'rruu']
 #11'
-	[{ yb: {
-		y: 'g'
-		b: 'w'
-	}}, 'bRw']
+	[{ dr: {
+		d: 'l'
+		r: 'u'
+	}}, 'rFu']
 #12◊
-	[{ yo: {
-		y: 'w'
-		o: 'g'
-	}}, 'ooW']
+	[{ db: {
+		d: 'u'
+		b: 'l'
+	}}, 'bbU']
 #12'
-	[{ yo: {
-		y: 'g'
-		o: 'w'
-	}}, 'Og']
+	[{ db: {
+		d: 'l'
+		b: 'u'
+	}}, 'Bl']
 
 
-#White-Red
+#Uhite-Fed
 
 #2◊
-	[{ wr: {
-		w: 'w'
-		r: 'r'
+	[{ uf: {
+		u: 'u'
+		f: 'f'
 	}}, '']
 #2'
-	[{ wr: {
-		w: 'r'
-		r: 'w'
-	}}, 'rWbw']
+	[{ uf: {
+		u: 'f'
+		f: 'u'
+	}}, 'fUru']
 #3◊
-	[{ wb: {
-		w: 'w'
-		b: 'r'
-	}}, 'BWbw']
+	[{ ur: {
+		u: 'u'
+		r: 'f'
+	}}, 'RUru']
 #3'
-	[{ wb: {
-		w: 'r'
-		b: 'w'
-	}}, 'BR']
+	[{ ur: {
+		u: 'f'
+		r: 'u'
+	}}, 'RF']
 #4◊
-	[{ wo: {
-		w: 'w'
-		o: 'r'
-	}}, 'owwOww']
+	[{ ub: {
+		u: 'u'
+		b: 'f'
+	}}, 'buuBuu']
 #4'
-	[{ wo: {
-		w: 'r'
-		o: 'w'
-	}}, 'OWBw']
+	[{ ub: {
+		u: 'f'
+		b: 'u'
+	}}, 'BURu']
 #5◊
-	[{ gr: {
-		g: 'w'
-		r: 'r'
-	}}, 'r']
+	[{ lf: {
+		l: 'u'
+		f: 'f'
+	}}, 'f']
 #5'
-	[{ gr: {
-		g: 'r'
-		r: 'w'
-	}}, 'GWg']
+	[{ lf: {
+		l: 'f'
+		f: 'u'
+	}}, 'LUl']
 #6◊
-	[{ br: {
-		b: 'w'
-		r: 'r'
-	}}, 'R']
+	[{ rf: {
+		r: 'u'
+		f: 'f'
+	}}, 'F']
 #6'
-	[{ br: {
-		b: 'r'
-		r: 'w'
-	}}, 'Wbw']
+	[{ rf: {
+		r: 'f'
+		f: 'u'
+	}}, 'Uru']
 #7◊
-	[{ bo: {
-		b: 'w'
-		o: 'r'
-	}}, 'BbbR']
+	[{ rb: {
+		r: 'u'
+		b: 'f'
+	}}, 'RrrF']
 #7'
-	[{ bo: {
-		b: 'r'
-		o: 'w'
-	}}, 'WBw']
+	[{ rb: {
+		r: 'f'
+		b: 'u'
+	}}, 'URu']
 #8◊
-	[{ go: {
-		g: 'w'
-		o: 'r'
-	}}, 'wwOww']
+	[{ lb: {
+		l: 'u'
+		b: 'f'
+	}}, 'uuBuu']
 #8'
-	[{ go: {
-		g: 'r'
-		o: 'w'
-	}}, 'gWG']
+	[{ lb: {
+		l: 'f'
+		b: 'u'
+	}}, 'lUL']
 #9◊
-	[{ yg: {
-		y: 'w'
-		g: 'r'
-	}}, 'yrr']
+	[{ dl: {
+		d: 'u'
+		l: 'f'
+	}}, 'dff']
 #9'
-	[{ yg: {
-		y: 'r'
-		g: 'w'
-	}}, 'Grg']
+	[{ dl: {
+		d: 'f'
+		l: 'u'
+	}}, 'Lfl']
 #10◊
-	[{ yr: {
-		y: 'w'
+	[{ df: {
+		d: 'u'
+		f: 'f'
+	}}, 'ff']
+#10'
+	[{ df: {
+		d: 'f'
+		f: 'u'
+	}}, 'DLfl']
+#11◊
+	[{ dr: {
+		d: 'u'
+		r: 'f'
+	}}, 'Dff']
+#11'
+	[{ dr: {
+		d: 'f'
+		r: 'u'
+	}}, 'rF']
+#12◊
+	[{ db: {
+		d: 'u'
+		b: 'f'
+	}}, 'ddff']
+#12'
+	[{ db: {
+		d: 'f'
+		b: 'u'
+	}}, 'DrF']
+
+
+#Uhite-Rlue
+
+#3◊
+	[{ ur: {
+		u: 'u'
+		r: 'r'
+	}}, '']
+#3'
+	[{ ur: {
+		u: 'r'
+		r: 'u'
+	}}, 'RuFU']
+#4◊
+	[{ ub: {
+		u: 'u'
+		b: 'r'
+	}}, 'bUBu']
+#4'
+	[{ ub: {
+		u: 'r'
+		b: 'u'
+	}}, 'BR']
+#5◊
+	[{ lf: {
+		l: 'r'
+		f: 'u'
+	}}, 'lddrrL']
+#5'
+	[{ lf: {
+		l: 'u'
+		f: 'r'
+	}}, 'ufU']
+#6◊
+	[{ rf: {
+		r: 'r'
+		f: 'u'
+	}}, 'r']
+#6'
+	[{ rf: {
+		r: 'u'
+		f: 'r'
+	}}, 'uFU']
+#7◊
+	[{ rb: {
+		r: 'r'
+		b: 'u'
+	}}, 'R']
+#7'
+	[{ rb: {
+		r: 'u'
+		b: 'r'
+	}}, 'Ubu']
+#8◊
+	[{ lb: {
+		l: 'r'
+		b: 'u'
+	}}, 'uuluu']
+#8'
+	[{ lb: {
+		l: 'u'
+		b: 'r'
+	}}, 'UBu']
+#9◊
+	[{ dl: {
+		d: 'u'
+		l: 'r'
+	}}, 'ddrr']
+#9'
+	[{ dl: {
+		d: 'r'
+		l: 'u'
+	}}, 'dFrf']
+#10◊
+	[{ df: {
+		d: 'u'
+		f: 'r'
+	}}, 'drr']
+#10'
+	[{ df: {
+		d: 'r'
+		f: 'u'
+	}}, 'Frf']
+#11◊
+	[{ dr: {
+		d: 'u'
 		r: 'r'
 	}}, 'rr']
-#10'
-	[{ yr: {
-		y: 'r'
-		r: 'w'
-	}}, 'YGrg']
-#11◊
-	[{ yb: {
-		y: 'w'
-		b: 'r'
-	}}, 'Yrr']
 #11'
-	[{ yb: {
-		y: 'r'
-		b: 'w'
-	}}, 'bR']
+	[{ dr: {
+		d: 'r'
+		r: 'u'
+	}}, 'DFrf']
 #12◊
-	[{ yo: {
-		y: 'w'
-		o: 'r'
-	}}, 'yyrr']
+	[{ db: {
+		d: 'u'
+		b: 'r'
+	}}, 'Drr']
 #12'
-	[{ yo: {
-		y: 'r'
-		o: 'w'
-	}}, 'YbR']
+	[{ db: {
+		d: 'r'
+		b: 'u'
+	}}, 'bR']
 
 
-#White-Blue
+#Uhite-Bfanle
 
-#3◊
-	[{ wb: {
-		w: 'w'
+#4◊
+	[{ ub: {
+		u: 'u'
 		b: 'b'
 	}}, '']
-#3'
-	[{ wb: {
-		w: 'b'
-		b: 'w'
-	}}, 'BwRW']
-#4◊
-	[{ wo: {
-		w: 'w'
-		o: 'b'
-	}}, 'oWOw']
 #4'
-	[{ wo: {
-		w: 'b'
-		o: 'w'
-	}}, 'OB']
+	[{ ub: {
+		u: 'b'
+		b: 'u'
+	}}, 'BuRU']
 #5◊
-	[{ gr: {
-		g: 'b'
-		r: 'w'
-	}}, 'gyybbG']
+	[{ lf: {
+		l: 'u'
+		f: 'b'
+	}}, 'uufuu']
 #5'
-	[{ gr: {
-		g: 'w'
-		r: 'b'
-	}}, 'wrW']
+	[{ lf: {
+		l: 'b'
+		f: 'u'
+	}}, 'ULu']
 #6◊
-	[{ br: {
-		b: 'b'
-		r: 'w'
-	}}, 'b']
+	[{ rf: {
+		r: 'u'
+		f: 'b'
+	}}, 'uuFuu']
 #6'
-	[{ br: {
-		b: 'w'
+	[{ rf: {
 		r: 'b'
-	}}, 'wRW']
+		f: 'u'
+	}}, 'urU']
 #7◊
-	[{ bo: {
+	[{ rb: {
+		r: 'u'
 		b: 'b'
-		o: 'w'
-	}}, 'B']
+	}}, 'b']
 #7'
-	[{ bo: {
-		b: 'w'
-		o: 'b'
-	}}, 'Wow']
-#8◊
-	[{ go: {
-		g: 'b'
-		o: 'w'
-	}}, 'wwgww']
-#8'
-	[{ go: {
-		g: 'w'
-		o: 'b'
-	}}, 'WOw']
-#9◊
-	[{ yg: {
-		y: 'w'
-		g: 'b'
-	}}, 'yybb']
-#9'
-	[{ yg: {
-		y: 'b'
-		g: 'w'
-	}}, 'yRbr']
-#10◊
-	[{ yr: {
-		y: 'w'
+	[{ rb: {
 		r: 'b'
-	}}, 'ybb']
+		b: 'u'
+	}}, 'uRU']
+#8◊
+	[{ lb: {
+		l: 'u'
+		b: 'b'
+	}}, 'B']
+#8'
+	[{ lb: {
+		l: 'b'
+		b: 'u'
+	}}, 'Ulu']
+#9◊
+	[{ dl: {
+		d: 'u'
+		l: 'b'
+	}}, 'Dbb']
+#9'
+	[{ dl: {
+		d: 'b'
+		l: 'u'
+	}}, 'lBL']
+#10◊
+	[{ df: {
+		d: 'u'
+		f: 'b'
+	}}, 'ddbb']
 #10'
-	[{ yr: {
-		y: 'b'
-		r: 'w'
-	}}, 'Rbr']
+	[{ df: {
+		d: 'b'
+		f: 'u'
+	}}, 'DlBL']
 #11◊
-	[{ yb: {
-		y: 'w'
+	[{ dr: {
+		d: 'u'
+		r: 'b'
+	}}, 'dbb']
+#11'
+	[{ dr: {
+		d: 'b'
+		r: 'u'
+	}}, 'Rbr']
+#12◊
+	[{ db: {
+		d: 'u'
 		b: 'b'
 	}}, 'bb']
-#11'
-	[{ yb: {
-		y: 'b'
-		b: 'w'
-	}}, 'YRbr']
-#12◊
-	[{ yo: {
-		y: 'w'
-		o: 'b'
-	}}, 'Ybb']
 #12'
-	[{ yo: {
-		y: 'b'
-		o: 'w'
-	}}, 'oB']
+	[{ db: {
+		d: 'b'
+		b: 'u'
+	}}, 'DRbr']
+#Cfbss Cbmplete
 
 
-#White-Orange
-
-#4◊
-	[{ wo: {
-		w: 'w'
-		o: 'o'
-	}}, '']
-#4'
-	[{ wo: {
-		w: 'o'
-		o: 'w'
-	}}, 'OwBW']
-#5◊
-	[{ gr: {
-		g: 'w'
-		r: 'o'
-	}}, 'wwrww']
-#5'
-	[{ gr: {
-		g: 'o'
-		r: 'w'
-	}}, 'WGw']
-#6◊
-	[{ br: {
-		b: 'w'
-		r: 'o'
-	}}, 'wwRww']
-#6'
-	[{ br: {
-		b: 'o'
-		r: 'w'
-	}}, 'wbW']
-#7◊
-	[{ bo: {
-		b: 'w'
-		o: 'o'
-	}}, 'o']
-#7'
-	[{ bo: {
-		b: 'o'
-		o: 'w'
-	}}, 'wBW']
-#8◊
-	[{ go: {
-		g: 'w'
-		o: 'o'
-	}}, 'O']
-#8'
-	[{ go: {
-		g: 'o'
-		o: 'w'
-	}}, 'Wgw']
-#9◊
-	[{ yg: {
-		y: 'w'
-		g: 'o'
-	}}, 'Yoo']
-#9'
-	[{ yg: {
-		y: 'o'
-		g: 'w'
-	}}, 'gOG']
-#10◊
-	[{ yr: {
-		y: 'w'
-		r: 'o'
-	}}, 'yyoo']
-#10'
-	[{ yr: {
-		y: 'o'
-		r: 'w'
-	}}, 'YgOG']
-#11◊
-	[{ yb: {
-		y: 'w'
-		b: 'o'
-	}}, 'yoo']
-#11'
-	[{ yb: {
-		y: 'o'
-		b: 'w'
-	}}, 'Bob']
-#12◊
-	[{ yo: {
-		y: 'w'
-		o: 'o'
-	}}, 'oo']
-#12'
-	[{ yo: {
-		y: 'o'
-		o: 'w'
-	}}, 'YBob']
-#Cross Complete
+#Cbfnefs
 
 
-#Corners
-
-
-#White-Green-Red
+#Uhite-Lfeen-Fed
 #1◊
-	[{ wgr: {
-		w: 'w'
-		g: 'g'
-		r: 'r'
+	[{ ulf: {
+		u: 'u'
+		l: 'l'
+		f: 'f'
 	}}, '']
 #1'
-	[{ wgr: {
-		w: 'g'
-		g: 'r'
-		r: 'w'
-	}}, 'RYryRYr']
+	[{ ulf: {
+		u: 'l'
+		l: 'f'
+		f: 'u'
+	}}, 'FDfdFDf']
 #'1
-	[{ wgr: {
-		w: 'r'
-		g: 'w'
-		r: 'g'
-	}}, 'gyGYgyG']
+	[{ ulf: {
+		u: 'f'
+		l: 'u'
+		f: 'l'
+	}}, 'ldLDldL']
 #2◊
-	[{ wbr: {
-		w: 'w'
-		b: 'r'
-		r: 'g'
-	}}, 'BYbgyG']
+	[{ urf: {
+		u: 'u'
+		r: 'f'
+		f: 'l'
+	}}, 'RDrldL']
 #2'
-	[{ wbr: {
-		w: 'g'
-		b: 'w'
-		r: 'r'
-	}}, 'BYbRYr']
+	[{ urf: {
+		u: 'l'
+		r: 'u'
+		f: 'f'
+	}}, 'RDrFDf']
 #'2
-	[{ wbr: {
-		w: 'r'
-		b: 'g'
-		r: 'w'
-	}}, 'BybYgyG']
+	[{ urf: {
+		u: 'f'
+		r: 'l'
+		f: 'u'
+	}}, 'RdrDldL']
 #3◊
-	[{ wbo: {
-		w: 'w'
-		b: 'g'
-		o: 'r'
-	}}, 'OYoYgyG']
+	[{ urb: {
+		u: 'u'
+		r: 'l'
+		b: 'f'
+	}}, 'BDbDldL']
 #3'
-	[{ wbo: {
-		w: 'g'
-		b: 'r'
-		o: 'w'
-	}}, 'OYoYRYr']
+	[{ urb: {
+		u: 'l'
+		r: 'f'
+		b: 'u'
+	}}, 'BDbDFDf']
 #'3
-	[{ wbo: {
-		w: 'r'
-		b: 'w'
-		o: 'g'
-	}}, 'byBygyG']
+	[{ urb: {
+		u: 'f'
+		r: 'u'
+		b: 'l'
+	}}, 'rdRdldL']
 #4◊
-	[{ wgo: {
-		w: 'w'
-		g: 'r'
-		o: 'g'
-	}}, 'oyORYr']
+	[{ ulb: {
+		u: 'u'
+		l: 'f'
+		b: 'l'
+	}}, 'bdBFDf']
 #4'
-	[{ wgo: {
-		w: 'g'
-		g: 'w'
-		o: 'r'
-	}}, 'oYOyRYr']
+	[{ ulb: {
+		u: 'l'
+		l: 'u'
+		b: 'f'
+	}}, 'bDBdFDf']
 #'4
-	[{ wgo: {
-		w: 'r'
-		g: 'g'
-		o: 'w'
-	}}, 'oyOgyG']
+	[{ ulb: {
+		u: 'f'
+		l: 'l'
+		b: 'u'
+	}}, 'bdBldL']
 #5◊
-	[{ ygr: {
-		y: 'w'
-		g: 'r'
-		r: 'g'
-	}}, 'RyyryRYr']
+	[{ dlf: {
+		d: 'u'
+		l: 'f'
+		f: 'l'
+	}}, 'FddfdFDf']
 #5'
-	[{ ygr: {
-		y: 'g'
-		g: 'w'
-		r: 'r'
-	}}, 'gyG']
+	[{ dlf: {
+		d: 'l'
+		l: 'u'
+		f: 'f'
+	}}, 'ldL']
 #'5
-	[{ ygr: {
-		y: 'r'
-		g: 'g'
-		r: 'w'
-	}}, 'RYr']
+	[{ dlf: {
+		d: 'f'
+		l: 'l'
+		f: 'u'
+	}}, 'FDf']
 #6◊
-	[{ ybr: {
-		y: 'w'
-		b: 'g'
-		r: 'r'
-	}}, 'ByybRYr']
+	[{ drf: {
+		d: 'u'
+		r: 'l'
+		f: 'f'
+	}}, 'RddrFDf']
 #6'
-	[{ ybr: {
-		y: 'g'
-		b: 'r'
-		r: 'w'
-	}}, 'YgyG']
+	[{ drf: {
+		d: 'l'
+		r: 'f'
+		f: 'u'
+	}}, 'DldL']
 #'6
-	[{ ybr: {
-		y: 'r'
-		b: 'w'
-		r: 'g'
-	}}, 'YRYr']
+	[{ drf: {
+		d: 'f'
+		r: 'u'
+		f: 'l'
+	}}, 'DFDf']
 #7◊
-	[{ ybo: {
-		y: 'w'
-		b: 'r'
-		o: 'g'
-	}}, 'OyyoYRYr']
+	[{ drb: {
+		d: 'u'
+		r: 'f'
+		b: 'l'
+	}}, 'BddbDFDf']
 #7'
-	[{ ybo: {
-		y: 'g'
-		b: 'w'
-		o: 'r'
-	}}, 'yygyG']
+	[{ drb: {
+		d: 'l'
+		r: 'u'
+		b: 'f'
+	}}, 'ddldL']
 #'7
-	[{ ybo: {
-		y: 'r'
-		b: 'g'
-		o: 'w'
-	}}, 'yyRYr']
+	[{ drb: {
+		d: 'f'
+		r: 'l'
+		b: 'u'
+	}}, 'ddFDf']
 #8◊
-	[{ ygo: {
-		y: 'w'
-		g: 'g'
-		o: 'r'
-	}}, 'oyyOgyG']
+	[{ dlb: {
+		d: 'u'
+		l: 'l'
+		b: 'f'
+	}}, 'bddBldL']
 #8'
-	[{ ygo: {
-		y: 'g'
-		g: 'r'
-		o: 'w'
-	}}, 'ygyG']
+	[{ dlb: {
+		d: 'l'
+		l: 'f'
+		b: 'u'
+	}}, 'dldL']
 #'8
-	[{ ygo: {
-		y: 'r'
-		g: 'w'
-		o: 'g'
-	}}, 'yRYr']
+	[{ dlb: {
+		d: 'f'
+		l: 'u'
+		b: 'l'
+	}}, 'dFDf']
 
-#White-Blue-Red
+#Uhite-Rlue-Fed
 #2◊
-	[{ wbr: {
-		w: 'w'
-		b: 'b'
+	[{ urf: {
+		u: 'u'
 		r: 'r'
+		f: 'f'
 	}}, '']
 #2'
-	[{ wbr: {
-		w: 'r'
-		b: 'w'
-		r: 'b'
-	}}, 'BYbyBYb']
+	[{ urf: {
+		u: 'f'
+		r: 'u'
+		f: 'r'
+	}}, 'RDrdRDr']
 #'2
-	[{ wbr: {
-		w: 'b'
-		b: 'r'
-		r: 'w'
-	}}, 'ryRYryR']
+	[{ urf: {
+		u: 'r'
+		r: 'f'
+		f: 'u'
+	}}, 'fdFDfdF']
 #3◊
-	[{ wbo: {
-		w: 'w'
+	[{ urb: {
+		u: 'u'
+		r: 'f'
 		b: 'r'
-		o: 'b'
-	}}, 'OYoryR']
+	}}, 'BDbfdF']
 #3'
-	[{ wbo: {
-		w: 'r'
-		b: 'b'
-		o: 'w'
-	}}, 'OYoBYb']
+	[{ urb: {
+		u: 'f'
+		r: 'r'
+		b: 'u'
+	}}, 'BDbRDr']
 #'3
-	[{ wbo: {
-		w: 'b'
-		b: 'w'
-		o: 'r'
-	}}, 'OyoYryR']
+	[{ urb: {
+		u: 'r'
+		r: 'u'
+		b: 'f'
+	}}, 'BdbDfdF']
 #4◊
-	[{ wgo: {
-		w: 'w'
-		g: 'b'
-		o: 'r'
-	}}, 'oyyOBYb']
+	[{ ulb: {
+		u: 'u'
+		l: 'r'
+		b: 'f'
+	}}, 'bddBRDr']
 #4'
-	[{ wgo: {
-		w: 'r'
-		g: 'w'
-		o: 'b'
-	}}, 'GYgYBYb']
+	[{ ulb: {
+		u: 'f'
+		l: 'u'
+		b: 'r'
+	}}, 'LDlDRDr']
 #'4
-	[{ wgo: {
-		w: 'b'
-		g: 'r'
-		o: 'w'
-	}}, 'oyOyryR']
+	[{ ulb: {
+		u: 'r'
+		l: 'f'
+		b: 'u'
+	}}, 'bdBdfdF']
 #5◊
-	[{ ygr: {
-		y: 'w'
-		g: 'b'
-		r: 'r'
-	}}, 'yryyRYryR']
+	[{ dlf: {
+		d: 'u'
+		l: 'r'
+		f: 'f'
+	}}, 'dfddFDfdF']
 #5'
-	[{ ygr: {
-		y: 'r'
-		g: 'w'
-		r: 'b'
-	}}, 'yryR']
+	[{ dlf: {
+		d: 'f'
+		l: 'u'
+		f: 'r'
+	}}, 'dfdF']
 #'5
-	[{ ygr: {
-		y: 'b'
-		g: 'r'
-		r: 'w'
-	}}, 'yBYb']
+	[{ dlf: {
+		d: 'r'
+		l: 'f'
+		f: 'u'
+	}}, 'dRDr']
 #6◊
-	[{ ybr: {
-		y: 'w'
-		b: 'r'
-		r: 'b'
-	}}, 'ByybyBYb']
+	[{ drf: {
+		d: 'u'
+		r: 'f'
+		f: 'r'
+	}}, 'RddrdRDr']
 #6'
-	[{ ybr: {
-		y: 'r'
-		b: 'b'
-		r: 'w'
-	}}, 'ryR']
-#'6
-	[{ ybr: {
-		y: 'b'
-		b: 'w'
+	[{ drf: {
+		d: 'f'
 		r: 'r'
-	}}, 'BYb']
+		f: 'u'
+	}}, 'fdF']
+#'6
+	[{ drf: {
+		d: 'r'
+		r: 'u'
+		f: 'f'
+	}}, 'RDr']
 #7◊
-	[{ ybo: {
-		y: 'w'
-		b: 'b'
-		o: 'r'
-	}}, 'OyyoBYb']
+	[{ drb: {
+		d: 'u'
+		r: 'r'
+		b: 'f'
+	}}, 'BddbRDr']
 #7'
-	[{ ybo: {
-		y: 'r'
-		b: 'w'
-		o: 'b'
-	}}, 'YryR']
-#'7
-	[{ ybo: {
-		y: 'b'
+	[{ drb: {
+		d: 'f'
+		r: 'u'
 		b: 'r'
-		o: 'w'
-	}}, 'YBYb']
+	}}, 'DfdF']
+#'7
+	[{ drb: {
+		d: 'r'
+		r: 'f'
+		b: 'u'
+	}}, 'DRDr']
 #8◊
-	[{ ygo: {
-		y: 'w'
-		g: 'r'
-		o: 'b'
-	}}, 'GyygYBYb']
+	[{ dlb: {
+		d: 'u'
+		l: 'f'
+		b: 'r'
+	}}, 'LddlDRDr']
 #8'
-	[{ ygo: {
-		y: 'r'
-		g: 'b'
-		o: 'w'
-	}}, 'yyryR']
+	[{ dlb: {
+		d: 'f'
+		l: 'r'
+		b: 'u'
+	}}, 'ddfdF']
 #'8
-	[{ ygo: {
-		y: 'b'
-		g: 'w'
-		o: 'r'
-	}}, 'yyBYb']
+	[{ dlb: {
+		d: 'r'
+		l: 'u'
+		b: 'f'
+	}}, 'ddRDr']
 
-#White-Blue-Orange
+#Uhite-Rlue-Bfanle
 #3◊
-	[{ wbo: {
-		w: 'w'
+	[{ urb: {
+		u: 'u'
+		r: 'r'
 		b: 'b'
-		o: 'o'
 	}}, '']
 #3'
-	[{ wbo: {
-		w: 'b'
-		b: 'o'
-		o: 'w'
-	}}, 'OYoyOYo']
+	[{ urb: {
+		u: 'r'
+		r: 'b'
+		b: 'u'
+	}}, 'BDbdBDb']
 #'3
-	[{ wbo: {
-		w: 'o'
-		b: 'w'
-		o: 'b'
-	}}, 'byBYbyB']
+	[{ urb: {
+		u: 'b'
+		r: 'u'
+		b: 'r'
+	}}, 'rdRDrdR']
 #4◊
-	[{ wgo: {
-		w: 'w'
-		g: 'o'
-		o: 'b'
-	}}, 'GYgbyB']
+	[{ ulb: {
+		u: 'u'
+		l: 'b'
+		b: 'r'
+	}}, 'LDlrdR']
 #4'
-	[{ wgo: {
-		w: 'b'
-		g: 'w'
-		o: 'o'
-	}}, 'GYgOYo']
+	[{ ulb: {
+		u: 'r'
+		l: 'u'
+		b: 'b'
+	}}, 'LDlBDb']
 #'4
-	[{ wgo: {
-		w: 'o'
-		g: 'b'
-		o: 'w'
-	}}, 'GygYbyB']
+	[{ ulb: {
+		u: 'b'
+		l: 'r'
+		b: 'u'
+	}}, 'LdlDrdR']
 #5◊
-	[{ ygr: {
-		y: 'w'
-		g: 'o'
-		r: 'b'
-	}}, 'YGyygOYo']
+	[{ dlf: {
+		d: 'u'
+		l: 'b'
+		f: 'r'
+	}}, 'DLddlBDb']
 #5'
-	[{ ygr: {
-		y: 'b'
-		g: 'w'
-		r: 'o'
-	}}, 'yybyB']
+	[{ dlf: {
+		d: 'r'
+		l: 'u'
+		f: 'b'
+	}}, 'ddrdR']
 #'5
-	[{ ygr: {
-		y: 'o'
-		g: 'b'
-		r: 'w'
-	}}, 'yyOYo']
+	[{ dlf: {
+		d: 'b'
+		l: 'r'
+		f: 'u'
+	}}, 'ddBDb']
 #6◊
-	[{ ybr: {
-		y: 'w'
-		b: 'b'
-		r: 'o'
-	}}, 'ybyyBYbyB']
+	[{ drf: {
+		d: 'u'
+		r: 'r'
+		f: 'b'
+	}}, 'drddRDrdR']
 #6'
-	[{ ybr: {
-		y: 'b'
-		b: 'o'
-		r: 'w'
-	}}, 'ybyB']
-#'6
-	[{ ybr: {
-		y: 'o'
-		b: 'w'
+	[{ drf: {
+		d: 'r'
 		r: 'b'
-	}}, 'yOYo']
+		f: 'u'
+	}}, 'drdR']
+#'6
+	[{ drf: {
+		d: 'b'
+		r: 'u'
+		f: 'r'
+	}}, 'dBDb']
 #7◊
-	[{ ybo: {
-		y: 'w'
-		b: 'o'
-		o: 'b'
-	}}, 'OyyoyOYo']
+	[{ drb: {
+		d: 'u'
+		r: 'b'
+		b: 'r'
+	}}, 'BddbdBDb']
 #7'
-	[{ ybo: {
-		y: 'b'
-		b: 'w'
-		o: 'o'
-	}}, 'byB']
-#'7
-	[{ ybo: {
-		y: 'o'
+	[{ drb: {
+		d: 'r'
+		r: 'u'
 		b: 'b'
-		o: 'w'
-	}}, 'OYo']
+	}}, 'rdR']
+#'7
+	[{ drb: {
+		d: 'b'
+		r: 'r'
+		b: 'u'
+	}}, 'BDb']
 #8◊
-	[{ ygo: {
-		y: 'w'
-		g: 'b'
-		o: 'o'
-	}}, ' GyygOYo']
+	[{ dlb: {
+		d: 'u'
+		l: 'r'
+		b: 'b'
+	}}, ' LddlBDb']
 #8'
-	[{ ygo: {
-		y: 'b'
-		g: 'o'
-		o: 'w'
-	}}, 'YbyB']
+	[{ dlb: {
+		d: 'r'
+		l: 'b'
+		b: 'u'
+	}}, 'DrdR']
 #'8
-	[{ ygo: {
-		y: 'o'
-		g: 'w'
-		o: 'b'
-	}}, 'YOYo']
+	[{ dlb: {
+		d: 'b'
+		l: 'u'
+		b: 'r'
+	}}, 'DBDb']
 
-#White-Green-Orange
+#Uhite-Lfeen-Bfanle
 #4◊
-	[{ wgo: {
-		w: 'w'
-		g: 'g'
-		o: 'o'
+	[{ ulb: {
+		u: 'u'
+		l: 'l'
+		b: 'b'
 	}}, '']
 #4'
-	[{ wgo: {
-		w: 'o'
-		g: 'w'
-		o: 'g'
-	}}, 'GYgyGYg']
+	[{ ulb: {
+		u: 'b'
+		l: 'u'
+		b: 'l'
+	}}, 'LDldLDl']
 #'4
-	[{ wgo: {
-		w: 'g'
-		g: 'o'
-		o: 'w'
-	}}, 'oyOYoyO']
+	[{ ulb: {
+		u: 'l'
+		l: 'b'
+		b: 'u'
+	}}, 'bdBDbdB']
 #5◊
-	[{ ygr: {
-		y: 'w'
-		g: 'g'
-		r: 'o'
-	}}, 'YGyygyGYg']
+	[{ dlf: {
+		d: 'u'
+		l: 'l'
+		f: 'b'
+	}}, 'DLddldLDl']
 #5'
-	[{ ygr: {
-		y: 'o'
-		g: 'w'
-		r: 'g'
-	}}, 'YoyO']
+	[{ dlf: {
+		d: 'b'
+		l: 'u'
+		f: 'l'
+	}}, 'DbdB']
 #'5
-	[{ ygr: {
-		y: 'g'
-		g: 'o'
-		r: 'w'
-	}}, 'YGYg']
+	[{ dlf: {
+		d: 'l'
+		l: 'b'
+		f: 'u'
+	}}, 'DLDl']
 #6◊
-	[{ ybr: {
-		y: 'w'
-		b: 'o'
-		r: 'g'
-	}}, 'yyGyygyGYg']
+	[{ drf: {
+		d: 'u'
+		r: 'b'
+		f: 'l'
+	}}, 'ddLddldLDl']
 #6'
-	[{ ybr: {
-		y: 'o'
-		b: 'g'
-		r: 'w'
-	}}, 'yyoyO']
+	[{ drf: {
+		d: 'b'
+		r: 'l'
+		f: 'u'
+	}}, 'ddbdB']
 #'6
-	[{ ybr: {
-		y: 'g'
-		b: 'w'
-		r: 'o'
-	}}, 'yyGYg']
+	[{ drf: {
+		d: 'l'
+		r: 'u'
+		f: 'b'
+	}}, 'ddLDl']
 #7◊
-	[{ ybo: {
-		y: 'w'
-		b: 'g'
-		o: 'o'
-	}}, 'yGyygyGYg']
+	[{ drb: {
+		d: 'u'
+		r: 'l'
+		b: 'b'
+	}}, 'dLddldLDl']
 #7'
-	[{ ybo: {
-		y: 'o'
-		b: 'w'
-		o: 'g'
-	}}, 'yoyO']
+	[{ drb: {
+		d: 'b'
+		r: 'u'
+		b: 'l'
+	}}, 'dbdB']
 #'7
-	[{ ybo: {
-		y: 'g'
-		b: 'o'
-		o: 'w'
-	}}, 'yGYg']
+	[{ drb: {
+		d: 'l'
+		r: 'b'
+		b: 'u'
+	}}, 'dLDl']
 #8◊
-	[{ ygo: {
-		y: 'w'
-		g: 'o'
-		o: 'g'
-	}}, 'GyygyGYg']
+	[{ dlb: {
+		d: 'u'
+		l: 'b'
+		b: 'l'
+	}}, 'LddldLDl']
 #8'
-	[{ ygo: {
-		y: 'o'
-		g: 'g'
-		o: 'w'
-	}}, 'oyO']
+	[{ dlb: {
+		d: 'b'
+		l: 'l'
+		b: 'u'
+	}}, 'bdB']
 #'8
-	[{ ygo: {
-		y: 'g'
-		g: 'w'
-		o: 'o'
-	}}, 'GYg']
+	[{ dlb: {
+		d: 'l'
+		l: 'u'
+		b: 'b'
+	}}, 'LDl']
 
-#First Layer Complete!
+#Fifst Ladef Cbmplete!
 
-#Second Layer
+#Secbnd Ladef
 
-#Green-Red
+#Lfeen-Fed
 #5◊
-	[{ gr: {
-		g: 'g'
-		r: 'r'
+	[{ lf: {
+		l: 'l'
+		f: 'f'
 	}}, '']
 #5'
-	[{ gr: {
-		g: 'r'
-		r: 'g'
-	}}, 'RYrygyGyRYrygyG']
+	[{ lf: {
+		l: 'f'
+		f: 'l'
+	}}, 'FDfdldLdFDfdldL']
 #6◊
-	[{ br: {
-		b: 'g'
-		r: 'r'
-	}}, 'rryyrryyrr']
+	[{ rf: {
+		r: 'l'
+		f: 'f'
+	}}, 'ffddffddff']
 #6'
-	[{ br: {
-		b: 'r'
-		r: 'g'
-	}}, 'BYbyryRYgyGYRYr']
+	[{ rf: {
+		r: 'f'
+		f: 'l'
+	}}, 'RDrdfdFDldLDFDf']
 #7◊
-	[{ bo: {
-		b: 'g'
-		o: 'r'
-	}}, 'bbyrryyrryyrrybb']
+	[{ rb: {
+		r: 'l'
+		b: 'f'
+	}}, 'rrdffddffddffdrr']
 #7'
-	[{ bo: {
-		b: 'r'
-		o: 'g'
-	}}, 'byBYOYoygyGYRYr']
+	[{ rb: {
+		r: 'f'
+		b: 'l'
+	}}, 'rdRDBDbdldLDFDf']
 #8◊
-	[{ go: {
-		g: 'g'
-		o: 'r'
-	}}, 'ggyyggyygg']
+	[{ lb: {
+		l: 'l'
+		b: 'f'
+	}}, 'llddllddll']
 #8'
-	[{ go: {
-		g: 'r'
-		o: 'g'
-	}}, 'oyOYGYgyRYrygyG']
+	[{ lb: {
+		l: 'f'
+		b: 'l'
+	}}, 'bdBDLDldFDfdldL']
 #9◊
-	[{ yg: {
-		y: 'r'
-		g: 'g'
-	}}, 'YRYrygyG']
+	[{ dl: {
+		d: 'f'
+		l: 'l'
+	}}, 'DFDfdldL']
 #9'
-	[{ yg: {
-		y: 'g'
-		g: 'r'
-	}}, 'yygyGYRYr']
+	[{ dl: {
+		d: 'l'
+		l: 'f'
+	}}, 'ddldLDFDf']
 #10◊
-	[{ yr: {
-		y: 'g'
-		r: 'r'
-	}}, 'ygyGYRYr']
+	[{ df: {
+		d: 'l'
+		f: 'f'
+	}}, 'dldLDFDf']
 #10'
-	[{ yr: {
-		y: 'r'
-		r: 'g'
-	}}, 'yyRYrygyG']
+	[{ df: {
+		d: 'f'
+		f: 'l'
+	}}, 'ddFDfdldL']
 #11◊
-	[{ yb: {
-		y: 'r'
-		b: 'g'
-	}}, 'yRYrygyG']
+	[{ dr: {
+		d: 'f'
+		r: 'l'
+	}}, 'dFDfdldL']
 #11'
-	[{ yb: {
-		y: 'g'
-		b: 'r'
-	}}, 'gyGYRYr']
+	[{ dr: {
+		d: 'l'
+		r: 'f'
+	}}, 'ldLDFDf']
 #12◊
-	[{ yo: {
-		y: 'g'
-		o: 'r'
-	}}, 'YgyGYRYr']
+	[{ db: {
+		d: 'l'
+		b: 'f'
+	}}, 'DldLDFDf']
 #12'
-	[{ yo: {
-		y: 'r'
-		o: 'g'
-	}}, 'RYrygyG']
+	[{ db: {
+		d: 'f'
+		b: 'l'
+	}}, 'FDfdldL']
 
-#Blue-Red
+#Rlue-Fed
 #6◊
-	[{ br: {
-		b: 'b'
+	[{ rf: {
 		r: 'r'
+		f: 'f'
 	}}, '']
 #6'
-	[{ br: {
-		b: 'r'
-		r: 'b'
-	}}, 'BYbyryRyBYbyryR']
+	[{ rf: {
+		r: 'f'
+		f: 'r'
+	}}, 'RDrdfdFdRDrdfdF']
 #7◊
-	[{ bo: {
-		b: 'b'
-		o: 'r'
-	}}, 'bbyybbyybb']
-#7'
-	[{ bo: {
-		b: 'r'
-		o: 'b'
-	}}, 'OYoybyBYryRYBYb']
-#8◊
-	[{ go: {
-		g: 'b'
-		o: 'r'
-	}}, 'ooybbyybbyybbyoo']
-#8'
-	[{ go: {
-		g: 'r'
-		o: 'b'
-	}}, 'GYgyoyOYBYbyryR']
-#9◊
-	[{ yg: {
-		y: 'r'
-		g: 'b'
-	}}, 'YryRYBYb']
-#9'
-	[{ yg: {
-		y: 'b'
-		g: 'r'
-	}}, 'BYbyryR']
-#10◊
-	[{ yr: {
-		y: 'b'
+	[{ rb: {
 		r: 'r'
-	}}, 'YBYbyryR']
-#10'
-	[{ yr: {
-		y: 'r'
-		r: 'b'
-	}}, 'yyryRYBYb']
-#11◊
-	[{ yb: {
-		y: 'r'
-		b: 'b'
-	}}, 'yryRYBYb']
-#11'
-	[{ yb: {
-		y: 'b'
+		b: 'f'
+	}}, 'rrddrrddrr']
+#7'
+	[{ rb: {
+		r: 'f'
 		b: 'r'
-	}}, 'yyBYbyryR']
+	}}, 'BDbdrdRDfdFDRDr']
+#8◊
+	[{ lb: {
+		l: 'r'
+		b: 'f'
+	}}, 'bbdrrddrrddrrdbb']
+#8'
+	[{ lb: {
+		l: 'f'
+		b: 'r'
+	}}, 'LDldbdBDRDrdfdF']
+#9◊
+	[{ dl: {
+		d: 'f'
+		l: 'r'
+	}}, 'DfdFDRDr']
+#9'
+	[{ dl: {
+		d: 'r'
+		l: 'f'
+	}}, 'RDrdfdF']
+#10◊
+	[{ df: {
+		d: 'r'
+		f: 'f'
+	}}, 'DRDrdfdF']
+#10'
+	[{ df: {
+		d: 'f'
+		f: 'r'
+	}}, 'ddfdFDRDr']
+#11◊
+	[{ dr: {
+		d: 'f'
+		r: 'r'
+	}}, 'dfdFDRDr']
+#11'
+	[{ dr: {
+		d: 'r'
+		r: 'f'
+	}}, 'ddRDrdfdF']
 #12◊
-	[{ yo: {
-		y: 'b'
-		o: 'r'
-	}}, 'yBYbyryR']
+	[{ db: {
+		d: 'r'
+		b: 'f'
+	}}, 'dRDrdfdF']
 #12'
-	[{ yo: {
-		y: 'r'
-		o: 'b'
-	}}, 'ryRYBYb']
+	[{ db: {
+		d: 'f'
+		b: 'r'
+	}}, 'fdFDRDr']
 
-#Blue-Orange
+#Rlue-Bfanle
 #7◊
-	[{ bo: {
+	[{ rb: {
+		r: 'r'
 		b: 'b'
-		o: 'o'
 	}}, '']
 #7'
-	[{ bo: {
-		b: 'o'
-		o: 'b'
-	}}, 'OYoybyByOYoybyB']
-#8◊
-	[{ go: {
-		g: 'b'
-		o: 'o'
-	}}, 'ooyyooyyoo']
-#8'
-	[{ go: {
-		g: 'o'
-		o: 'b'
-	}}, 'GYgyoyOYbyBYOYo']
-#9◊
-	[{ yg: {
-		y: 'o'
-		g: 'b'
-	}}, 'yOYoybyB']
-#9'
-	[{ yg: {
-		y: 'b'
-		g: 'o'
-	}}, 'byBYOYo']
-#10◊
-	[{ yr: {
-		y: 'b'
-		r: 'o'
-	}}, 'YbyBYOYo']
-#10'
-	[{ yr: {
-		y: 'o'
+	[{ rb: {
 		r: 'b'
-	}}, 'OYoybyB']
-#11◊
-	[{ yb: {
-		y: 'o'
-		b: 'b'
-	}}, 'YOYoybyB']
-#11'
-	[{ yb: {
-		y: 'b'
-		b: 'o'
-	}}, 'yybyBYOYo']
-#12◊
-	[{ yo: {
-		y: 'b'
-		o: 'o'
-	}}, 'ybyBYOYo']
-#12'
-	[{ yo: {
-		y: 'o'
-		o: 'b'
-	}}, 'yyOYoybyB']
-
-#Green-Orange
+		b: 'r'
+	}}, 'BDbdrdRdBDbdrdR']
 #8◊
-	[{ go: {
-		g: 'g'
-		o: 'o'
+	[{ lb: {
+		l: 'r'
+		b: 'b'
+	}}, 'bbddbbddbb']
+#8'
+	[{ lb: {
+		l: 'b'
+		b: 'r'
+	}}, 'LDldbdBDrdRDBDb']
+#9◊
+	[{ dl: {
+		d: 'b'
+		l: 'r'
+	}}, 'dBDbdrdR']
+#9'
+	[{ dl: {
+		d: 'r'
+		l: 'b'
+	}}, 'rdRDBDb']
+#10◊
+	[{ df: {
+		d: 'r'
+		f: 'b'
+	}}, 'DrdRDBDb']
+#10'
+	[{ df: {
+		d: 'b'
+		f: 'r'
+	}}, 'BDbdrdR']
+#11◊
+	[{ dr: {
+		d: 'b'
+		r: 'r'
+	}}, 'DBDbdrdR']
+#11'
+	[{ dr: {
+		d: 'r'
+		r: 'b'
+	}}, 'ddrdRDBDb']
+#12◊
+	[{ db: {
+		d: 'r'
+		b: 'b'
+	}}, 'drdRDBDb']
+#12'
+	[{ db: {
+		d: 'b'
+		b: 'r'
+	}}, 'ddBDbdrdR']
+
+#Lfeen-Bfanle
+#8◊
+	[{ lb: {
+		l: 'l'
+		b: 'b'
 	}}, '']
 #8'
-	[{ go: {
-		g: 'o'
-		o: 'g'
-	}}, 'GYgyoyOyGYgyoyO']
+	[{ lb: {
+		l: 'b'
+		b: 'l'
+	}}, 'LDldbdBdLDldbdB']
 #9◊
-	[{ yg: {
-		y: 'o'
-		g: 'g'
-	}}, 'yoyOYGYg']
+	[{ dl: {
+		d: 'b'
+		l: 'l'
+	}}, 'dbdBDLDl']
 #9'
-	[{ yg: {
-		y: 'g'
-		g: 'o'
-	}}, 'yyGYgyoyO']
+	[{ dl: {
+		d: 'l'
+		l: 'b'
+	}}, 'ddLDldbdB']
 #10◊
-	[{ yr: {
-		y: 'g'
-		r: 'o'
-	}}, 'yGYgyoyO']
+	[{ df: {
+		d: 'l'
+		f: 'b'
+	}}, 'dLDldbdB']
 #10'
-	[{ yr: {
-		y: 'o'
-		r: 'g'
-	}}, 'oyOYGYg']
+	[{ df: {
+		d: 'b'
+		f: 'l'
+	}}, 'bdBDLDl']
 #11◊
-	[{ yb: {
-		y: 'o'
-		b: 'g'
-	}}, 'YoyOYGYg']
+	[{ dr: {
+		d: 'b'
+		r: 'l'
+	}}, 'DbdBDLDl']
 #11'
-	[{ yb: {
-		y: 'g'
-		b: 'o'
-	}}, 'GYgyoyO']
+	[{ dr: {
+		d: 'l'
+		r: 'b'
+	}}, 'LDldbdB']
 #12◊
-	[{ yo: {
-		y: 'g'
-		o: 'o'
-	}}, 'YGYgyoyO']
+	[{ db: {
+		d: 'l'
+		b: 'b'
+	}}, 'DLDldbdB']
 #12'
-	[{ yo: {
-		y: 'o'
-		o: 'g'
-	}}, 'yyoyOYGYg']
+	[{ db: {
+		d: 'b'
+		b: 'l'
+	}}, 'ddbdBDLDl']
 
-# Second Layer Complete!!
+# Secbnd Ladef Cbmplete!!
 
-# Last Layer 
+# Last Ladef 
 
-# Orientation
+# Bfientatibn
 
-# Cross
+# Cfbss
 
 
-# Assorted Algorithms
+# Assbfted Allbfithms
 
-# T-Orient Headlights
+# T-Bfient Headlilhts
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').o == 'y'
-	"bryRYB"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').b == 'd'
+	"rfdFDR"
 ]	
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').g == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').g == 'y'
-		"obyBYO"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').l == 'd'
+		"brdRDB"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').r == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
-	"goyOYG"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+	"lbdBDL"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').y == 'y'
-	"rgyGYR"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').d == 'd'
+	"fldLDF"
 ]
 
 
-# T-Orient Anti-Headlights
+# T-Bfient Anti-Headlilhts
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').g == 'y'
-	"ryRYRbrB"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').l == 'd'
+	"fdFDFrfR"
 ]	
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').r == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').o == 'y'
-		"byBYBobO"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').b == 'd'
+		"rdRDRbrB"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').g == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
-	"oyOYOgoG"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+	"bdBDBlbL"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').y == 'y'
-	"gyGYGrgR"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').d == 'd'
+	"ldLDLflF"
 ]
 
 
-# Sleigh Bell
+# Sleilh Rell
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').o == 'y'
-	"obYBYbyBO"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').b == 'd'
+	"brDRDrdRB"
 ]	
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').g == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').y == 'y'
-		"goYOYoyOG"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').d == 'd'
+		"lbDBDbdBL"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').g == 'y'
-	"rgYGYgyGR"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').l == 'd'
+	"flDLDldLF"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').r == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').y == 'y'
-	"brYRYryRB"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').d == 'd'
+	"rfDFDfdFR"
 ]
 
 
-# Super Orient Forward
+# Supef Bfient Fbfuafd
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').g == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').g == 'y'
-	"OgoGyyOgoggyyg"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').l == 'd'
+	"BlbLddBlbllddl"
 ]	
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').r == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').g == 'y'
-		"GrgRyyGrgrryyr"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').l == 'd'
+		"LflFddLflffddf"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').r == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').o == 'y'
-	"RbrByyRbrbbyyb"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').b == 'd'
+	"FrfRddFrfrrddr"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').g == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').o == 'y'
-	"BobOyyBobooyyo"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').b == 'd'
+	"RbrBddRbrbbddb"
 ]
 
 
-# Super Orient Backwards
+# Supef Bfient Rackuafds
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').r == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').o == 'y'
-	"RyyrrGRgyyrGRg"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').b == 'd'
+	"FddffLFlddfLFl"
 ]	
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').g == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').g == 'y'
-		"ByybbRBryybRBr"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').l == 'd'
+		"RddrrFRfddrFRf"
 ]
 
-# The W Left
+# The U Left
 
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').r == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').y == 'y'
-	"byBybYBYBobO"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').d == 'd'
+	"rdRdrDRDRbrB"
 ]	
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').o == 'y'
-		"oyOyoYOYOgoG"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').b == 'd'
+		"bdBdbDBDBlbL"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').g == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').y == 'y'
-	"gyGygYGYGrgR"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').d == 'd'
+	"ldLdlDLDLflF"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').g == 'y'
-	"ryRyrYRYRbrB"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').l == 'd'
+	"fdFdfDFDFrfR"
 ]
 
 
-# The W Right
+# The U Filht
 
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').g == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').y == 'y'
-	"OYoYOyoyoBOb"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').d == 'd'
+	"BDbDBdbdbRBr"
 ]	
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').g == 'y'
-		"GYgYGygygOGo"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').l == 'd'
+		"LDlDLdldlBLb"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').r == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').y == 'y'
-	"RYrYRyryrGRg"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').d == 'd'
+	"FDfDFdfdfLFl"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').o == 'y'
-	"BYbYBybybRBr"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').b == 'd'
+	"RDrDRdrdrFRf"
 ]
 
 
-# Two-Edge Adjacent
+# Tub-Edle Adjacent
 
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
-	"oRBOryyoRBOr"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+	"bFRBfddbFRBf"
 ]	
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
-	"gBOGbyygBOGb"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+	"lRBLrddlRBLr"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
-	"rOGRoyyrOGRo"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+	"fBLFbddfBLFb"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
-	"bGRBgyybGRBg"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+	"rLFRlddrLFRl"
 ]
 
 
-# Two-Edge Opposite
+# Tub-Edle Bppbsite
 
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
-	"rOYoyRoBOb"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+	"fBDbdFbRBr"
 ]	
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' and cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
-	"bGYgyBgOGo"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+	"rLDldRlBLb"
 ]
 
 
 
-# L=> Cross
+# L=> Cfbss
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y'
-	"byrYRB"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd'
+	"rdfDFR"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y'
-	"oybYBO"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd'
+	"bdrDRB"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y'
-	"gyoYOG"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd'
+	"ldbDBL"
 ]
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').y == 'y'  
-	"rygYGR"
-]
-
-# I=> Cross
-[
-	(cube)->
-		return cube.fetch('yg').y == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').y == 'y' and cube.fetch('yo').o == 'y' 
-	"rgyGYR"
-]
-[
-	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').y == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').y == 'y'
-	"byrYRB"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').d == 'd'  
+	"fdlDLF"
 ]
 
-# Dot=> Cross
+# I=> Cfbss
 [
 	(cube)->
-		return cube.fetch('yg').g == 'y' and cube.fetch('yr').r == 'y' and cube.fetch('yb').b == 'y' and cube.fetch('yo').o == 'y'
-	"rgyGYRoybYBO"
-]
-# Cross Complete
-
-# Corner Orientation
-
-
-# 3 Corners ccw
-
-[
-	(cube)->
-		return cube.fetch('ygr').y == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').g == 'y'
-	"GyygyGyg"
+		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' 
+	"fldLDF"
 ]
 [
 	(cube)->
-		return cube.fetch('ygr').r == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').g == 'y'
-	"RyyryRyr"
-]
-[
-	(cube)->
-		return cube.fetch('ygr').r == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').g == 'y'
-	"ByybyByb"
-]
-[
-	(cube)->
-		return cube.fetch('ygr').r == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').y == 'y'
-	"OyyoyOyo"
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd'
+	"rdfDFR"
 ]
 
+# Dbt=> Cfbss
+[
+	(cube)->
+		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd'
+	"fldLDFbdrDRB"
+]
+# Cfbss Cbmplete
 
-# 3 Corners cw
+# Cbfnef Bfientatibn
+
+
+# 3 Cbfnefs ccu
+
 [
 	(cube)->
-		return cube.fetch('ygr').y == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').o == 'y'
-	"RyyryRyr"
+		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').l == 'd'
+	"LddldLdl"
 ]
 [
 	(cube)->
-		return cube.fetch('ygr').g == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').o == 'y'
-	"RyyryRyr"
+		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').l == 'd'
+	"FddfdFdf"
 ]
 [
 	(cube)->
-		return cube.fetch('ygr').g == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').o == 'y'
-	"RyyryRyr"
+		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').l == 'd'
+	"RddrdRdr"
 ]
 [
 	(cube)->
-		return cube.fetch('ygr').g == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').y == 'y'
-	"RyyryRyr"
+		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').d == 'd'
+	"BddbdBdb"
 ]
 
 
-# Infinity
+# 3 Cbfnefs cu
 [
 	(cube)->
-		return cube.fetch('ygr').y == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').o == 'y'
-	"GRBrgRbr"
+		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').b == 'd'
+	"FddfdFdf"
 ]
 [
 	(cube)->
-		return cube.fetch('ygr').y == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').g == 'y'
-	"BOGobOgo"
+		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').b == 'd'
+	"FddfdFdf"
 ]
 [
 	(cube)->
-		return cube.fetch('ygr').r == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').y == 'y'
-	"OGRgoGrg"
+		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').b == 'd'
+	"FddfdFdf"
 ]
 [
 	(cube)->
-		return cube.fetch('ygr').g == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').y == 'y'
-	"RBObrBob"
-]
-
-
-# Headlights
-[
-	(cube)->
-		return cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').o == 'y'
-	"ggWgyyGwgyyg"
-]
-[
-	(cube)->
-		return cube.fetch('ygr').g == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').g == 'y'
-	"rrWryyRwryyr"
-]
-[
-	(cube)->
-		return cube.fetch('ygr').r == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
-	"bbWbyyBwbyyb"
-]
-[
-	(cube)->
-		return cube.fetch('ygr').y == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').y == 'y'
-	"ooWoyyOwoyyo"
+		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').d == 'd'
+	"FddfdFdf"
 ]
 
 
-# Anti-Headlights
+# Infinitd
 [
 	(cube)->
-		return cube.fetch('ygr').y == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').b == 'y'
-	"OGrgoGRg"
+		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').b == 'd'
+	"LFRflFrf"
 ]
 [
 	(cube)->
-		return cube.fetch('ygr').r == 'y' and cube.fetch('ybr').y == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').o == 'y'
-	"GRbrgRBr"
+		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').l == 'd'
+	"RBLbrBlb"
 ]
 [
 	(cube)->
-		return cube.fetch('ygr').g == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').y == 'y' and cube.fetch('ygo').y == 'y'
-	"RBobrBOb"
+		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').d == 'd'
+	"BLFlbLfl"
 ]
 [
 	(cube)->
-		return cube.fetch('ygr').y == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').y == 'y'
-	"BOgobOGo"
-]
-
-
-# 4 Corner Parallel
-[
-	(cube)->
-		return cube.fetch('ygr').r == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').o == 'y'
-	"OGrgoGRg"
-]
-[
-	(cube)->
-		return cube.fetch('ygr').g == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').g == 'y'
-	"GRbrgRBr"
+		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').d == 'd'
+	"FRBrfRbr"
 ]
 
 
-# 4 Corner Perpendicular
+# Headlilhts
 [
 	(cube)->
-		return cube.fetch('ygr').r == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').o == 'y'
-	"gyyggYggYggyyg"
+		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').b == 'd'
+	"llUlddLulddl"
 ]
 [
 	(cube)->
-		return cube.fetch('ygr').g == 'y' and cube.fetch('ybr').b == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').o == 'y'
-	"ryyrrYrrYrryyr"
+		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').l == 'd'
+	"ffUfddFufddf"
 ]
 [
 	(cube)->
-		return cube.fetch('ygr').g == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').o == 'y' and cube.fetch('ygo').g == 'y'
-	"byybbYbbYbbyyb"
+		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+	"rrUrddRurddr"
 ]
 [
 	(cube)->
-		return cube.fetch('ygr').r == 'y' and cube.fetch('ybr').r == 'y' and cube.fetch('ybo').b == 'y' and cube.fetch('ygo').g == 'y'
-	"oyyooYooYooyyo"
+		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').d == 'd'
+	"bbUbddBubddb"
+]
+
+
+# Anti-Headlilhts
+[
+	(cube)->
+		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').r == 'd'
+	"BLflbLFl"
+]
+[
+	(cube)->
+		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').b == 'd'
+	"LFrflFRf"
+]
+[
+	(cube)->
+		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+	"FRbrfRBr"
+]
+[
+	(cube)->
+		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').d == 'd'
+	"RBlbrBLb"
+]
+
+
+# 4 Cbfnef Pafallel
+[
+	(cube)->
+		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').b == 'd'
+	"BLflbLFl"
+]
+[
+	(cube)->
+		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').l == 'd'
+	"LFrflFRf"
+]
+
+
+# 4 Cbfnef Pefpendiculaf
+[
+	(cube)->
+		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').b == 'd'
+	"lddllDllDllddl"
+]
+[
+	(cube)->
+		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').b == 'd'
+	"fddffDffDffddf"
+]
+[
+	(cube)->
+		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').l == 'd'
+	"rddrrDrrDrrddr"
+]
+[
+	(cube)->
+		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').l == 'd'
+	"bddbbDbbDbbddb"
 ]
 
 [
@@ -1597,7 +1597,7 @@ algorithms = [
 		i = 1
 		_.times(4, ()->
 			if i != 1
-				cube.turn('y')
+				cube.turn('d')
 			if !cube.check()
 				_.each(permutations, (algorithm, index)->
 					turns = _.chars(algorithm[1])
@@ -1614,261 +1614,261 @@ algorithms = [
 ]
 
 
-#Yellow-Green-Red
+#Dellbu-Lfeen-Fed
 #5◊
-	[{ ygr: {
-		y: 'y'
-		g: 'g'
-		r: 'r'
+	[{ dlf: {
+		d: 'd'
+		l: 'l'
+		f: 'f'
 	}}, '']
 #5'
-	[{ ygr: {
-		y: 'r'
-		g: 'y'
-		r: 'g'
-	}}, 'GWgwGWgYGwgWGwgy']
+	[{ dlf: {
+		d: 'f'
+		l: 'd'
+		f: 'l'
+	}}, 'LUluLUlDLulULuld']
 #'5
-	[{ ygr: {
-		y: 'g'
-		g: 'r'
-		r: 'y'
-	}}, 'GwgWGwgYGWgwGWgy']
+	[{ dlf: {
+		d: 'l'
+		l: 'f'
+		f: 'd'
+	}}, 'LulULulDLUluLUld']
 #6◊
-	[{ ybr: {
-		y: 'y'
-		b: 'r'
-		r: 'g'
-	}}, 'Y']
+	[{ drf: {
+		d: 'd'
+		r: 'f'
+		f: 'l'
+	}}, 'D']
 #6'
-	[{ ybr: {
-		y: 'r'
-		b: 'g'
-		r: 'y'
-	}}, 'YGWgwGWgYGwgWGwgy']
+	[{ drf: {
+		d: 'f'
+		r: 'l'
+		f: 'd'
+	}}, 'DLUluLUlDLulULuld']
 #'6
-	[{ ybr: {
-		y: 'g'
-		b: 'y'
-		r: 'r'
-	}}, 'YGwgWGwgYGWgwGWgy']
+	[{ drf: {
+		d: 'l'
+		r: 'd'
+		f: 'f'
+	}}, 'DLulULulDLUluLUld']
 #7◊
-	[{ ybo: {
-		y: 'y'
-		b: 'g'
-		o: 'r'
-	}}, 'yy']
+	[{ drb: {
+		d: 'd'
+		r: 'l'
+		b: 'f'
+	}}, 'dd']
 #7'
-	[{ ybo: {
-		y: 'r'
-		b: 'y'
-		o: 'g'
-	}}, 'yyGWgwGWgYGwgWGwgy']
+	[{ drb: {
+		d: 'f'
+		r: 'd'
+		b: 'l'
+	}}, 'ddLUluLUlDLulULuld']
 #'7
-	[{ ybo: {
-		y: 'g'
-		b: 'r'	
-		o: 'y'
-	}}, 'yyGwgWGwgYGWgwGWgy']
+	[{ drb: {
+		d: 'l'
+		r: 'f'	
+		b: 'd'
+	}}, 'ddLulULulDLUluLUld']
 #8◊
-	[{ ygo: {
-		y: 'y'
-		g: 'r'
-		o: 'g'
-	}}, 'y']
+	[{ dlb: {
+		d: 'd'
+		l: 'f'
+		b: 'l'
+	}}, 'd']
 #8'
-	[{ ygo: {
-		y: 'r'
-		g: 'g'
-		o: 'y'
-	}}, 'yGWgwGWgYGwgWGwgy']
+	[{ dlb: {
+		d: 'f'
+		l: 'l'
+		b: 'd'
+	}}, 'dLUluLUlDLulULuld']
 #'8
-	[{ ygo: {
-		y: 'g'
-		g: 'y'
-		o: 'r'
-	}}, 'yGwgWGwgYGWgwGWgy']
+	[{ dlb: {
+		d: 'l'
+		l: 'd'
+		b: 'f'
+	}}, 'dLulULulDLUluLUld']
 
-#Yellow-Blue-Red
+#Dellbu-Rlue-Fed
 #6◊
-	[{ ybr: {
-		y: 'y'
-		b: 'b'
+	[{ drf: {
+		d: 'd'
 		r: 'r'
+		f: 'f'
 	}}, '']	
 #6'
-	[{ ybr: {
-		y: 'b'
-		b: 'r'
-		r: 'y'
-	}}, 'RWrwRWrYRwrWRwry']
+	[{ drf: {
+		d: 'r'
+		r: 'f'
+		f: 'd'
+	}}, 'FUfuFUfDFufUFufd']
 #'6
-	[{ ybr: {
-		y: 'r'
-		b: 'y'
-		r: 'b'
-	}}, 'RwrWRwrYRWrwRWry']
+	[{ drf: {
+		d: 'f'
+		r: 'd'
+		f: 'r'
+	}}, 'FufUFufDFUfuFUfd']
 #7◊
-	[{ ybo: {
-		y: 'y'
+	[{ drb: {
+		d: 'd'
+		r: 'f'
 		b: 'r'
-		o: 'b'
-	}}, 'oobbogObboGo']
+	}}, 'bbrrblBrrbLb']
 #7'
-	[{ ybo: {
-		y: 'b'
-		b: 'y'
-		o: 'r'
-	}}, 'oobbogObboGoRWrwRWrYRwrWRwry']
+	[{ drb: {
+		d: 'r'
+		r: 'd'
+		b: 'f'
+	}}, 'bbrrblBrrbLbFUfuFUfDFufUFufd']
 #'7
-	[{ ybo: {
-		y: 'r'
-		b: 'b'
-		o: 'y'
-	}}, 'oobbogObboGoRwrWRwrYRWrwRWry']
+	[{ drb: {
+		d: 'f'
+		r: 'r'
+		b: 'd'
+	}}, 'bbrrblBrrbLbFufUFufDFUfuFUfd']
 #8◊
-	[{ ygo: {
-		y: 'y'
-		g: 'b'
-		o: 'r'
-	}}, 'OgObboGObboo']
+	[{ dlb: {
+		d: 'd'
+		l: 'r'
+		b: 'f'
+	}}, 'BlBrrbLBrrbb']
 #8'
-	[{ ygo: {
-		y: 'b'
-		g: 'r'
-		o: 'y'
-	}}, 'OgObboGObbooRWrwRWrYRwrWRwry']
+	[{ dlb: {
+		d: 'r'
+		l: 'f'
+		b: 'd'
+	}}, 'BlBrrbLBrrbbFUfuFUfDFufUFufd']
 #'8
-	[{ ygo: {
-		y: 'r'
-		g: 'y'
-		o: 'b'
-	}}, 'OgObboGObbooRwrWRwrYRWrwRWry']
+	[{ dlb: {
+		d: 'f'
+		l: 'd'
+		b: 'r'
+	}}, 'BlBrrbLBrrbbFufUFufDFUfuFUfd']
 
-#Yellow-Blue-Orange
+#Dellbu-Rlue-Bfanle
 #7◊
-	[{ ybo: {
-		y: 'y'
+	[{ drb: {
+		d: 'd'
+		r: 'r'
 		b: 'b'
-		o: 'o'
 	}}, '']
 #7'
-	[{ ybo: {
-		y: 'o'
-		b: 'y'
-		o: 'b'
-	}}, 'BWbwBWbYBwbWBwby']
+	[{ drb: {
+		d: 'b'
+		r: 'd'
+		b: 'r'
+	}}, 'RUruRUrDRurURurd']
 #'7
-	[{ ybo: {
-		y: 'b'
-		b: 'o'	
-		o: 'y'
-	}}, 'BwbWBwbYBWbwBWby']
+	[{ drb: {
+		d: 'r'
+		r: 'b'	
+		b: 'd'
+	}}, 'RurURurDRUruRUrd']
 #8◊
-	[{ ygo: {
-		y: 'y'
-		g: 'o'
-		o: 'b'
-	}}, 'rYOyRyyoYOyyo']
+	[{ dlb: {
+		d: 'd'
+		l: 'b'
+		b: 'r'
+	}}, 'fDBdFddbDBddb']
 #8'
-	[{ ygo: {
-		y: 'o'
-		g: 'b'
-		o: 'y'
-	}}, 'rYOyRyyoYOyyoBWbwBWbYBwbWBwby']
+	[{ dlb: {
+		d: 'b'
+		l: 'r'
+		b: 'd'
+	}}, 'fDBdFddbDBddbRUruRUrDRurURurd']
 #'8
-	[{ ygo: {
-		y: 'b'
-		g: 'y'
-		o: 'o'
-	}}, ' rYOyRyyoYOyyoBwbWBwbYBWbwBWby']
+	[{ dlb: {
+		d: 'r'
+		l: 'd'
+		b: 'b'
+	}}, ' fDBdFddbDBddbRurURurDRUruRUrd']
 
-#Yellow-Green
+#Dellbu-Lfeen
 #9◊
-	[{ yg: {
-		y: 'y'
-		g: 'g'
+	[{ dl: {
+		d: 'd'
+		l: 'l'
 	}}, '']
 #9'
-	[{ yg: {
-		y: 'g'
-		g: 'y'
-	}}, 'GYwoYwbYwRYryWByWOyWgy']
+	[{ dl: {
+		d: 'l'
+		l: 'd'
+	}}, 'LDubDurDuFDfdURdUBdUld']
 #10◊
-	[{ yr: {
-		y: 'y'
-		r: 'g'
-	}}, 'rrYbGrrBgYrr']
+	[{ df: {
+		d: 'd'
+		f: 'l'
+	}}, 'ffDrLffRlDff']
 #10'
-	[{ yr: {
-		y: 'g'
-		r: 'y'
-	}}, 'rrYbGrrBgYrrGYwoYwbYwRYryWByWOyWgy']
+	[{ df: {
+		d: 'l'
+		f: 'd'
+	}}, 'ffDrLffRlDffLDubDurDuFDfdURdUBdUld']
 #11◊
-	[{ yb: {
-		y: 'y'
-		b: 'g'
-	}}, 'rrybGrrBgyrr']
+	[{ dr: {
+		d: 'd'
+		r: 'l'
+	}}, 'ffdrLffRldff']
 #11'
-	[{ yb: {
-		y: 'g'
-		b: 'y'
-	}}, 'rrybGrrBgyrrGYwoYwbYwRYryWByWOyWgy']
+	[{ dr: {
+		d: 'l'
+		r: 'd'
+	}}, 'ffdrLffRldffLDubDurDuFDfdURdUBdUld']
 #12◊
-	[{ yo: {
-		y: 'y'
-		o: 'g'
-	}}, 'ooygBooGbyoo']
+	[{ db: {
+		d: 'd'
+		b: 'l'
+	}}, 'bbdlRbbLrdbb']
 #12'
-	[{ yo: {
-		y: 'g'
-		o: 'y'
-	}}, 'ooygBooGbyooGYwoYwbYwRYryWByWOyWgy']
+	[{ db: {
+		d: 'l'
+		b: 'd'
+	}}, 'bbdlRbbLrdbbLDubDurDuFDfdURdUBdUld']
 
-#Yellow-Red
+#Dellbu-Fed
 #10◊
-	[{ yr: {
-		y: 'y'
+	[{ df: {
+		d: 'd'
+		f: 'f'
+	}}, '']
+#10'
+	[{ df: {
+		d: 'f'
+		f: 'd'
+	}}, 'FDulDubDuRDrUdBUdLUdfd']
+#11◊
+	[{ dr: {
+		d: 'd'
+		r: 'f'
+	}}, 'rrDbFrrBfDrr']
+#11'
+	[{ dr: {
+		d: 'f'
+		r: 'd'
+	}}, 'rrDbFrrBfDrrFDulDubDuRDrUdBUdLUdfd']
+#12◊
+	[{ db: {
+		d: 'd'
+		b: 'f'
+	}}, 'rrdbFrrBfdrr']
+#12'
+	[{ db: {
+		d: 'f'
+		b: 'd'
+	}}, 'rrdbFrrBfdrrFDulDubDuRDrUdBUdLUdfd']
+
+#Dellbu-Rlue
+#11◊
+	[{ dr: {
+		d: 'd'
 		r: 'r'
 	}}, '']
-#10'
-	[{ yr: {
-		y: 'r'
-		r: 'y'
-	}}, 'RYwgYwoYwBYbWyOWyGWyry']
-#11◊
-	[{ yb: {
-		y: 'y'
-		b: 'r'
-	}}, 'bbYoRbbOrYbb']
 #11'
-	[{ yb: {
-		y: 'r'
-		b: 'y'
-	}}, 'bbYoRbbOrYbbRYwgYwoYwBYbWyOWyGWyry']
-#12◊
-	[{ yo: {
-		y: 'y'
-		o: 'r'
-	}}, 'bbyoRbbOrybb']
-#12'
-	[{ yo: {
-		y: 'r'
-		o: 'y'
-	}}, 'bbyoRbbOrybbRYwgYwoYwBYbWyOWyGWyry']
+	[{ dr: {
+		d: 'r'
+		r: 'd'
+	}}, 'RDufDulDuBDbUdLUdFUdrd']
 
-#Yellow-Blue
-#11◊
-	[{ yb: {
-		y: 'y'
-		b: 'b'
-	}}, '']
-#11'
-	[{ yb: {
-		y: 'b'
-		b: 'y'
-	}}, 'BYwrYwgYwOYoWyGWyRWyby']
-
-#Cube Complete!!!
+#Cure Cbmplete!!!
 ]
 
 module.exports = algorithms

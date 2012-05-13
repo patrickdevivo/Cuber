@@ -13,7 +13,7 @@ solver.import_algorithms(jeremy)
 
 
 # cube.interface()
-###
+
 cube.scramble(25)
 cube.display()
 console.log cube.history.scramble
@@ -21,4 +21,4 @@ solver.go()
 console.log cube.history.algorithm
 ###
 
-cube.turn_by_perspective('u')
+# cube.turn_by_perspective('u')
