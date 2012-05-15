@@ -1,8 +1,7 @@
-_ = require './requirements/underscore.min.js'
-_.str = require './requirements/underscore.string.min.js'
+global._ = require 'underscore'
+_.str = require('underscore.string')
 _.mixin(_.str.exports())
 _.str.include('Underscore.string', 'string')
-# $ = require 'jquery'
 colorize = require 'colorize'
 require('console-trace')
 console.log = console.t.log
@@ -589,4 +588,3 @@ class Solver # a solver is a holder for a sequence of algorithms
 
 module.exports.Cube = Cube
 module.exports.Solver = Solver
-module.exports._ = _

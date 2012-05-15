@@ -1,33 +1,28 @@
 before = new Date().getTime()
 Cuber = require './cuber.coffee'
-_ = require './requirements/underscore.min.js'
-_.str = require './requirements/underscore.string.min.js'
-_.mixin(_.str.exports())
-_.str.include('Underscore.string', 'string')
 Table = require 'cli-table'
-
-# db = require('monk')('heroku:cuber@staff.mongohq.com:10011/app4172676')
-# tests = db.get('tests')
+db = require('monk')('heroku:cuber@staff.mongohq.com:10011/app4172676')
+tests = db.get('tests')
 id = ''
 
 
 # clear out older tests under 100 cubes
-# tests.findAndModify({total_cubes: $lt: 100}, {remove: true}, (err, docs) =>
-# 	console.log docs
-# )
+tests.findAndModify({total_cubes: $lt: 100}, {remove: true}, (err, docs) =>
+	console.log docs
+)
 
 
-jeremy = require './algorithms/jeremy/jeremy.coffee'
+jeremy = require './algorithms/jeremy/color/jeremy.coffee'
 checks = 0
 n = 0
 turns = 0
 most = 0
 least = 10000
 execute = ()->
-	# if n is 10
-		# tests.insert({total_cubes: 0, average_turns: 0, time_elapsed: 0, accuracy: 0}, (err, doc)->
-		# 	id = doc._id
-		# )
+	if n is 10
+		tests.insert({total_cubes: 0, average_turns: 0, time_elapsed: 0, accuracy: 0}, (err, doc)->
+			id = doc._id
+		)
 		
 	cube = new Cuber.Cube n+'', false
 	solver = new Cuber.Solver cube
@@ -61,8 +56,7 @@ execute = ()->
 	console.log('\u001B[2J\u001B[0;0f') # clear screen
 	console.log table.toString() # write table
 	
-	execute()
-	# tests.updateById(id, data, (err, doc)->
-		# execute()
-	# )
+	tests.updateById(id, data, (err, doc)->
+		execute()
+	)
 execute()

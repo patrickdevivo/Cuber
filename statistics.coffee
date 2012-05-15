@@ -1,9 +1,5 @@
 before = new Date().getTime()
 Cuber = require './cuber.coffee'
-_ = require './requirements/underscore.min.js'
-_.str = require './requirements/underscore.string.min.js'
-_.mixin(_.str.exports())
-_.str.include('Underscore.string', 'string')
 
 mongoose = require('mongoose')
 mongoose.connect('mongodb://heroku:cuber@staff.mongohq.com:10011/app4172676')
