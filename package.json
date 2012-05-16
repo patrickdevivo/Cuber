@@ -4,7 +4,7 @@
   "dependencies": {
     "coffee-script": "1.2.x",
     "zappa": "0.3.x",
-	"monk": "0.1.8",
+	"monk": "0.1.x",
 	"cli-table": "0.0.x",
 	"colorize": "0.1.x",
 	"prompt": "0.1.x",
