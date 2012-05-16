@@ -1,19 +1,31 @@
 {
-  "name": "Cuber",
-  "version": "0.2.0",
-  "dependencies": {
-    "coffee-script": "1.2.x",
-    "zappa": "0.3.x",
-	"monk": "0.1.8",
-	"cli-table": "0.0.x",
-	"colorize": "0.1.x",
-	"prompt": "0.1.x",
-	"console-trace": "0.1.x",
-	"underscore": "1.3.x",
-	"underscore.string": "2.2.x"
-  },
-  "engines": {
-  	"node": "0.6.x",
-  	"npm": "1.1.x"
-  }
+	"name": "Cuber",
+	"version": "0.2.0",
+	"author": "Patrick DeVivo <patrick.devivo@gmail.com>"
+	"description": "Rubik's cube model and solver."
+	"contributors": [
+		{
+			"name": "Jeremy Bannister",
+			"email": "jeremy_bannister@hotmail.com"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/patrickdevivo/Cuber"
+	}
+	"dependencies": {
+		"coffee-script": "1.2.x",
+		"zappa": "0.3.x",
+		"monk": "0.1.8",
+		"cli-table": "0.0.x",
+		"colorize": "0.1.x",
+		"prompt": "0.1.x",
+		"console-trace": "0.1.x",
+		"underscore": "1.3.x",
+		"underscore.string": "2.2.x"
+	},
+	"engines": {
+		"node": "0.6.x",
+		"npm": "1.1.x"
+		}
 }
