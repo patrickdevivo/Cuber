@@ -1,6 +1,8 @@
 - If both grippers are closed, perspective matrix does not change. 
 - If a gripper is open then turns of that gripper do not affect the perspective matrix. 
 
+(The first position is where it is to begin with and the position after the colon is its final position as a result of the specified turn)
+
 If side gripper is closed and bottom gripper is open then:
 	Clockwise on the side means: 
 		top: back,
