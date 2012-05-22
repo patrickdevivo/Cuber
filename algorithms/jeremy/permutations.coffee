@@ -3,472 +3,472 @@ permutations = [
 
 	#Edge Rotation cw
 
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'b'
-		"bbyoRbbOrybb"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'b' and cube.fetch('yr').r == 'r'
-		"ooygBooGbyoo"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'r' and cube.fetch('yr').r == 'o'
-		"ggyOrggoRygg"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'r' and cube.fetch('yr').r == 'b'
-		"rrybGrrBgyrr"
-	]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'r'
+			"rrdbFrrBfdrr"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'r' and cube.fetch_by_perspective('df').f == 'f'
+			"bbdlRbbLrdbb"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'f' and cube.fetch_by_perspective('df').f == 'b'
+			"lldBfllbFdll"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'f' and cube.fetch_by_perspective('df').f == 'r'
+			"ffdrLffRldff"
+		]
 
 
-	#Edge Rotation ccw
+		#Edle Fbtatibn ccu
 
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'o'
-		"bbYoRbbOrYbb"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'o' and cube.fetch('yr').r == 'r'
-		"ooYgBooGbYoo"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'o' and cube.fetch('yr').r == 'g'
-		"ggYrOggRoYgg"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'b' and cube.fetch('yr').r == 'g'
-		"rrYbGrrBgYrr"
-	]
-
-
-	#Opposite Edges
-
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'b' and cube.fetch('yr').r == 'o'
-		"bbggybbggyybbggybbgg"
-	]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'b'
+			"rrDbFrrBfDrr"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'b' and cube.fetch_by_perspective('df').f == 'f'
+			"bbDlRbbLrDbb"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'b' and cube.fetch_by_perspective('df').f == 'l'
+			"llDfBllFbDll"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'r' and cube.fetch_by_perspective('df').f == 'l'
+			"ffDrLffRlDff"
+		]
 
 
-	#Adjacent Edge Swap
+		#Bppbsite Edles
 
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'o' and cube.fetch('yr').r == 'b'
-		"rGRgbRbGRgrbby"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'r' and cube.fetch('yr').r == 'g'
-		"bRBroBoRBrbooy"
-	]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'r' and cube.fetch_by_perspective('df').f == 'b'
+			"rrlldrrllddrrlldrrll"
+		]
 
 
-	#Adjacent Block Pair Swap Left
+		#Adjacent Edle Suap
 
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'b' and cube.fetch('ybo').b == 'r' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'b'
-		"gYByGyybYByyb"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'o' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"rYOyRyyoYOyyo"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'o' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'o' and cube.fetch('yr').r == 'r'
-		"bYGyByygYGyyg"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'r' and cube.fetch('ybr').r == 'g' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'r' and cube.fetch('yr').r == 'g'
-		"oYRyOyyrYRyyr"
-	]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'b' and cube.fetch_by_perspective('df').f == 'r'
+			"fLFlrFrLFlfrrd"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'f' and cube.fetch_by_perspective('df').f == 'l'
+			"rFRfbRbFRfrbbd"
+		]
 
 
-	#Adjacent Block Pair Swap Right
+		#Adjacent Rlbck Paif Suap Left
 
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'b' and cube.fetch('ybo').b == 'r' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"GybYgyyBybyyB"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'o' and cube.fetch('yg').g == 'o' and cube.fetch('yr').r == 'r'
-		"RyoYryyOyoyyO"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'o' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'r' and cube.fetch('yr').r == 'g'
-		"BygYbyyGygyyG"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'r' and cube.fetch('ybr').r == 'g' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'b'
-		"OyrYoyyRyryyR"
-	]
-
-
-	#Corner Rotation cw
-
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'b' and cube.fetch('ybo').b == 'o' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"OgObboGObboo"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'b' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'o' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"GrGoogRGoogg"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'r' and cube.fetch('ybr').r == 'o' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"RbRggrBRggrr"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'r' and cube.fetch('ybr').r == 'b' and cube.fetch('ybo').b == 'g' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"BoBrrbOBrrbb"
-	]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'r' and cube.fetch_by_perspective('drb').r == 'f' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'r'
+			"lDRdLddrDRddr"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'b' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"fDBdFddbDBddb"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'b' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'b' and cube.fetch_by_perspective('df').f == 'f'
+			"rDLdRddlDLddl"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'f' and cube.fetch_by_perspective('drf').f == 'l' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'f' and cube.fetch_by_perspective('df').f == 'l'
+			"bDFdBddfDFddf"
+		]
 
 
-	#Corner Rotation ccw
+		#Adjacent Rlbck Paif Suap Filht
 
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'o' and cube.fetch('ybo').b == 'r' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"oobbogObboGo"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'o' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'g' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"ggoogrGoogRg"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'o' and cube.fetch('ybr').r == 'g' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"rrggrbRggrBr"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'b' and cube.fetch('ybr').r == 'g' and cube.fetch('ybo').b == 'r' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"bbrrboBrrbOb"
-	]
-
-
-	#Mirror Swap
-
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'o' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"GybYgyGyBYgyybyyB"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'b' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'g' and cube.fetch('yg').g == 'o' and cube.fetch('yr').r == 'r'
-		"RyoYryRyOYryyoyyO"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'o' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'r' and cube.fetch('yr').r == 'g'
-		"BygYbyByGYbyygyyG"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'b' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'g' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'b'
-		"OyrYoyOyRYoyyryyR"
-	]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'r' and cube.fetch_by_perspective('drb').r == 'f' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"LdrDlddRdrddR"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'b' and cube.fetch_by_perspective('dl').l == 'b' and cube.fetch_by_perspective('df').f == 'f'
+			"FdbDfddBdbddB"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'b' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'f' and cube.fetch_by_perspective('df').f == 'l'
+			"RdlDrddLdlddL"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'f' and cube.fetch_by_perspective('drf').f == 'l' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'r'
+			"BdfDbddFdfddF"
+		]
 
 
-	#Arrowhead
+		#Cbfnef Fbtatibn cu
 
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'o' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'o' and cube.fetch('yr').r == 'r'
-		"brYRYryRBryRYRbrB"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'b' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'g' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"rgYGYgyGRgyGYGrgR"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'o' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'b'
-		"goYOYoyOGoyOYOgoG"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'b' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'g' and cube.fetch('yg').g == 'r' and cube.fetch('yr').r == 'g'
-		"obYBYbyBObyBYBobO"
-	]
-
-
-	#T-Perm
-
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'o' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'b' and cube.fetch('yr').r == 'r'
-		"gyGYGrggYGYgyGR"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'r' and cube.fetch('ybr').r == 'g' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'o'
-		"ryRYRbrrYRYryRB"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'b' and cube.fetch('ybo').b == 'r' and cube.fetch('yg').g == 'b' and cube.fetch('yr').r == 'r'
-		"byBYBobbYBYbyBO"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'o' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'o'
-		"oyOYOgooYOYoyOG"
-	]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'r' and cube.fetch_by_perspective('drb').r == 'b' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"BlBrrbLBrrbb"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'r' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'b' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"LfLbblFLbbll"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'f' and cube.fetch_by_perspective('drf').f == 'b' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"FrFllfRFllff"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'f' and cube.fetch_by_perspective('drf').f == 'r' and cube.fetch_by_perspective('drb').r == 'l' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"RbRffrBRffrr"
+		]
 
 
-	#Cross-Perm
+		#Cbfnef Fbtatibn ccu
 
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'b' and cube.fetch('ybo').b == 'r' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'o'
-		"ggOgwwBrbwwgrgoGR"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'o' and cube.fetch('yg').g == 'b' and cube.fetch('yr').r == 'r'
-		"rrGrwwObowwrbrgRB"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'o' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'o'
-		"bbRbwwGogwwbobrBO"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'r' and cube.fetch('ybr').r == 'g' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'b' and cube.fetch('yr').r == 'r'
-		"ooBowwRgrwwogobOG"
-	]
-
-
-	#Opposite Block Pair Swap Right
-
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'b' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'g' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'o'
-		"oYryyOyRoYryyOyRY"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'o' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'b' and cube.fetch('yr').r == 'r'
-		"gYbyyGyBgYbyyGyBY"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'b' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'g' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'o'
-		"rYoyyRyOrYoyyRyOY"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'o' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'b' and cube.fetch('yr').r == 'r'
-		"bYgyyByGbYgyyByGY"
-	]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'b' and cube.fetch_by_perspective('drb').r == 'f' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"bbrrblBrrbLb"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'b' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'l' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"llbblfLbblFl"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'b' and cube.fetch_by_perspective('drf').f == 'l' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"ffllfrFllfRf"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'r' and cube.fetch_by_perspective('drf').f == 'l' and cube.fetch_by_perspective('drb').r == 'f' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"rrffrbRffrBr"
+		]
 
 
-	#Opposite Block Pair Swap Left
+		#Miffbf Suap
 
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'o' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'o'
-		"RyOyyrYoRyOyyrYoy"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'b' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'g' and cube.fetch('yg').g == 'b' and cube.fetch('yr').r == 'r'
-		"ByGyybYgByGyybYgy"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'o' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'o'
-		"OyRyyoYrOyRyyoYry"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'b' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'g' and cube.fetch('yg').g == 'b' and cube.fetch('yr').r == 'r'
-		"GyByygYbGyByygYby"
-	]
-
-
-	#4 Corner Swap
-
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'o' and cube.fetch('ybr').r == 'b' and cube.fetch('ybo').b == 'r' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"gOGrgoGrrBobrBOb"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'r' and cube.fetch('ybr').r == 'g' and cube.fetch('ybo').b == 'o' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"rGRbrgRbbOgobOGo"
-	]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'b' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"LdrDldLdRDlddrddR"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'r' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'l' and cube.fetch_by_perspective('dl').l == 'b' and cube.fetch_by_perspective('df').f == 'f'
+			"FdbDfdFdBDfddbddB"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'b' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'f' and cube.fetch_by_perspective('df').f == 'l'
+			"RdlDrdRdLDrddlddL"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'r' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'l' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'r'
+			"BdfDbdBdFDbddfddF"
+		]
 
 
-	#Sidebar Back Left
+		#Affbuhead
 
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'b' and cube.fetch('ybo').b == 'r' and cube.fetch('yg').g == 'r' and cube.fetch('yr').r == 'g'
-		"YrrGRYRyrgRyyryyR"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'o' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'b'
-		"YbbRBYBybrByybyyB"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'o' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"YooBOYOyobOyyoyyO"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'r' and cube.fetch('ybr').r == 'g' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'o' and cube.fetch('yr').r == 'r'
-		"YggOGYGygoGyygyyG"
-	]
-
-
-	#Sidebar Back Right
-
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'b' and cube.fetch('ybo').b == 'r' and cube.fetch('yg').g == 'o' and cube.fetch('yr').r == 'r'
-		"yoogoyoYOGoyyOyyo"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'o' and cube.fetch('yg').g == 'r' and cube.fetch('yr').r == 'g'
-		"yggrgygYGRgyyGyyg"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'o' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'b'
-		"yrrbryrYRBryyRyyr"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'r' and cube.fetch('ybr').r == 'g' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'r'
-		"ybbobybYBObyyByyb"
-	]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'b' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'b' and cube.fetch_by_perspective('df').f == 'f'
+			"rfDFDfdFRfdFDFrfR"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'r' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'l' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"flDLDldLFldLDLflF"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'b' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'r'
+			"lbDBDbdBLbdBDBlbL"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'r' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'l' and cube.fetch_by_perspective('dl').l == 'f' and cube.fetch_by_perspective('df').f == 'l'
+			"brDRDrdRBrdRDRbrB"
+		]
 
 
-	#Sidebar Front Left
+		#T-Pefm
 
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'r' and cube.fetch('ybr').r == 'b' and cube.fetch('ybo').b == 'g' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'o'
-		"oowByBYbWooGyg"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'b' and cube.fetch('ybo').b == 'o' and cube.fetch('yg').g == 'o' and cube.fetch('yr').r == 'r'
-		"ggwOyOYoWggRyr"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'b' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'o' and cube.fetch('yg').g == 'o' and cube.fetch('yr').r == 'g'
-		"rrwGyGYgWrrByb"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'r' and cube.fetch('ybr').r == 'o' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'b' and cube.fetch('yr').r == 'g'
-		"bbwRyRYrWbbOyo"
-	]
-
-
-	#Sidebar Front Right
-
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'o' and cube.fetch('ybo').b == 'r' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'b'
-		"rrWbYbyBwrrgYG"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'o' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'g' and cube.fetch('yg').g == 'b' and cube.fetch('yr').r == 'r'
-		"bbWoYoyOwbbrYR"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'o' and cube.fetch('ybr').r == 'g' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'r' and cube.fetch('yr').r == 'o'
-		"ooWgYgyGwoobYB"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'b' and cube.fetch('ybr').r == 'g' and cube.fetch('ybo').b == 'r' and cube.fetch('yg').g == 'r' and cube.fetch('yr').r == 'b'
-		"ggWrYryRwggoYO"
-	]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'b' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'r' and cube.fetch_by_perspective('df').f == 'f'
+			"ldLDLfllDLDldLF"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'f' and cube.fetch_by_perspective('drf').f == 'l' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'b'
+			"fdFDFrffDFDfdFR"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'r' and cube.fetch_by_perspective('drb').r == 'f' and cube.fetch_by_perspective('dl').l == 'r' and cube.fetch_by_perspective('df').f == 'f'
+			"rdRDRbrrDRDrdRB"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'b' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'b'
+			"bdBDBlbbDBDbdBL"
+		]
 
 
-	#Frontbar Front Left
+		#Cfbss-Pefm
 
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'b' and cube.fetch('ybo').b == 'o' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'o'
-		"gyGrrWbYByBwrr"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'b' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'o' and cube.fetch('yg').g == 'o' and cube.fetch('yr').r == 'r'
-		"ryRbbWoYOyOwbb"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'r' and cube.fetch('ybr').r == 'o' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'o' and cube.fetch('yr').r == 'g'
-		"byBooWgYGyGwoo"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'r' and cube.fetch('ybr').r == 'b' and cube.fetch('ybo').b == 'g' and cube.fetch('yg').g == 'b' and cube.fetch('yr').r == 'g'
-		"oyOggWrYRyRwgg"
-	]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'r' and cube.fetch_by_perspective('drb').r == 'f' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'b'
+			"llBluuRfruulflbLF"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'b' and cube.fetch_by_perspective('dl').l == 'r' and cube.fetch_by_perspective('df').f == 'f'
+			"ffLfuuBrbuufrflFR"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'b' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'b'
+			"rrFruuLbluurbrfRB"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'f' and cube.fetch_by_perspective('drf').f == 'l' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'r' and cube.fetch_by_perspective('df').f == 'f'
+			"bbRbuuFlfuublbrBL"
+		]
 
 
-	#Frontbar Front Right
+		#Bppbsite Rlbck Paif Suap Filht
 
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'b' and cube.fetch('ybr').r == 'g' and cube.fetch('ybo').b == 'r' and cube.fetch('yg').g == 'g' and cube.fetch('yr').r == 'b'
-		"GYgoowBybYbWoo"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'g' and cube.fetch('ybr').r == 'o' and cube.fetch('ybo').b == 'r' and cube.fetch('yg').g == 'b' and cube.fetch('yr').r == 'r'
-		"RYrggwOyoYoWgg"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'o' and cube.fetch('ybr').r == 'r' and cube.fetch('ybo').b == 'g' and cube.fetch('yg').g == 'r' and cube.fetch('yr').r == 'o'
-		"BYbrrwGygYgWrr"
-	]
-	[
-		(cube)->
-			return cube.fetch('ygr').g == 'o' and cube.fetch('ybr').r == 'g' and cube.fetch('ybo').b == 'b' and cube.fetch('yg').g == 'r' and cube.fetch('yr').r == 'b'
-		"OYobbwRyrYrWbb"
-	]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'r' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'l' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'b'
+			"bDfddBdFbDfddBdFD"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'b' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'r' and cube.fetch_by_perspective('df').f == 'f'
+			"lDrddLdRlDrddLdRD"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'r' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'l' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'b'
+			"fDbddFdBfDbddFdBD"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'b' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'r' and cube.fetch_by_perspective('df').f == 'f'
+			"rDlddRdLrDlddRdLD"
+		]
 
-]
+
+		#Bppbsite Rlbck Paif Suap Left
+
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'b' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'b'
+			"FdBddfDbFdBddfDbd"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'r' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'l' and cube.fetch_by_perspective('dl').l == 'r' and cube.fetch_by_perspective('df').f == 'f'
+			"RdLddrDlRdLddrDld"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'b' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'b'
+			"BdFddbDfBdFddbDfd"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'r' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'l' and cube.fetch_by_perspective('dl').l == 'r' and cube.fetch_by_perspective('df').f == 'f'
+			"LdRddlDrLdRddlDrd"
+		]
+
+
+		#4 Cbfnef Suap
+
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'b' and cube.fetch_by_perspective('drf').f == 'r' and cube.fetch_by_perspective('drb').r == 'f' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"lBLflbLffRbrfRBr"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'f' and cube.fetch_by_perspective('drf').f == 'l' and cube.fetch_by_perspective('drb').r == 'b' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"fLFrflFrrBlbrBLb"
+		]
+
+
+		#Sideraf Rack Left
+
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'r' and cube.fetch_by_perspective('drb').r == 'f' and cube.fetch_by_perspective('dl').l == 'f' and cube.fetch_by_perspective('df').f == 'l'
+			"DffLFDFdflFddfddF"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'b' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'r'
+			"DrrFRDRdrfRddrddR"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'b' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"DbbRBDBdbrBddbddB"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'f' and cube.fetch_by_perspective('drf').f == 'l' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'b' and cube.fetch_by_perspective('df').f == 'f'
+			"DllBLDLdlbLddlddL"
+		]
+
+
+		#Sideraf Rack Filht
+
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'r' and cube.fetch_by_perspective('drb').r == 'f' and cube.fetch_by_perspective('dl').l == 'b' and cube.fetch_by_perspective('df').f == 'f'
+			"dbblbdbDBLbddBddb"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'b' and cube.fetch_by_perspective('dl').l == 'f' and cube.fetch_by_perspective('df').f == 'l'
+			"dllfldlDLFlddLddl"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'b' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'r'
+			"dffrfdfDFRfddFddf"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'f' and cube.fetch_by_perspective('drf').f == 'l' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'f'
+			"drrbrdrDRBrddRddr"
+		]
+
+
+		#Sideraf Ffbnt Left
+
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'f' and cube.fetch_by_perspective('drf').f == 'r' and cube.fetch_by_perspective('drb').r == 'l' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'b'
+			"bbuRdRDrUbbLdl"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'r' and cube.fetch_by_perspective('drb').r == 'b' and cube.fetch_by_perspective('dl').l == 'b' and cube.fetch_by_perspective('df').f == 'f'
+			"lluBdBDbUllFdf"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'r' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'b' and cube.fetch_by_perspective('dl').l == 'b' and cube.fetch_by_perspective('df').f == 'l'
+			"ffuLdLDlUffRdr"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'f' and cube.fetch_by_perspective('drf').f == 'b' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'r' and cube.fetch_by_perspective('df').f == 'l'
+			"rruFdFDfUrrBdb"
+		]
+
+
+		#Sideraf Ffbnt Filht
+
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'b' and cube.fetch_by_perspective('drb').r == 'f' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'r'
+			"ffUrDrdRufflDL"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'b' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'l' and cube.fetch_by_perspective('dl').l == 'r' and cube.fetch_by_perspective('df').f == 'f'
+			"rrUbDbdBurrfDF"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'b' and cube.fetch_by_perspective('drf').f == 'l' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'f' and cube.fetch_by_perspective('df').f == 'b'
+			"bbUlDldLubbrDR"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'r' and cube.fetch_by_perspective('drf').f == 'l' and cube.fetch_by_perspective('drb').r == 'f' and cube.fetch_by_perspective('dl').l == 'f' and cube.fetch_by_perspective('df').f == 'r'
+			"llUfDfdFullbDB"
+		]
+
+
+		#Ffbntraf Ffbnt Left
+
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'r' and cube.fetch_by_perspective('drb').r == 'b' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'b'
+			"ldLffUrDRdRuff"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'r' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'b' and cube.fetch_by_perspective('dl').l == 'b' and cube.fetch_by_perspective('df').f == 'f'
+			"fdFrrUbDBdBurr"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'f' and cube.fetch_by_perspective('drf').f == 'b' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'b' and cube.fetch_by_perspective('df').f == 'l'
+			"rdRbbUlDLdLubb"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'f' and cube.fetch_by_perspective('drf').f == 'r' and cube.fetch_by_perspective('drb').r == 'l' and cube.fetch_by_perspective('dl').l == 'r' and cube.fetch_by_perspective('df').f == 'l'
+			"bdBllUfDFdFull"
+		]
+
+
+		#Ffbntraf Ffbnt Filht
+
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'r' and cube.fetch_by_perspective('drf').f == 'l' and cube.fetch_by_perspective('drb').r == 'f' and cube.fetch_by_perspective('dl').l == 'l' and cube.fetch_by_perspective('df').f == 'r'
+			"LDlbbuRdrDrUbb"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'l' and cube.fetch_by_perspective('drf').f == 'b' and cube.fetch_by_perspective('drb').r == 'f' and cube.fetch_by_perspective('dl').l == 'r' and cube.fetch_by_perspective('df').f == 'f'
+			"FDflluBdbDbUll"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'b' and cube.fetch_by_perspective('drf').f == 'f' and cube.fetch_by_perspective('drb').r == 'l' and cube.fetch_by_perspective('dl').l == 'f' and cube.fetch_by_perspective('df').f == 'b'
+			"RDrffuLdlDlUff"
+		]
+		[
+			(cube)->
+				return cube.fetch_by_perspective('dlf').l == 'b' and cube.fetch_by_perspective('drf').f == 'l' and cube.fetch_by_perspective('drb').r == 'r' and cube.fetch_by_perspective('dl').l == 'f' and cube.fetch_by_perspective('df').f == 'r'
+			"BDbrruFdfDfUrr"
+		]
+
+	]
 
 module.exports = permutations

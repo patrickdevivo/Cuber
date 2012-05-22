@@ -5,8 +5,8 @@ Servo rotate2; // pos[1]
 Servo grip1; // pos[2]
 Servo grip2; // pos[3]
 
-int pos[] = {90, 90, 0, 0}; // default servo positions
-int grippers[] = {30, 180}; // open and close
+int pos[] = {90, 90, 60, 60}; // default servo positions
+int grippers[] = {60, 180}; // open and close
 int rotaters[] = {0, 90, 180}; // ccw, default, cw
 
 int incoming;
@@ -55,8 +55,8 @@ void reset()
 {
   pos[0] = 90;
   pos[1] = 90;
-  pos[2] = 0;
-  pos[3] = 0;
+  pos[2] = 60;
+  pos[3] = 60;
   go();
 }
 
@@ -64,9 +64,9 @@ void setup()
 { 
   Serial.begin(9600);
   rotate1.attach(6);
-  rotate2.attach(7);
+  rotate2.attach(2);
   grip1.attach(8);
-  grip2.attach(9);
+  grip2.attach(4);
   
   go(); // default positions
   

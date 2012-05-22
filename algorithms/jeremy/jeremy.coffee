@@ -1,8 +1,3 @@
-_ = require '../../requirements/underscore.min.js'
-_.stf = require '../../requirements/underscore.string.min.js'
-_.mixin(_.str.exports())
-_.str.include('Underscore.string', 'string')
-
 permutations = require "./permutations.coffee"
 
 algorithms = [
@@ -1208,22 +1203,22 @@ algorithms = [
 # T-Bfient Headlilhts
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').d == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 	"rfdFDR"
 ]	
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 		"brdRDB"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').d == 'd' and cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"lbdBDL"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"fldLDF"
 ]
 
@@ -1231,22 +1226,22 @@ algorithms = [
 # T-Bfient Anti-Headlilhts
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').d == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 	"fdFDFrfR"
 ]	
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 		"rdRDRbrB"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').d == 'd' and cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"bdBDBlbL"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"ldLDLflF"
 ]
 
@@ -1254,22 +1249,22 @@ algorithms = [
 # Sleilh Rell
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 	"brDRDrdRB"
 ]	
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 		"lbDBDbdBL"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').d == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 	"flDLDldLF"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').d == 'd' and cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"rfDFDfdFR"
 ]
 
@@ -1277,22 +1272,22 @@ algorithms = [
 # Supef Bfient Fbfuafd
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 	"BlbLddBlbllddl"
 ]	
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 		"LflFddLflffddf"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 	"FrfRddFrfrrddr"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 	"RbrBddRbrbbddb"
 ]
 
@@ -1300,12 +1295,12 @@ algorithms = [
 # Supef Bfient Rackuafds
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 	"FddffLFlddfLFl"
 ]	
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 		"RddrrFRfddrFRf"
 ]
 
@@ -1313,22 +1308,22 @@ algorithms = [
 
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"rdRdrDRDRbrB"
 ]	
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 		"bdBdbDBDBlbL"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').d == 'd' and cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"ldLdlDLDLflF"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').d == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 	"fdFdfDFDFrfR"
 ]
 
@@ -1337,22 +1332,22 @@ algorithms = [
 
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').l == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"BDbDBdbdbRBr"
 ]	
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 		"LDlDLdldlBLb"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').f == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').d == 'd' and cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"FDfDFdfdfLFl"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').d == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 	"RDrDRdrdrFRf"
 ]
 
@@ -1361,22 +1356,22 @@ algorithms = [
 
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').d == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"bFRBfddbFRBf"
 ]	
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').d == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"lRBLrddlRBLr"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"fBLFbddfBLFb"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"rLFRlddrLFRl"
 ]
 
@@ -1385,12 +1380,12 @@ algorithms = [
 
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').d == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"fBDbdFbRBr"
 ]	
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' and cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').b == 'd' and cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"rLDldRlBLb"
 ]
 
@@ -1399,41 +1394,41 @@ algorithms = [
 # L=> Cfbss
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd'
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').d == 'd'
 	"rdfDFR"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd'
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').b == 'd'
 	"bdrDRB"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').b == 'd'
 	"ldbDBL"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').d == 'd'  
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').d == 'd'  
 	"fdlDLF"
 ]
 
 # I=> Cfbss
 [
 	(cube)->
-		return cube.fetch('dl').d == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').d == 'd' and cube.fetch('db').b == 'd' 
+		return cube.fetch_by_perspective('dl').d == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').d == 'd' and cube.fetch_by_perspective('db').b == 'd' 
 	"fldLDF"
 ]
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').d == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').d == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').d == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').d == 'd'
 	"rdfDFR"
 ]
 
 # Dbt=> Cfbss
 [
 	(cube)->
-		return cube.fetch('dl').l == 'd' and cube.fetch('df').f == 'd' and cube.fetch('dr').r == 'd' and cube.fetch('db').b == 'd'
+		return cube.fetch_by_perspective('dl').l == 'd' and cube.fetch_by_perspective('df').f == 'd' and cube.fetch_by_perspective('dr').r == 'd' and cube.fetch_by_perspective('db').b == 'd'
 	"fldLDFbdrDRB"
 ]
 # Cfbss Cbmplete
@@ -1445,22 +1440,22 @@ algorithms = [
 
 [
 	(cube)->
-		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 	"LddldLdl"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 	"FddfdFdf"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 	"RddrdRdr"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"BddbdBdb"
 ]
 
@@ -1468,22 +1463,22 @@ algorithms = [
 # 3 Cbfnefs cu
 [
 	(cube)->
-		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 	"FddfdFdf"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 	"FddfdFdf"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 	"FddfdFdf"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"FddfdFdf"
 ]
 
@@ -1491,22 +1486,22 @@ algorithms = [
 # Infinitd
 [
 	(cube)->
-		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 	"LFRflFrf"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 	"RBLbrBlb"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"BLFlbLfl"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"FRBrfRbr"
 ]
 
@@ -1514,22 +1509,22 @@ algorithms = [
 # Headlilhts
 [
 	(cube)->
-		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 	"llUlddLulddl"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 	"ffUfddFufddf"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"rrUrddRurddr"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"bbUbddBubddb"
 ]
 
@@ -1537,22 +1532,22 @@ algorithms = [
 # Anti-Headlilhts
 [
 	(cube)->
-		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').r == 'd'
+		return cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').r == 'd'
 	"BLflbLFl"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').d == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').d == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 	"LFrflFRf"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').d == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').d == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"FRbrfRBr"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').d == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').d == 'd'
+		return cube.fetch_by_perspective('dlf').d == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').d == 'd'
 	"RBlbrBLb"
 ]
 
@@ -1560,12 +1555,12 @@ algorithms = [
 # 4 Cbfnef Pafallel
 [
 	(cube)->
-		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 	"BLflbLFl"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 	"LFrflFRf"
 ]
 
@@ -1573,22 +1568,22 @@ algorithms = [
 # 4 Cbfnef Pefpendiculaf
 [
 	(cube)->
-		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 	"lddllDllDllddl"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').r == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').b == 'd'
+		return cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').r == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').b == 'd'
 	"fddffDffDffddf"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').l == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').b == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dlf').l == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').b == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 	"rddrrDrrDrrddr"
 ]
 [
 	(cube)->
-		return cube.fetch('dlf').f == 'd' and cube.fetch('drf').f == 'd' and cube.fetch('drb').r == 'd' and cube.fetch('dlb').l == 'd'
+		return cube.fetch_by_perspective('dlf').f == 'd' and cube.fetch_by_perspective('drf').f == 'd' and cube.fetch_by_perspective('drb').r == 'd' and cube.fetch_by_perspective('dlb').l == 'd'
 	"bddbbDbbDbbddb"
 ]
 
@@ -1597,14 +1592,14 @@ algorithms = [
 		i = 1
 		_.times(4, ()->
 			if i != 1
-				cube.turn('d')
+				cube.turn_by_perspective('d')
 			if !cube.check()
 				_.each(permutations, (algorithm, index)->
 					turns = _.chars(algorithm[1])
 					conditions = algorithm[0]
 					if conditions(cube)
 						_.each(turns, (turn, index)->
-							cube.turn(turn)	
+							cube.turn_by_perspective(turn)	
 							cube.history.algorithm.push(turn)
 						)
 				)

@@ -1,6 +1,6 @@
 repl = require "repl"
 Cuber = require './cuber.coffee'
-cube = new Cuber.Cube '', false
+cube = new Cuber.Cube 'Patrick', false
 solver = new Cuber.Solver cube
 
 jeremy = require './algorithms/jeremy/color/jeremy.coffee'

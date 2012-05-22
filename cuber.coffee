@@ -26,9 +26,11 @@ class Cube
 					this[id.charAt 2] = id.charAt 2
 				else
 					console.log "Invalid corner id"
+					
+		
 		class Face
-			constructor: (@color) ->
-				
+			constructor: (@color, @opposite) ->
+
 			cw: () ->
 				cube.turn(this.color, 'cw')
 				
@@ -65,12 +67,12 @@ class Cube
 		@corners['yog'] = new Corner 'yog'
 	
 		# faces
-		@white	= new Face 'white'
-		@green	= new Face 'green'
-		@orange	= new Face 'orange'
-		@blue	= new Face 'blue'
-		@red	= new Face 'red'
-		@yellow	= new Face 'yellow'
+		@w	= new Face 'w', 'y'
+		@g	= new Face 'g', 'b'
+		@o	= new Face 'o', 'r'
+		@b	= new Face 'b', 'g'
+		@r	= new Face 'r', 'o'
+		@y	= new Face 'y', 'w'
 		
 		@history = {
 			complete: []
@@ -79,14 +81,24 @@ class Cube
 		}
 		
 		@perspective = {
-			upper: 'w'
+			up: 'w'
 			left: 'g'
+			front: 'r'
+			down: 'y'
+			right: 'b'
+			back: 'o'
 		}
 		
-	change_perspective: (upper, left) ->
-		@perspective.upper = upper
-		@perspective.left = left
+	change_perspective: (up, left, front) ->
+		p = @perspective
+		p.up = up
+		p.left = left
+		p.front = front
+		p.down = this[p.up].opposite
+		p.right = this[p.left].opposite
+		p.back = this[p.front].opposite
 		
+	
 	display: (log = true)-> # display cube to the console
 		f = (piece) => this.fetch(piece)
 		output ="          --+-+-+--\n" +
@@ -190,6 +202,45 @@ class Cube
 	fetch: (piece) ->
 		this.get(piece, false)
 		
+	color_to_perspective: (color) -> # takes a color and returns what perspective contains that color
+		output = ''
+		_.each(@perspective, (value, perspective)->
+			if color is value
+				output =  perspective.charAt(0)
+		)
+
+		output
+		
+	fetch_by_perspective: (piece) -> # returns an object (like fetch()) of piece color values but by perspective
+		piece = _.chars(piece)
+		fetch = ''
+		output = {}
+		_.each(piece, (perspective, index) =>
+			perspective = perspective.toLowerCase()
+			switch perspective
+				when 'u'
+					face = 'up'
+				when 'd'
+					face = 'down'
+				when 'r'   
+					face = 'right'
+				when 'l'   
+					face = 'left'
+				when 'f'   
+					face = 'front'
+				when 'b'
+					face = 'back'
+			fetch += this.perspective[face]
+			output[perspective] = ''
+		)
+
+		_.each(this.fetch(fetch), (value, key) =>
+			index = this.color_to_perspective(key)
+			output[index] = this.color_to_perspective(value)
+		)
+		
+		output
+		
 	set: (piece, color_key, value) -> # set the value of 'color_key' on 'piece' to 'value'
 		piece = this.get(piece)
 		switch _.size(_.chars(piece))
@@ -203,127 +254,31 @@ class Cube
 		this[type][piece][color_key] = value
 	
 	turn_by_perspective: (turn) ->
-		p = @perspective
-		color = {
-			up: p.upper
-			down: ''
-			left: p.left
-			right: ''
-			front: ''
-			back: ''
-		}
-		
-		switch p.upper
-			when 'w'
-				color.down = 'y'
-			when 'y'
-				color.down = 'w'
-			when 'g'
-				color.down = 'b'
-			when 'b'
-				color.down = 'g'
-			when 'o'
-				color.down = 'r'
-			when 'r'
-				color.down = 'o'
-
-		switch p.left
-			when 'w'
-				color.right = 'y'
-			when 'y'
-				color.right = 'w'
-			when 'g'
-				color.right = 'b'
-			when 'b'
-				color.right = 'g'
-			when 'o'
-				color.right = 'r'
-			when 'r'
-				color.right = 'o'
-
-		if p.upper == 'w' and p.left == 'g'
-			color.front = 'r'
-			color.back = 'o'
-		if p.upper == 'w' and p.left == 'r'
-			color.front = 'b'
-			color.back = 'g'
-		if p.upper == 'w' and p.left == 'b'
-			color.front = 'o'
-			color.back = 'r'
-		if p.upper == 'w' and p.left == 'o'
-			color.front = 'o'
-			color.back = 'r'
-		if p.upper == 'g' and p.left == 'w'
-			color.front = 'o'
-			color.back = 'r'
-		if p.upper == 'g' and p.left == 'o'
-			color.front = 'y'
-			color.back = 'w'
-		if p.upper == 'g' and p.left == 'y'
-			color.front = 'r'
-			color.back = 'o'
-		if p.upper == 'g' and p.left == 'r'
-			color.front = 'w'
-			color.back = 'y'
-		if p.upper == 'r' and p.left == 'w'
-			color.front = 'g'
-			color.back = 'b'
-		if p.upper == 'r' and p.left == 'g'
-			color.front = 'y'
-			color.back = 'w'
-		if p.upper == 'r' and p.left == 'y'
-			color.front = 'b'
-			color.back = 'g'
-		if p.upper == 'r' and p.left == 'b'
-			color.front = 'w'
-			color.back = 'y'
-		if p.upper == 'b' and p.left == 'w'
-			color.front = 'r'
-			color.back = 'o'
-		if p.upper == 'b' and p.left == 'r'
-			color.front = 'y'
-			color.back = 'w'
-		if p.upper == 'b' and p.left == 'y'
-			color.front = 'o'
-			color.back = 'r'
-		if p.upper == 'b' and p.left == 'o'
-			color.front = 'w'
-			color.back = 'y'
-		if p.upper == 'o' and p.left == 'w'
-			color.front = 'b'
-			color.back = 'g'
-		if p.upper == 'o' and p.left == 'b'
-			color.front = 'y'
-			color.back = 'w'
-		if p.upper == 'o' and p.left == 'y'
-			color.front = 'g'
-			color.back = 'b'
-		if p.upper == 'o' and p.left == 'g'
-			color.front = 'w'
-			color.back = 'y'
-		if p.upper == 'y' and p.left == 'g'
-			color.front = 'o'
-			color.back = 'r'
-		if p.upper == 'y' and p.left == 'o'
-			color.front = 'b'
-			color.back = 'g'
-		if p.upper == 'y' and p.left == 'b'
-			color.front = 'r'
-			color.back = 'o'
-		if p.upper == 'y' and p.left == 'r'
-			color.front = 'g'
-			color.back = 'b'
-			
 		turn = turn.charAt(0)
-
 		switch turn
 			when turn.toLowerCase() # if face is uppercase
 				direction = 'cw'
 			when turn.toUpperCase() # if face is lowercase
 				direction = 'ccw'
-			
-		
+						
+		turn = turn.toLowerCase()
+		switch turn
+			when 'u'
+				face = @perspective.up
+			when 'd'
+				face = @perspective.down
+			when 'r'
+				face = @perspective.right
+			when 'l'
+				face = @perspective.left
+			when 'f'
+				face = @perspective.front
+			when 'b'
+				face = @perspective.back
 				
+		this.turn(face, direction)
+		
+		
 	turn: (face, direction, history = true) ->
 		cube = this
 		# refer to face by first character of color
@@ -337,6 +292,11 @@ class Cube
 					direction = 'ccw'
 
 		face = face.toLowerCase()
+		
+		if !/[wgrbyoWGRBYO]/.test(face)
+			console.log 'Invalid face'
+		
+		
 		
 		# find edges to turn
 		edges_to_turn = []
@@ -518,24 +478,30 @@ class Cube
 		
 		
 class Solver # a solver is a holder for a sequence of algorithms
-	constructor: (@cube = cube) ->
+	constructor: (@cube = cube, @perspective = false) ->
 		@queue = [] # algorithm queue
 
 	add_algorithm: (turns, condition) -> # add an algorithm to the solver queue
 		@queue.push([turns, condition])
 
 	run_algorithm: (turns, condition) -> # run an algorithm -> check if condition is true, execute turns
-		check_turn = (turn)=>
-			return /[wgrbyoWGRBYO]/.test(turn)
-		
+		check_turn = (turn) =>
+			if !@perspective
+				return /[wgrbyoWGRBYO]/.test(turn)
+			if @perspective
+				return /[udrlfbPDRLFB]/.test(turn)
+
 		execute_turn = (turn) =>
 			if check_turn(turn)
-				this.cube.turn(turn)
-				this.cube.history.algorithm.push(turn)
-			
+				if !@perspective
+					this.cube.turn(turn)
+					this.cube.history.algorithm.push(turn)
+				if @perspective
+					this.cube.turn_by_perspective(turn)
+
 		if typeof turns == 'string'
 			turns = _.chars(turns)
-		
+
 		if typeof condition == 'function'
 			if condition(@cube)
 				_.each(turns, (turn, index) =>
@@ -545,13 +511,21 @@ class Solver # a solver is a holder for a sequence of algorithms
 
 		if typeof condition == 'object'
 			checker = true
-			_.each(condition, (colors, piece) =>
-				_.each(colors, (value, key) =>
-					if @cube.get(piece, false)[key] != value
-						checker = false
+			if !@perspective
+				_.each(condition, (colors, piece) =>
+					_.each(colors, (value, key) =>
+						if @cube.get(piece, false)[key] != value
+							checker = false
+					)
 				)
-			)
-			
+			if @perspective
+				_.each(condition, (perspectives, piece) =>
+					_.each(perspectives, (value, key) =>
+						if @cube.fetch_by_perspective(piece)[key] != value
+							checker = false
+					)
+				)
+				
 			if checker
 				_.each(turns, (turn, index)=>
 					# this.cube.turn(turn)
@@ -562,7 +536,6 @@ class Solver # a solver is a holder for a sequence of algorithms
 		_.each(@queue, (element, index) =>
 			this.run_algorithm(element[0], element[1])
 		)
-		
 		return this.cube.check()
 		
 	export_turns: () -> # returns a string of all moves solver will execute when go() is called
@@ -584,7 +557,6 @@ class Solver # a solver is a holder for a sequence of algorithms
 			turns = element[1]
 			this.add_algorithm(turns, conditions)
 		)
-		
 
 module.exports.Cube = Cube
 module.exports.Solver = Solver
