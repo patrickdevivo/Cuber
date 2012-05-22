@@ -1,8 +1,8 @@
 {
 	"name": "Cuber",
 	"version": "0.2.0",
-	"author": "Patrick DeVivo <patrick.devivo@gmail.com>"
-	"description": "Rubik's cube model and solver."
+	"author": "Patrick DeVivo <patrick.devivo@gmail.com>",
+	"description": "Rubik's cube model and solver.",
 	"contributors": [
 		{
 			"name": "Jeremy Bannister",
@@ -12,7 +12,7 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/patrickdevivo/Cuber"
-	}
+	},
 	"dependencies": {
 		"coffee-script": "1.2.x",
 		"zappa": "0.3.x",
