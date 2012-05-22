@@ -1,0 +1,147 @@
+- If both grippers are closed, perspective matrix does not change. 
+- If a gripper is open then turns of that gripper do not affect the perspective matrix. 
+
+(The first position is where it is to begin with and the position after the colon is its final position as a result of the specified turn)
+
+If side gripper is closed and bottom gripper is open then:
+	Clockwise on the side means: 
+		top: back,
+		bottom: front,
+		front: top,
+		back: bottom,
+		left: left, 
+		right: right;
+		
+		
+	Counterclockwise on the side means: 
+		top: front,
+		bottom: back,
+		front: bottom,
+		back: top,
+		left: left,  
+		right: right; 
+		
+	
+	Double on side means:
+		top: bottom,
+		bottom: top,
+		front: back,
+		back: front,
+		left: left, 
+		right: right;
+		
+		
+If bottom gripper is closed and side gripper is open then:
+	Clockwise on the bottom means: 
+		top: top,
+		bottom: bottom,
+		front: right,
+		back: left,
+		left: front,
+		right: back;
+		
+
+	Counterclockwise on the bottom means: 
+		top: top, 
+		bottom: bottom,
+		front: left, 
+		back: right,
+		left: back,
+		right: front;
+		 
+	
+	Double on bottom means:
+		top: top, 
+		bottom: bottom,
+		front: back, 
+		back: front,
+		left: right,
+		right: left; 
+		
+	
+	
+AB are open and close respectively (Side Gripper).
+	
+CDEF are rotational positions of side gripper starting in default (horizontal), moving clockwise.
+
+UV are open and close respectively (Bottom Gripper).
+
+WXYZ are rotational positions of bottom gripper starting in default (back to front), moving clockwise.
+
+(ACB) = Side Gripper Reset (default position)
+(UWV) = Bottom Gripper Reset (default position)
+
+
+First a command such as "turn g" gets converted to one of 18: turn u or turn U or turn U2
+															  turn d or turn D or turn D2
+															  turn f or turn F or turn F2
+															  turn b or turn B or turn B2
+															  turn l or turn L or turn L2
+															  turn r or turn R or turn R2
+through the perspective matrix.
+
+
+
+turn u:
+	UEV(ACB)X(UWV)
+	
+turn U:
+	UEV(ACB)Z(UWV)
+
+turn U2:
+	UEV(ACB)Y(UWV)
+
+
+
+turn d:
+	X(UWV)
+	
+turn D:
+	Z(UWV)
+	
+turn D2:
+	Y(UWV)
+	
+	
+	
+turn f:
+	AXB(UWV)D(ACB)
+
+turn F:
+	AXB(UWV)F(ACB)
+
+turn F2:
+	AXB(UWV)E(ACB)
+	
+	
+	
+turn b:
+	AZB(UWV)D(ACB)
+	
+turn B:
+	AZB(UWV)F(ACB)
+	
+turn B2:
+	AZB(UWV)E(ACB)
+	
+	
+	
+turn l:
+	AYB(UWV)D(ACB)
+	
+turn L:
+	AYB(UWV)F(ACB)
+
+turn L2:
+	AYB(UWV)E(ACB)
+	
+	
+	
+turn r:
+	D(ACB)
+	
+turn R:
+	F(ACB)
+	
+turn R2:
+	E(ACB)
