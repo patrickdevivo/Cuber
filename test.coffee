@@ -12,7 +12,7 @@ tests.findAndModify({total_cubes: $lt: 100}, {remove: true}, (err, docs) =>
 )
 
 
-jeremy = require './algorithms/jeremy/color/jeremy.coffee'
+jeremy = require './algorithms/jeremy/jeremy.coffee'
 checks = 0
 n = 0
 turns = 0
@@ -25,7 +25,7 @@ execute = ()->
 		)
 		
 	cube = new Cuber.Cube n+'', false
-	solver = new Cuber.Solver cube
+	solver = new Cuber.Solver cube, true
 	solver.import_algorithms(jeremy)
 	cube.scramble()
 	solver.go()

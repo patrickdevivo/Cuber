@@ -206,6 +206,15 @@
       return this.get(piece, false);
     };
 
+    Cube.prototype.color_to_perspective = function(color) {
+      var output;
+      output = '';
+      _.each(this.perspective, function(value, perspective) {
+        if (color === value) return output = perspective.charAt(0);
+      });
+      return output;
+    };
+
     Cube.prototype.fetch_by_perspective = function(piece) {
       var fetch, output,
         _this = this;
@@ -241,15 +250,6 @@
         var index;
         index = _this.color_to_perspective(key);
         return output[index] = _this.color_to_perspective(value);
-      });
-      return output;
-    };
-
-    Cube.prototype.color_to_perspective = function(color) {
-      var output;
-      output = '';
-      _.each(this.perspective, function(value, perspective) {
-        if (color === value) return output = perspective.charAt(0);
       });
       return output;
     };

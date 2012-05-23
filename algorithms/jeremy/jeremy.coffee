@@ -1599,7 +1599,7 @@ algorithms = [
 					conditions = algorithm[0]
 					if conditions(cube)
 						_.each(turns, (turn, index)->
-							cube.turn_by_perspective(turn)	
+							cube.turn_by_perspective(turn)
 							cube.history.algorithm.push(turn)
 						)
 				)

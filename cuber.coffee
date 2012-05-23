@@ -255,6 +255,7 @@ class Cube
 	
 	turn_by_perspective: (turn) ->
 		turn = turn.charAt(0)
+
 		switch turn
 			when turn.toLowerCase() # if face is uppercase
 				direction = 'cw'
@@ -275,8 +276,9 @@ class Cube
 				face = @perspective.front
 			when 'b'
 				face = @perspective.back
-				
-		this.turn(face, direction)
+		
+		if typeof face == 'string'
+			this.turn(face, direction)
 		
 		
 	turn: (face, direction, history = true) ->
@@ -396,7 +398,7 @@ class Cube
 			console.log 'Error: import a string of turns to do'
 		turns = _.chars(turns)
 		_.each(turns, (element, index) =>
-			this.cube.turn(element)
+			this.turn(element)
 		)
 		
 	cheat: () -> # reverse all moves in the cube turn history (cube.history)
@@ -489,7 +491,7 @@ class Solver # a solver is a holder for a sequence of algorithms
 			if !@perspective
 				return /[wgrbyoWGRBYO]/.test(turn)
 			if @perspective
-				return /[udrlfbPDRLFB]/.test(turn)
+				return /[udrlfbUDRLFB]/.test(turn)
 
 		execute_turn = (turn) =>
 			if check_turn(turn)
@@ -498,6 +500,7 @@ class Solver # a solver is a holder for a sequence of algorithms
 					this.cube.history.algorithm.push(turn)
 				if @perspective
 					this.cube.turn_by_perspective(turn)
+					this.cube.history.algorithm.push(turn)
 
 		if typeof turns == 'string'
 			turns = _.chars(turns)
