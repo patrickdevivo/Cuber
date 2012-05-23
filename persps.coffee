@@ -24,3 +24,5 @@ all_perspectives = [
 	{u: 'y', l: 'b', f: 'r'}
 	{u: 'y', l: 'r', f: 'g'}
 ]
+
+module.exports = all_perspectives

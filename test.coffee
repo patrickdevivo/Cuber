@@ -4,7 +4,7 @@ Table = require 'cli-table'
 db = require('monk')('heroku:cuber@staff.mongohq.com:10011/app4172676')
 tests = db.get('tests')
 id = ''
-
+persps = require './persps.coffee'
 
 # clear out older tests under 100 cubes
 tests.findAndModify({total_cubes: $lt: 100}, {remove: true}, (err, docs) =>
@@ -22,8 +22,8 @@ execute = ()->
 	if n is 10
 		tests.insert({total_cubes: 0, average_turns: 0, time_elapsed: 0, accuracy: 0}, (err, doc)->
 			id = doc._id
-		)
-		
+		)	
+	
 	cube = new Cuber.Cube n+'', false
 	solver = new Cuber.Solver cube, true
 	solver.import_algorithms(jeremy)
