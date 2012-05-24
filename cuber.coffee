@@ -36,7 +36,7 @@ class Cube
 				
 			ccw: () ->
 				cube.turn(this.color, 'ccw')
-				
+
 		# edges
 		@edges = {}	
 		@edges['wg'] = new Edge 'wg'

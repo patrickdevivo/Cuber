@@ -23,7 +23,6 @@
 		"console-trace": "0.1.x",
 		"underscore": "1.3.x",
 		"underscore.string": "2.2.x",
-		"async": "0.1.x"
 	},
 	"engines": {
 		"node": "0.6.x",

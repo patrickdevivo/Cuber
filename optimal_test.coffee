@@ -2,7 +2,6 @@ before = new Date().getTime()
 Cuber = require './cuber.coffee'
 Table = require 'cli-table'
 persps = require './persps.coffee'
-async = require 'async'
 jeremy = require './algorithms/jeremy/jeremy.coffee'
 
 
