@@ -9,6 +9,7 @@ jeremy = require './algorithms/jeremy/jeremy.coffee'
 
 scrambled.scramble(20)
 
+turns = []
 cubes = []
 solvers = []
 counts = []
@@ -23,8 +24,13 @@ _.each(persps, (persp, index)->
 	counts.push([cubes[i].history.algorithm.length, persp])
 	counts.push(cubes[i].history.algorithm.length)
 	i++
+	turns.push([cubes[i].history.algorithm])
+	
 )
+
 
 console.log counts
 console.log _.min(counts)
 console.log _.max(counts)
+console.log turns.indexOf(_.min(counts))
+console.log turns.indexOf(_.max(counts))
