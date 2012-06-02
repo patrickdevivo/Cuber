@@ -142,18 +142,25 @@ void loop() {
     if (client.available()) {
       // read incoming bytes:
       char inChar = client.read();
-
-      // add incoming byte to end of line:
-      if (!(inChar == '!')) {
-        moves += inChar; 
+      
+      if (inChar == '>') {
+       readingMoves = true; 
       }
-      else if (inChar == '!') {
-        Serial.println(moves);   
-        // close the connection to the server:
-        client.stop();  
-      }
+      
+      if (readingMoves == true) {
+        // add incoming byte to end of line:
+        if (!(inChar == '!')) {
+          moves += inChar; 
+        }
+        else if (inChar == '!') {
+          Serial.println(moves);   
+          readingMoves = false
+          // close the connection to the server:
+          client.stop();  
+        }
+       }
+       }
      }
-     }   
  
   if (millis() - lastAttemptTime > requestInterval) {
     // if you're not connected, and two minutes have passed since
