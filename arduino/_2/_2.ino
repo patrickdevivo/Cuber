@@ -79,7 +79,7 @@ void execute(String turns) {
     if (current == 'V') grip(2, "close");
     if (current == 'E') grip(1, "open");
     if (current == 'F') grip(1, "close");
-    delay(3000);
+    delay(2000);
   }
 }
 
@@ -90,7 +90,7 @@ void connectToServer() {
   if (client.connect(serverName, 80)) {
     Serial.println("making HTTP request...");
     // make HTTP GET request:
-    client.println("GET / HTTP/1.1");
+    client.println("GET /moves HTTP/1.1");
     client.println("HOST: cuber.patrickdevivo.com");
     client.println();
   }
@@ -144,46 +144,28 @@ void loop() {
       char inChar = client.read();
 
       // add incoming byte to end of line:
-      currentLine += inChar; 
-
-      // if you get a newline, clear the line:
-      if (inChar == '\n') {
-        currentLine = "";
-      } 
-      // if the current line ends with <text>, it will
-      // be followed by the tweet:
-      if ( currentLine.endsWith("<text>")) {
-        readingMoves = true; 
-        moves = "";
+      if (!(inChar == '!')) {
+        moves += inChar; 
       }
-      // if you're currently reading the bytes of a tweet,
-      // add them to the tweet String:
-      if (readingMoves) {
-        if (inChar != '<') {
-          moves += inChar;
-        } 
-        else {
-          // if you got a "<" character,
-          // you've reached the end of the tweet:
-          readingMoves = false;
-          Serial.println(moves);   
-          // close the connection to the server:
-          client.stop(); 
-        }
+      else if (inChar == '!') {
+        Serial.println(moves);   
+        // close the connection to the server:
+        client.stop();  
       }
-    }   
-  }
-  else if (millis() - lastAttemptTime > requestInterval) {
+     }
+     }   
+ 
+  if (millis() - lastAttemptTime > requestInterval) {
     // if you're not connected, and two minutes have passed since
     // your last connection, then attempt to connect again:
     connectToServer();
   }
 
-  if (Serial.available() > 0) {
-    char incoming = Serial.read();
-    execute(String(incoming));    
-    Serial.print(incoming);
-    Serial.println();
-  }
+//  if (Serial.available() > 0) {
+//    char incoming = Serial.read();
+//    execute(String(incoming));    
+//    Serial.print(incoming);
+//    Serial.println();
+//  }
   
 }

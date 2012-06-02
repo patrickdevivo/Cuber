@@ -32,7 +32,7 @@ web = require('zappa') port, ->
 	translator = require('../translator.coffee')
 	@use 'bodyParser'
 	@get
-		'/' : ->
+		'/moves' : ->
 			@response.contentType('application/json')
 			cube = new Cuber.Cube '', false
 			solver = new Cuber.Solver cube, true
@@ -43,7 +43,7 @@ web = require('zappa') port, ->
 			optimizer = require '../best_solve.coffee'
 			solved = optimizer(cube)
 			translator = require '../translator'
-			machine_moves = translator(solved.colors, solved.perspective)
+			machine_moves = translator(solved.colors, solved.perspective) + '!'
 			
 			response = {
 				moves: machine_moves
