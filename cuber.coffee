@@ -4,7 +4,7 @@ _.mixin(_.str.exports())
 _.str.include('Underscore.string', 'string')
 colorize = require 'colorize'
 require('console-trace')
-console.log = console.t.log
+# console.log = console.t.log
 
 class Cube
 	constructor: (@name = "Rubik\'s", @verbosity = true) ->
@@ -81,12 +81,12 @@ class Cube
 		}
 		
 		@perspective = {
-			up: 'w'
-			left: 'g'
-			front: 'r'
-			down: 'y'
-			right: 'b'
-			back: 'o'
+			u: 'w'
+			l: 'g'
+			f: 'r'
+			d: 'y'
+			r: 'b'
+			b: 'o'
 		}
 		
 		@all_perspectives = [
@@ -116,14 +116,14 @@ class Cube
 			{u: 'y', l: 'r', f: 'g'}
 		]
 		
-	change_perspective: (up, left, front) ->
+	change_perspective: (u, l, f) ->
 		p = @perspective
-		p.up = up
-		p.left = left
-		p.front = front
-		p.down = this[p.up].opposite
-		p.right = this[p.left].opposite
-		p.back = this[p.front].opposite
+		p.u = u
+		p.l = l
+		p.f = f
+		p.d = this[p.u].opposite
+		p.r = this[p.l].opposite
+		p.b = this[p.f].opposite
 		
 	
 	display: (log = true)-> # display cube to the console
@@ -244,19 +244,7 @@ class Cube
 		output = {}
 		_.each(piece, (perspective, index) =>
 			perspective = perspective.toLowerCase()
-			switch perspective
-				when 'u'
-					face = 'up'
-				when 'd'
-					face = 'down'
-				when 'r'   
-					face = 'right'
-				when 'l'   
-					face = 'left'
-				when 'f'   
-					face = 'front'
-				when 'b'
-					face = 'back'
+			face = perspective
 			fetch += this.perspective[face]
 			output[perspective] = ''
 		)
@@ -292,17 +280,17 @@ class Cube
 		turn = turn.toLowerCase()
 		switch turn
 			when 'u'
-				face = @perspective.up
+				face = @perspective.u
 			when 'd'
-				face = @perspective.down
+				face = @perspective.d
 			when 'r'
-				face = @perspective.right
+				face = @perspective.r
 			when 'l'
-				face = @perspective.left
+				face = @perspective.l
 			when 'f'
-				face = @perspective.front
+				face = @perspective.f
 			when 'b'
-				face = @perspective.back
+				face = @perspective.b
 		
 		if typeof face == 'string'
 			this.turn(face, direction)
@@ -444,12 +432,18 @@ class Cube
 	reset: () ->
 		this.cheat()
 		
-	###	
+		
 	import: (cube) ->
-		_.extend(this.edges, cube.edges)
-		_.extend(this.corners, cube.corners)
-		_.extend(this.history, cube.history)
-	###
+		# _.extend(this.edges, cube.edges)
+		# _.extend(this.corners, cube.corners)
+		# _.extend(this.history, cube.history)
+		# this.edges = {}
+		# this.corners = {}
+		for pieces of cube.edges
+			_.extend(this.edges[pieces], cube.edges[pieces])
+			
+		for pieces of cube.corners
+			_.extend(this.corners[pieces], cube.corners[pieces])
 		
 	scramble: (n = 100, return_only = false) -> # scranbles a cube with n random turns
 		scrambles = ''

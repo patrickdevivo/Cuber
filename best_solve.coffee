@@ -3,7 +3,8 @@ Table = require 'cli-table'
 persps = require './persps.coffee'
 jeremy = require './algorithms/jeremy/jeremy.coffee'
 
-optimal = () ->
+
+optimal = (import_cube) ->
 	cubes = []
 	solvers = []
 	counts = []
@@ -16,7 +17,8 @@ optimal = () ->
 		cubes[i] = new Cuber.Cube i+'', false
 		solvers[i] = new Cuber.Solver cubes[i], true
 		solvers[i].import_algorithms(jeremy)
-		cubes[i].import_turns(scrambled)
+		# cubes[i].import_turns(scrambled)
+		cubes[i].import(import_cube)
 		# cubes[i].display()
 		cubes[i].change_perspective(persp.u, persp.l, persp.f)
 		solvers[i].go()
@@ -50,7 +52,9 @@ optimal = () ->
 	
 	return {solved: solved, turns: counts[min_index].turns, perspective: counts[min_index].perspective, colors: colors}
 	
-foo = optimal()
-console.log foo.turns
-console.log foo.perspective
-console.log foo.colors
+# foo = optimal()
+# console.log foo.turns
+# console.log foo.perspective
+# console.log foo.colors
+
+module.exports = optimal

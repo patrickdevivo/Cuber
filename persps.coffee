@@ -22,7 +22,7 @@ all_perspectives = [
 	{u: 'y', l: 'g', f: 'o'}
 	{u: 'y', l: 'o', f: 'b'}
 	{u: 'y', l: 'b', f: 'r'}
-	{u: 'y', l: 'r', f: 'g'}
+	{u: 'y', l: 'r', f: 'g'} # index 23
 ]
 
 module.exports = all_perspectives

@@ -51,6 +51,7 @@ void rotate(int rotater, char command) {
   go();
 }
 
+
 void reset()
 {
   pos[0] = 90;
